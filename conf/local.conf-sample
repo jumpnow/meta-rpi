@@ -1,0 +1,43 @@
+# Local configuration for meta-raspberrypi images
+# Yocto Project 2.0.0 Poky distribution [jethro] branch
+# This is a sysvinit system
+
+LICENSE_FLAGS_WHITELIST = "commercial"
+
+# PREFERRED_PROVIDER_jpeg = "jpeg"
+
+PREFERRED_PROVIDER_udev = "systemd"
+VIRTUAL_RUNTIME_init_manager = "sysvinit"
+
+MACHINE = "raspberrypi2"
+
+#DL_DIR = "/oe-sources"
+
+#SSTATE_DIR = "/oe8/rpi/sstate-cache"
+
+#TMPDIR = "/oe8/rpi/tmp-poky-jethro-build"
+
+DISTRO = "poky"
+
+PACKAGE_CLASSES = "package_ipk"
+
+# RPi specific tweaks
+DISABLE_OVERSCAN = "1"
+
+ENABLE_SPI_BUS = "1"
+
+DISMANX_OFFLINE = "1"
+
+
+# i686 or x86_64
+SDKMACHINE = "x86_64"
+
+EXTRA_IMAGE_FEATURES = "debug-tweaks"
+
+USER_CLASSES = "image-mklibs image-prelink"
+
+PATCHRESOLVE = "noop"
+
+RM_OLD_IMAGE = "1"
+
+CONF_VERSION = "1"

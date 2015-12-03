@@ -1,0 +1,22 @@
+# LAYER_CONF_VERSION is increased each time build/conf/bblayers.conf
+# changes incompatibly
+LCONF_VERSION = "6"
+
+BBPATH = "${TOPDIR}"
+BBFILES ?= ""
+
+BBLAYERS ?= " \
+  ${HOME}/poky-jethro/meta \
+  ${HOME}/poky-jethro/meta-yocto \
+  ${HOME}/poky-jethro/meta-openembedded/meta-oe \
+  ${HOME}/poky-jethro/meta-openembedded/meta-multimedia \
+  ${HOME}/poky-jethro/meta-openembedded/meta-networking \
+  ${HOME}/poky-jethro/meta-openembedded/meta-python \
+  ${HOME}/rpi/meta-raspberrypi \
+  ${HOME}/rpi/meta-rpi \
+  "
+
+BBLAYERS_NON_REMOVABLE ?= " \
+  ${HOME}/poky-jethro/meta \
+  ${HOME}/poky-jethro/meta-yocto \
+  "
