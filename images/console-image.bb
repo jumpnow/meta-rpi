@@ -87,14 +87,23 @@ EXTRA_TOOLS_INSTALL = " \
     zip \
  "
 
+RPI_STUFF = " \
+    omxplayer \
+    bcm2835-tests \
+    wiringpi \
+    rpio \
+    rpi-gpio \
+    pi-blaster \
+ "
+
 IMAGE_INSTALL += " \
     ${CORE_OS} \
     ${DEV_SDK_INSTALL} \
     ${DEV_EXTRAS} \
     ${EXTRA_TOOLS_INSTALL} \
     ${KERNEL_EXTRA_INSTALL} \
+    ${RPI_STUFF} \
     ${WIFI_SUPPORT} \
-    packagegroup-rpi-test \
  "
 
 set_local_timezone() {
