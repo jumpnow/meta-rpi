@@ -2,7 +2,7 @@ SUMMARY = "A Qt5 development image"
 HOMEPAGE = "http://www.jumpnowtek.com"
 LICENSE = "MIT"
 
-require console-image.bb
+require x11-image.bb
 
 QT_TOOLS = " \
     qtbase \
@@ -20,5 +20,5 @@ IMAGE_INSTALL += " \
     tspress \
  "
 
-export IMAGE_BASENAME = "qt5-image"
+export IMAGE_BASENAME = "qt5-x11-image"
 
