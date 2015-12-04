@@ -4,7 +4,8 @@
 
 LICENSE_FLAGS_WHITELIST = "commercial"
 
-# PREFERRED_PROVIDER_jpeg = "jpeg"
+PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
+PREFERRED_PROVIDER_jpeg-native = "libjpeg-turbo-native"
 
 PREFERRED_PROVIDER_udev = "systemd"
 VIRTUAL_RUNTIME_init_manager = "sysvinit"
