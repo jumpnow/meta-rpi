@@ -12,6 +12,7 @@ BBLAYERS ?= " \
     ${HOME}/poky-jethro/meta-openembedded/meta-multimedia \
     ${HOME}/poky-jethro/meta-openembedded/meta-networking \
     ${HOME}/poky-jethro/meta-openembedded/meta-python \
+    ${HOME}/poky-jethro/meta-qt5 \
     ${HOME}/poky-jethro/meta-raspberrypi \
     ${HOME}/rpi/meta-rpi \
   "
