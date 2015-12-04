@@ -16,19 +16,15 @@ MACHINE = "raspberrypi2"
 
 #SSTATE_DIR = "/oe8/rpi/sstate-cache"
 
-#TMPDIR = "/oe8/rpi/tmp-poky-jethro-build"
+#TMPDIR = "/oe8/rpi/tmp-jethro"
 
 DISTRO = "poky"
 
 PACKAGE_CLASSES = "package_ipk"
 
-# RPi specific tweaks
 DISABLE_OVERSCAN = "1"
-
 ENABLE_SPI_BUS = "1"
-
 DISMANX_OFFLINE = "1"
-
 
 # i686 or x86_64
 SDKMACHINE = "x86_64"
