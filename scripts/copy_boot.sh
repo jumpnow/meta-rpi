@@ -1,6 +1,15 @@
 #!/bin/bash
 
-MACHINE=raspberrypi2
+if [ -z "${MACHINE}" ]; then
+	echo "Environment variable MACHINE not set"
+	echo "Example: export MACHINE=raspberrypi2 or export MACHINE=raspberrypi"
+	exit 1
+fi
+
+if [ "${MACHINE}" != "raspberrypi2" ] && [ "${MACHINE}" != "raspberrypi" ]; then
+	echo "Invalid MACHINE: ${MACHINE}"
+	exit 1
+fi
 
 BOOTLDRFILES="bcm2835-bootfiles-20151021.stamp \
               bootcode.bin \
@@ -25,8 +34,9 @@ OVERLAYDTBS="hifiberry-amp-overlay.dtb \
              w1-gpio-overlay.dtb \
              w1-gpio-pullup-overlay.dtb"
 
-KERNELFILES="Image \
-             Image-bcm2709-rpi-2-b.dtb"
+DTBS="bcm2708-rpi-b.dtb \
+      bcm2708-rpi-b-plus.dtb \
+      bcm2709-rpi-2-b.dtb"
 
 if [ "x${1}" = "x" ]; then
 	echo -e "\nUsage: ${0} <block device>\n"
@@ -65,14 +75,16 @@ for f in ${OVERLAYDTBS}; do
 		exit 1
 	fi
 done
+
+for f in ${DTBS}; do
+	if [ ! -f ${SRCDIR}/Image-${f} ]; then
+		echo "dtb not found: ${SRCDIR}/Image-${f}"
+		exit 1
+	fi
+done
 	
 if [ ! -f ${SRCDIR}/Image ]; then
 	echo "Kernel file not found: ${SRCDIR}/Image"
-	exit 1
-fi
-
-if [ ! -f ${SRCDIR}/Image-bcm2709-rpi-2-b.dtb ]; then
-	echo "DTB file not found: ${SRCDIR}/Image-bcm2709-rpi-2-b.dtb"
 	exit 1
 fi
 
@@ -114,14 +126,29 @@ for f in ${OVERLAYDTBS}; do
 	sudo cp ${SRCDIR}/Image-${f} /media/card/overlays/${f}
 
 	if [ $? -ne 0 ]; then
-		echo "Error copying $f"
+		echo "Error copying overlay: $f"
+		sudo umount ${DEV}
+		exit 1
+	fi
+done
+
+echo "Copying dtbs"
+for f in ${DTBS}; do
+	sudo cp ${SRCDIR}/Image-${f} /media/card/${f}
+
+	if [ $? -ne 0 ]; then
+		echo "Error copying dtb: $f"
 		sudo umount ${DEV}
 		exit 1
 	fi
 done
 
 echo "Copying kernel"
-sudo cp ${SRCDIR}/Image /media/card/kernel7.img
+if [ "${MACHINE}" = "raspberrypi2" ]; then 
+	sudo cp ${SRCDIR}/Image /media/card/kernel7.img
+else
+	sudo cp ${SRCDIR}/Image /media/card/kernel.img
+fi
 
 if [ $? -ne 0 ]; then
 	echo "Error copying kernel"
@@ -129,15 +156,6 @@ if [ $? -ne 0 ]; then
 	exit 1
 fi
  
-echo "Copying rpi2 dtb"
-sudo cp ${SRCDIR}/Image-bcm2709-rpi-2-b.dtb /media/card/bcm2709-rpi-2-b.dtb
-
-if [ $? -ne 0 ]; then
-	echo "Error copying rpi2 dtb"
-	sudo umount ${DEV}
-	exit 1
-fi
-
 echo "Unmounting ${DEV}"
 sudo umount ${DEV}
 

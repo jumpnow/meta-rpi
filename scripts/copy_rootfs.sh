@@ -1,6 +1,15 @@
 #!/bin/bash
 
-MACHINE=raspberrypi2
+if [ -z "${MACHINE}" ]; then
+	echo "Environment variable MACHINE not set"
+	echo "Example: export MACHINE=raspberrypi2 or export MACHINE=raspberrypi"
+	exit 1
+fi
+
+if [ "${MACHINE}" != "raspberrypi2" ] && [ "${MACHINE}" != "raspberrypi" ]; then
+	echo "Invalid MACHINE: ${MACHINE}"
+	exit 1
+fi
 
 if [ "x${1}" = "x" ]; then
 	echo -e "\nUsage: ${0} <block device> [ <image-type> [<hostname>] ]\n"
@@ -20,7 +29,7 @@ fi
 
 if [ -z "$OETMP" ]; then
 	echo -e "\nWorking from local directory"
-    SRCDIR=.
+	SRCDIR=.
 else
 	echo -e "\nOETMP: $OETMP"
 
