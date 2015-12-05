@@ -7,16 +7,10 @@ IMAGE_LINGUAS = "en-us"
 
 inherit core-image
 
-SPLASH = "psplash-raspberrypi"
-
 CORE_OS = " \
     openssh openssh-keygen openssh-sftp-server \
     term-prompt \
     tzdata \
- "
-
-KERNEL_EXTRA_INSTALL = " \
-    kernel-modules \
  "
 
 WIFI_SUPPORT = " \
@@ -101,7 +95,6 @@ IMAGE_INSTALL += " \
     ${DEV_SDK_INSTALL} \
     ${DEV_EXTRAS} \
     ${EXTRA_TOOLS_INSTALL} \
-    ${KERNEL_EXTRA_INSTALL} \
     ${RPI_STUFF} \
     ${WIFI_SUPPORT} \
  "
