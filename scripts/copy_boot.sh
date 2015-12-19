@@ -11,8 +11,7 @@ if [ "${MACHINE}" != "raspberrypi2" ] && [ "${MACHINE}" != "raspberrypi" ]; then
 	exit 1
 fi
 
-BOOTLDRFILES="bcm2835-bootfiles-20151021.stamp \
-              bootcode.bin \
+BOOTLDRFILES="bootcode.bin \
               cmdline.txt \
               config.txt \
               fixup_cd.dat \
@@ -102,15 +101,13 @@ echo "Mounting ${DEV}"
 sudo mount ${DEV} /media/card
 
 echo "Copying bootloader files"
-for f in ${BOOTLDRFILES}; do
-	sudo cp ${SRCDIR}/bcm2835-bootfiles/${f} /media/card
+sudo cp ${SRCDIR}/bcm2835-bootfiles/* /media/card
 
-	if [ $? -ne 0 ]; then
-		echo "Error copying ${f}"
-		sudo umount ${DEV}
-		exit 1
-	fi
-done
+if [ $? -ne 0 ]; then
+	echo "Error copying bootloader files"
+	sudo umount ${DEV}
+	exit 1
+fi
 
 echo "Copying overlay dtbs"
 sudo mkdir /media/card/overlays
