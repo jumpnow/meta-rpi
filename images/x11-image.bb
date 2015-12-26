@@ -62,6 +62,7 @@ ALSA += " \
 X11_EXTRAS = " \
     disable-x11-blanking \
     formfactor \
+    leafpad \
     pcmanfm \
     pcmanfm-locale-en-gb \
     shutdown-desktop \
