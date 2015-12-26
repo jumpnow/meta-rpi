@@ -88,6 +88,7 @@ RPI_STUFF = " \
     rpio \
     rpi-gpio \
     pi-blaster \
+    userland \
  "
 
 IMAGE_INSTALL += " \
