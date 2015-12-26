@@ -36,8 +36,8 @@ SIZE=`fdisk -l $DRIVE | grep "Disk $DRIVE" | cut -d' ' -f5`
 
 echo DISK SIZE – $SIZE bytes
 
-if [ "$SIZE" -lt 3800000000 ]; then
-	echo "Require an SD card of at least 4GB"
+if [ "$SIZE" -lt 1800000000 ]; then
+	echo "Require an SD card of at least 2GB"
 	exit 1
 fi
 
@@ -61,7 +61,7 @@ dd if=/dev/zero of=$DRIVE bs=1024 count=1024
 # Sectors are 512 bytes
 # 0     : 4MB, no partition, MBR then empty
 # 8192  : 64 MB, FAT partition, bootloader, kernel 
-# 139264: 4GB+, linux partition, root filesystem
+# 139264: 2GB+, linux partition, root filesystem
 
 echo -e "\n=== Creating 2 partitions ===\n"
 {

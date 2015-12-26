@@ -64,11 +64,11 @@ if [ ! -b $DEV ]; then
 	exit 1
 fi
 
-echo "Formatting $DEV as ext4"
-sudo mkfs.ext4 -q -L ROOT $DEV
+echo "Formatting ${DEV} as ext4"
+sudo mkfs.ext4 -q -L ROOT ${DEV}
 
-echo "Mounting $DEV"
-sudo mount $DEV /media/card
+echo "Mounting ${DEV}"
+sudo mount ${DEV} /media/card
 
 echo "Extracting ${IMAGE}-image-${MACHINE}.tar.bz2 to /media/card"
 sudo tar -C /media/card -xjf ${SRCDIR}/${IMAGE}-image-${MACHINE}.tar.bz2
@@ -87,7 +87,14 @@ if [ -f ${SRCDIR}/wpa_supplicant.conf ]; then
 	sudo cp ${SRCDIR}/wpa_supplicant.conf /media/card/etc/wpa_supplicant.conf
 fi
 
-echo "Unmounting $DEV"
-sudo umount $DEV
+echo "Unmounting ${DEV}"
+sudo umount ${DEV}
+
+DEV=/dev/${1}3
+
+if [ -b ${DEV} ]; then
+	echo "Formatting partition ${DEV} as ext4"
+	sudo mkfs.ext4 -q -L DATA ${DEV}
+fi
 
 echo "Done"
