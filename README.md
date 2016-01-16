@@ -3,17 +3,17 @@ This layer depends on:
     URI: git://git.yoctoproject.org/poky.git
     branch: jethro 
     revision: HEAD
-    commit: 347347a 
+    commit: 435139b
 
     URI: git://git.openembedded.org/meta-openembedded
     branch: jethro 
     revision: HEAD
-    commit: 4fdb203 
+    commit: ad6133a
 
     URI: https://github.com/meta-qt5/meta-qt5.git
     branch: fido
     revision: HEAD
-    commit: 0454fb0
+    commit: d5536e3
 
     URI: git://git.yoctoproject.org/meta-raspberrypi 
     branch: jethro
