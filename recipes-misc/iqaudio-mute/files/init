@@ -1,0 +1,9 @@
+#!/bin/sh
+# Set gpio22 high, this enables (unmutes) the IQAudio DigiAMP
+
+if [ ! -d /sys/class/gpio/gpio22 ]; then
+	echo 22 > /sys/class/gpio/export
+	echo high > /sys/class/gpio/gpio22/direction
+else
+	echo 1 > /sys/class/gpio/gpio22/value
+fi
