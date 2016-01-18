@@ -152,7 +152,18 @@ if [ $? -ne 0 ]; then
 	sudo umount ${DEV}
 	exit 1
 fi
- 
+
+if [ -f ./config.txt ]; then
+	echo "Copying local config.txt to card"
+	sudo cp ./config.txt /media/card
+
+	if [ $? -ne 0 ]; then
+		echo "Error copying local config.txt to card"
+		sudo umount ${DEV}
+		exit 1
+	fi
+fi
+  
 echo "Unmounting ${DEV}"
 sudo umount ${DEV}
 
