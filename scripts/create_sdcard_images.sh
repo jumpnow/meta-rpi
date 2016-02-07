@@ -3,7 +3,6 @@
 DSTDIR=~/rpi/download
 IMG=qt5-x11
 IMG_LONG="${IMG}-image-${MACHINE}"
-HOSTNAME=rpi2
 
 if [ "x${1}" = "x" ]; then
 	echo "Usage: ${0} <block device>"
@@ -55,6 +54,8 @@ else
 	echo "Invalid MACHINE: ${MACHINE}"
 	exit 1
 fi
+
+HOSTNAME=${MACH}
 
 SRCDIR=${OETMP}/deploy/images/${MACHINE}
 
