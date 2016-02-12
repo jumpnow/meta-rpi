@@ -8,7 +8,7 @@ This layer depends on:
     URI: git://git.openembedded.org/meta-openembedded
     branch: jethro 
     revision: HEAD
-    commit: 7bc138a
+    commit: dc56349
 
     URI: https://github.com/meta-qt5/meta-qt5.git
     branch: fido
@@ -18,6 +18,6 @@ This layer depends on:
     URI: git://git.yoctoproject.org/meta-raspberrypi 
     branch: jethro
     revision: HEAD
-    commit: f2cff83 
+    commit: f2cff83
 
     meta-rpi layer maintainer: Scott Ellis <scott@jumpnowtek.com>
