@@ -26,7 +26,7 @@ if [ "x${2}" = "x" ]; then
 else
 	if [ "${2}" -eq 2 ]; then
 		CARDSIZE=2
-	elif [ "${4}" -eq 4 ]; then
+	elif [ "${2}" -eq 4 ]; then
 		CARDSIZE=4
 	elif [ "${2}" -gt 4 ]; then
 		CARDSIZE=8
