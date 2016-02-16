@@ -108,9 +108,14 @@ disable_bootlogd() {
     echo BOOTLOGD_ENABLE=no > ${IMAGE_ROOTFS}/etc/default/bootlogd
 }
 
+disable_samba_start() {
+    rm ${IMAGE_ROOTFS}/etc/rc5.d/S20samba.sh
+}
+
 ROOTFS_POSTPROCESS_COMMAND += " \
     set_local_timezone ; \
     disable_bootlogd ; \
+    disable_samba_start ; \
  "
 
 export IMAGE_BASENAME = "console-image"
