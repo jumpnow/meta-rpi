@@ -1,5 +1,5 @@
-# Local configuration for meta-raspberrypi images
-# Yocto Project 2.0.0 Poky distribution [jethro] branch
+# Local configuration for meta-rpi images
+# Yocto Project 2.0.1 Poky distribution [jethro] branch
 # This is a sysvinit system
 
 LICENSE_FLAGS_WHITELIST = "commercial"
@@ -10,13 +10,15 @@ PREFERRED_PROVIDER_jpeg-native = "libjpeg-turbo-native"
 PREFERRED_PROVIDER_udev = "systemd"
 VIRTUAL_RUNTIME_init_manager = "sysvinit"
 
+MACHINE_FEATURES_remove = "apm"
+
 MACHINE = "raspberrypi2"
 
-#DL_DIR = "/oe-sources"
+# DL_DIR = "/oe-sources"
 
-#SSTATE_DIR = "/oe8/rpi/sstate-cache"
+# SSTATE_DIR = "/oe4/rpi/sstate-cache"
 
-#TMPDIR = "/oe8/rpi/tmp-jethro"
+# TMPDIR = "/oe4/rpi/tmp-jethro"
 
 DISTRO = "poky"
 
