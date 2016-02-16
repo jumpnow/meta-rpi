@@ -22,16 +22,58 @@ BOOTLDRFILES="bootcode.bin \
               start.elf \
               start_x.elf"
 
-OVERLAYDTBS="hifiberry-amp-overlay.dtb \
-             hifiberry-dac-overlay.dtb \
-             hifiberry-dacplus-overlay.dtb \
-             i2c-rtc-overlay.dtb \
-             iqaudio-dac-overlay.dtb \
-             iqaudio-dacplus-overlay.dtb \
-             lirc-rpi-overlay.dtb \
-             pps-gpio-overlay.dtb \
-             w1-gpio-overlay.dtb \
-             w1-gpio-pullup-overlay.dtb"
+OVERLAYDTBS="ads7846-overlay.dtb \
+    at86rf233-overlay.dtb \
+    bmp085_i2c-sensor-overlay.dtb \
+    dht11-overlay.dtb \
+    enc28j60-overlay.dtb \
+    gpio-ir-overlay.dtb \
+    gpio-poweroff-overlay.dtb \
+    hifiberry-amp-overlay.dtb \
+    hifiberry-dac-overlay.dtb \
+    hifiberry-dacplus-overlay.dtb \
+    hifiberry-digi-overlay.dtb \
+    hy28a-overlay.dtb \
+    hy28b-overlay.dtb \
+    i2c-gpio-overlay.dtb \
+    i2c-rtc-overlay.dtb \
+    i2s-mmap-overlay.dtb \
+    iqaudio-dac-overlay.dtb \
+    iqaudio-dacplus-overlay.dtb \
+    lirc-rpi-overlay.dtb \
+    mcp2515-can0-overlay.dtb \
+    mcp2515-can1-overlay.dtb \
+    mmc-overlay.dtb \
+    mz61581-overlay.dtb \
+    piscreen2r-overlay.dtb \
+    piscreen-overlay.dtb \
+    pitft28-capacitive-overlay.dtb \
+    pitft28-resistive-overlay.dtb \
+    pps-gpio-overlay.dtb \
+    pwm-2chan-overlay.dtb \
+    pwm-overlay.dtb \
+    raspidac3-overlay.dtb \
+    rpi-backlight-overlay.dtb \
+    rpi-dac-overlay.dtb \
+    rpi-display-overlay.dtb \
+    rpi-ft5406-overlay.dtb \
+    rpi-proto-overlay.dtb \
+    rpi-sense-overlay.dtb \
+    sdhost-overlay.dtb \
+    sdio-overlay.dtb \
+    smi-dev-overlay.dtb \
+    smi-nand-overlay.dtb \
+    smi-overlay.dtb \
+    spi-bcm2708-overlay.dtb \
+    spi-bcm2835-overlay.dtb \
+    spi-dma-overlay.dtb \
+    tinylcd35-overlay.dtb \
+    uart1-overlay.dtb \
+    vc4-kms-v3d-overlay.dtb \
+    vga666-overlay.dtb \
+    w1-gpio-overlay.dtb \
+    w1-gpio-pullup-overlay.dtb"
+
 
 DTBS="bcm2708-rpi-b.dtb \
       bcm2708-rpi-b-plus.dtb \
@@ -109,7 +151,7 @@ if [ $? -ne 0 ]; then
 	exit 1
 fi
 
-echo "Copying overlay dtbs"
+echo "Creating overlay directory"
 sudo mkdir /media/card/overlays
 
 if [ $? -ne 0 ]; then
