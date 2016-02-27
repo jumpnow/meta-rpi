@@ -60,6 +60,7 @@ OVERLAYDTBS="ads7846-overlay.dtb \
     rpi-proto-overlay.dtb \
     rpi-sense-overlay.dtb \
     sdhost-overlay.dtb \
+    sdio-1bit-overlay.dtb \
     sdio-overlay.dtb \
     smi-dev-overlay.dtb \
     smi-nand-overlay.dtb \
