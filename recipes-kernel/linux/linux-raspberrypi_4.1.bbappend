@@ -1,8 +1,8 @@
 LINUX_VERSION = "4.1.18"
 
-SRCREV = "dc59e187b00ce0d4386b4468fe06ab644e8a7d91"
+SRCREV = "bf0bc44d74d6afd714642f6052c011ceb43375df"
 
-PR = "r2"
+PR = "r3"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
@@ -47,6 +47,7 @@ KERNEL_DEVICETREE = " \
     overlays/rpi-proto-overlay.dtb \
     overlays/rpi-sense-overlay.dtb \
     overlays/sdhost-overlay.dtb \
+    overlays/sdio-1bit-overlay.dtb \
     overlays/sdio-overlay.dtb \
     overlays/smi-dev-overlay.dtb \
     overlays/smi-nand-overlay.dtb \
