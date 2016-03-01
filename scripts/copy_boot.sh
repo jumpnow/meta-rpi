@@ -50,8 +50,9 @@ OVERLAYDTBS="ads7846-overlay.dtb \
     pitft28-capacitive-overlay.dtb \
     pitft28-resistive-overlay.dtb \
     pps-gpio-overlay.dtb \
-    pwm-2chan-overlay.dtb \
     pwm-overlay.dtb \
+    pwm-2chan-overlay.dtb \
+    qca7000-overlay.dtb \
     raspidac3-overlay.dtb \
     rpi-backlight-overlay.dtb \
     rpi-dac-overlay.dtb \
@@ -78,7 +79,8 @@ OVERLAYDTBS="ads7846-overlay.dtb \
 
 DTBS="bcm2708-rpi-b.dtb \
       bcm2708-rpi-b-plus.dtb \
-      bcm2709-rpi-2-b.dtb"
+      bcm2709-rpi-2-b.dtb \
+      bcm2710-rpi-3-b.dtb"
 
 if [ "x${1}" = "x" ]; then
 	echo -e "\nUsage: ${0} <block device>\n"

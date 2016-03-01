@@ -1,13 +1,14 @@
 LINUX_VERSION = "4.1.18"
 
-SRCREV = "bf0bc44d74d6afd714642f6052c011ceb43375df"
+SRCREV = "02ce9572cc77c65f49086bbc4281233bd3fa48b7"
 
-PR = "r3"
+PR = "r4"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
     bcm2708-rpi-b-plus.dtb \
     bcm2709-rpi-2-b.dtb \
+    bcm2710-rpi-3-b.dtb \
     \
     overlays/ads7846-overlay.dtb \
     overlays/at86rf233-overlay.dtb \
@@ -37,8 +38,9 @@ KERNEL_DEVICETREE = " \
     overlays/pitft28-capacitive-overlay.dtb \
     overlays/pitft28-resistive-overlay.dtb \
     overlays/pps-gpio-overlay.dtb \
-    overlays/pwm-2chan-overlay.dtb \
     overlays/pwm-overlay.dtb \
+    overlays/pwm-2chan-overlay.dtb \
+    overlays/qca7000-overlay.dtb \
     overlays/raspidac3-overlay.dtb \
     overlays/rpi-backlight-overlay.dtb \
     overlays/rpi-dac-overlay.dtb \
