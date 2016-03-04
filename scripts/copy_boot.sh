@@ -45,6 +45,7 @@ OVERLAYDTBS="ads7846-overlay.dtb \
     mcp2515-can1-overlay.dtb \
     mmc-overlay.dtb \
     mz61581-overlay.dtb \
+    pi3-disable-bt-overlay.dtb \
     piscreen2r-overlay.dtb \
     piscreen-overlay.dtb \
     pitft28-capacitive-overlay.dtb \

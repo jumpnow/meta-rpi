@@ -1,8 +1,8 @@
 LINUX_VERSION = "4.1.18"
 
-SRCREV = "02ce9572cc77c65f49086bbc4281233bd3fa48b7"
+SRCREV = "ee066443bb656f6015d0060edee1576f30947923"
 
-PR = "r4"
+PR = "r5"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
@@ -33,6 +33,7 @@ KERNEL_DEVICETREE = " \
     overlays/mcp2515-can1-overlay.dtb \
     overlays/mmc-overlay.dtb \
     overlays/mz61581-overlay.dtb \
+    overlays/pi3-disable-bt-overlay.dtb \
     overlays/piscreen2r-overlay.dtb \
     overlays/piscreen-overlay.dtb \
     overlays/pitft28-capacitive-overlay.dtb \
