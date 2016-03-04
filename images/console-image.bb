@@ -14,7 +14,6 @@ CORE_OS = " \
  "
 
 WIFI_SUPPORT = " \
-    crda \
     iw \
     linux-firmware-ralink \
     linux-firmware-rtl8192ce \
