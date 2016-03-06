@@ -1,8 +1,8 @@
 LIC_FILES_CHKSUM = "file://LICENCE;md5=0448d6488ef8cc380632b1569ee6d196"
 
-PR = "r6"
+PR = "r7"
 
-SRCREV = "748b2ba6112435063352d72f48d1d6dcc124bd6f"
+SRCREV = "8369e390999f4a7c3bc57e577247e0dd502c51f7"
 
 SRC_URI = "\
     git://github.com/${SRCFORK}/userland.git;protocol=git;branch=${SRCBRANCH} \
