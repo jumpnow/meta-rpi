@@ -1,8 +1,8 @@
-LINUX_VERSION = "4.1.18"
+LINUX_VERSION = "4.1.19"
 
-SRCREV = "ee066443bb656f6015d0060edee1576f30947923"
+SRCREV = "b39e1e341239b36c48cf63e7cf7a17776e62bfa6"
 
-PR = "r5"
+PR = "r6"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
@@ -24,6 +24,8 @@ KERNEL_DEVICETREE = " \
     overlays/hy28a-overlay.dtb \
     overlays/hy28b-overlay.dtb \
     overlays/i2c-gpio-overlay.dtb \
+    overlays/i2c0-bcm2708-overlay.dtb \
+    overlays/i2c1-bcm2708-overlay.dtb \
     overlays/i2c-rtc-overlay.dtb \
     overlays/i2s-mmap-overlay.dtb \
     overlays/iqaudio-dac-overlay.dtb \

@@ -37,6 +37,8 @@ OVERLAYDTBS="ads7846-overlay.dtb \
     hy28b-overlay.dtb \
     i2c-gpio-overlay.dtb \
     i2c-rtc-overlay.dtb \
+    i2c0-bcm2708-overlay.dtb \
+    i2c1-bcm2708-overlay.dtb \
     i2s-mmap-overlay.dtb \
     iqaudio-dac-overlay.dtb \
     iqaudio-dacplus-overlay.dtb \
