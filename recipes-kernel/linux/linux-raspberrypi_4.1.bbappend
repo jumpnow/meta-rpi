@@ -1,8 +1,8 @@
 LINUX_VERSION = "4.1.19"
 
-SRCREV = "b39e1e341239b36c48cf63e7cf7a17776e62bfa6"
+SRCREV = "5f023e8019fffd88c57106b5604c217436c67401"
 
-PR = "r6"
+PR = "r7"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
@@ -36,6 +36,7 @@ KERNEL_DEVICETREE = " \
     overlays/mmc-overlay.dtb \
     overlays/mz61581-overlay.dtb \
     overlays/pi3-disable-bt-overlay.dtb \
+    overlays/pi3-miniuart-bt-overlay.dtb \
     overlays/piscreen2r-overlay.dtb \
     overlays/piscreen-overlay.dtb \
     overlays/pitft28-capacitive-overlay.dtb \
