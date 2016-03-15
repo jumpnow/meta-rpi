@@ -1,4 +1,4 @@
-dtoverlay=iqaudio-dacplus
-dtoverlay=i2s-mmap
+dtoverlay=iqaudio-dacplus-overlay.dtb
+dtoverlay=i2s-mmap-overlay.dtb
 dtparam=spi=off
 dtparam=i2c_arm=on

@@ -1,1 +1,1 @@
-dtoverlay=hifiberry-amp
+dtoverlay=hifiberry-amp-overlay.dtb
