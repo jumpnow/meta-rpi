@@ -4,10 +4,7 @@
 
 LICENSE_FLAGS_WHITELIST = "commercial"
 
-# we want systemd-udev, we still keep sysvinit as the init system
 DISTRO_FEATURES_append = " systemd"
-
-# customize this to taste, this works for my minimal systems
 DISTRO_FEATURES_remove = "bluetooth bluez5 pcmcia irda xattr zeroconf pci 3g nfs nfc pulseaudio"
 
 PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
@@ -16,13 +13,18 @@ PREFERRED_PROVIDER_jpeg-native = "libjpeg-turbo-native"
 PREFERRED_PROVIDER_udev = "systemd"
 VIRTUAL_RUNTIME_init_manager = "sysvinit"
 
-MACHINE = "raspberrypi"
+MACHINE_FEATURES_remove = "apm"
+
+# the default is 4.1.x
+PREFERRED_VERSION_linux-raspberrypi = "4.4.%"
+
+MACHINE = "raspberrypi2"
 
 #DL_DIR = "/oe-sources"
 
-#SSTATE_DIR = "/oe8/rpi/sstate-cache"
+#SSTATE_DIR = "/oe4/rpi/sstate-cache"
 
-#TMPDIR = "/oe8/rpi/tmp-jethro"
+#TMPDIR = "/oe4/rpi/tmp-jethro"
 
 DISTRO = "poky"
 
