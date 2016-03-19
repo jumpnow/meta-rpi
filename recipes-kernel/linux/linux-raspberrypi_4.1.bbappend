@@ -1,8 +1,8 @@
-LINUX_VERSION = "4.1.19"
+LINUX_VERSION = "4.1.20"
 
-SRCREV = "5f023e8019fffd88c57106b5604c217436c67401"
+SRCREV = "c6c6f224bf6ce8c918326c55849fcd07bb3b2208"
 
-PR = "r7"
+PR = "r9"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
@@ -67,4 +67,5 @@ KERNEL_DEVICETREE = " \
     overlays/vga666-overlay.dtb \
     overlays/w1-gpio-overlay.dtb \
     overlays/w1-gpio-pullup-overlay.dtb \
+    overlays/wittypi-overlay.dtb \
 "
