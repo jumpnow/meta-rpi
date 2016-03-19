@@ -15,8 +15,9 @@ VIRTUAL_RUNTIME_init_manager = "sysvinit"
 
 MACHINE_FEATURES_remove = "apm"
 
-# the default is 4.1.x
-PREFERRED_VERSION_linux-raspberrypi = "4.4.%"
+# the default is 4.1.%
+# the other alternative is 4.4.%
+PREFERRED_VERSION_linux-raspberrypi = "4.5.%"
 
 MACHINE = "raspberrypi2"
 
