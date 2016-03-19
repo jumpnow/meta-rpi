@@ -15,6 +15,7 @@ CORE_OS = " \
 
 WIFI_SUPPORT = " \
     iw \
+    linux-firmware-brcm43430 \
     linux-firmware-ralink \
     linux-firmware-rtl8192ce \
     linux-firmware-rtl8192cu \
