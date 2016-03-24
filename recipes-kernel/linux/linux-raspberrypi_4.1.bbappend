@@ -1,8 +1,8 @@
 LINUX_VERSION = "4.1.20"
 
-SRCREV = "00a5af4f010393235d9f3ebe02fa1ce3d6168e9b"
+SRCREV = "f5b71eeb9b40451bff82e010e48c605d5dc9e2f2"
 
-PR = "r11"
+PR = "r12"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
@@ -35,6 +35,7 @@ KERNEL_DEVICETREE = " \
     overlays/mcp2515-can1-overlay.dtb \
     overlays/mmc-overlay.dtb \
     overlays/mz61581-overlay.dtb \
+    overlays/pi3-act-led-overlay.dtb \
     overlays/pi3-disable-bt-overlay.dtb \
     overlays/pi3-miniuart-bt-overlay.dtb \
     overlays/piscreen2r-overlay.dtb \

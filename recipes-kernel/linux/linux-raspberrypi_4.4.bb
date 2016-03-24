@@ -1,9 +1,9 @@
 LINUX_VERSION = "4.4.6"
 
-SRCREV = "adc10c5da2b83bbc8c893e3a745b43890f27e2ac"
+SRCREV = "09e64d48934eb812bab8667dcce81d0387092644"
 SRC_URI = "git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.4.y"
 
-PR = "r3"
+PR = "r4"
 
 require recipes-kernel/linux/linux-raspberrypi.inc
 
@@ -29,10 +29,10 @@ KERNEL_DEVICETREE = " \
     overlays/hy28a-overlay.dtb \
     overlays/hy28b-overlay.dtb \
     overlays/i2c-gpio-overlay.dtb \
+    overlays/i2c-mux-pca9548a-overlay.dtb \
+    overlays/i2c-rtc-overlay.dtb \
     overlays/i2c0-bcm2708-overlay.dtb \
     overlays/i2c1-bcm2708-overlay.dtb \
-    overlays/i2c-gpio-overlay.dtb \
-    overlays/i2c-rtc-overlay.dtb \
     overlays/i2s-mmap-overlay.dtb \
     overlays/iqaudio-dac-overlay.dtb \
     overlays/iqaudio-dacplus-overlay.dtb \
@@ -41,6 +41,7 @@ KERNEL_DEVICETREE = " \
     overlays/mcp2515-can1-overlay.dtb \
     overlays/mmc-overlay.dtb \
     overlays/mz61581-overlay.dtb \
+    overlays/pi3-act-led-overlay.dtb \
     overlays/pi3-disable-bt-overlay.dtb \
     overlays/pi3-miniuart-bt-overlay.dtb \
     overlays/piscreen2r-overlay.dtb \
