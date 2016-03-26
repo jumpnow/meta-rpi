@@ -15,8 +15,10 @@ VIRTUAL_RUNTIME_init_manager = "sysvinit"
 
 MACHINE_FEATURES_remove = "apm"
 
-# the default is 4.1.%
-# the other alternative is 4.4.%
+IMAGE_FSTYPES = "tar.bz2"
+
+# the default is 4.1.x
+#PREFERRED_VERSION_linux-raspberrypi = "4.4.%"
 PREFERRED_VERSION_linux-raspberrypi = "4.5.%"
 
 MACHINE = "raspberrypi2"
@@ -32,8 +34,8 @@ DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
 
 DISABLE_OVERSCAN = "1"
+DISPMANX_OFFLINE = "1"
 ENABLE_SPI_BUS = "1"
-DISMANX_OFFLINE = "1"
 ENABLE_RPI3_SERIAL_CONSOLE = "1"
 
 # i686 or x86_64
