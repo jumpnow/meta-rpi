@@ -1,9 +1,9 @@
 LINUX_VERSION = "4.5.0"
 
-SRCREV = "c08af14a8a59febf3d4daf7780ce0892318ac10f"
+SRCREV = "c378799d6e347051404fbcc444f3478872bbe7ea"
 SRC_URI = "git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.5.y"
 
-PR = "r3"
+PR = "r4"
 
 require recipes-kernel/linux/linux-raspberrypi.inc
 
@@ -62,6 +62,7 @@ KERNEL_DEVICETREE = " \
     overlays/sdhost-overlay.dtb \
     overlays/sdio-1bit-overlay.dtb \
     overlays/sdio-overlay.dtb \
+    overlays/sdtweak-overlay.dtb \
     overlays/smi-dev-overlay.dtb \
     overlays/smi-nand-overlay.dtb \
     overlays/smi-overlay.dtb \
