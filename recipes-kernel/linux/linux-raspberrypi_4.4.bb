@@ -1,9 +1,9 @@
 LINUX_VERSION = "4.4.6"
 
-SRCREV = "3ce05d6e2e4994e06ec73ff95969ae189681a8e8"
+SRCREV = "ccb9ab7ba94d7b005f4fd820f1cb91caf73dbf89"
 SRC_URI = "git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.4.y"
 
-PR = "r8"
+PR = "r9"
 
 require recipes-kernel/linux/linux-raspberrypi.inc
 
