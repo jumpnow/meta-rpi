@@ -1,9 +1,9 @@
 LINUX_VERSION = "4.4.6"
 
-SRCREV = "ccb9ab7ba94d7b005f4fd820f1cb91caf73dbf89"
+SRCREV = "3b1047181fbbbd2067b6b7476c428199474fdd19"
 SRC_URI = "git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.4.y"
 
-PR = "r9"
+PR = "r10"
 
 require recipes-kernel/linux/linux-raspberrypi.inc
 
@@ -30,6 +30,7 @@ KERNEL_DEVICETREE = " \
     overlays/hy28b-overlay.dtb \
     overlays/i2c-gpio-overlay.dtb \
     overlays/i2c-mux-pca9548a-overlay.dtb \
+    overlays/i2c-pwm-pca9685a-overlay.dtb \
     overlays/i2c-rtc-overlay.dtb \
     overlays/i2c0-bcm2708-overlay.dtb \
     overlays/i2c1-bcm2708-overlay.dtb \
