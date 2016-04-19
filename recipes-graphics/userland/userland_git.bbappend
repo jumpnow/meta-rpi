@@ -2,9 +2,9 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 LIC_FILES_CHKSUM = "file://LICENCE;md5=0448d6488ef8cc380632b1569ee6d196"
 
-PR = "r11"
+PR = "r12"
 
-SRCREV = "cfd971c6300b4f2c1929fdd95a09d9bb03b87dbe"
+SRCREV = "6732ebd37033a9f533be653665b8b1696cab1f1f"
 
 SRC_URI = "\
     git://github.com/${SRCFORK}/userland.git;protocol=git;branch=${SRCBRANCH} \

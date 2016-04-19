@@ -1,9 +1,9 @@
 LINUX_VERSION = "4.4.6"
 
-SRCREV = "3b1047181fbbbd2067b6b7476c428199474fdd19"
+SRCREV = "12d5fa2dc64a11ac0d2faefeee501f6ed97dbc3b"
 SRC_URI = "git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.4.y"
 
-PR = "r10"
+PR = "r11"
 
 require recipes-kernel/linux/linux-raspberrypi.inc
 
@@ -16,7 +16,10 @@ KERNEL_DEVICETREE = " \
     overlays/ads7846-overlay.dtb \
     overlays/at86rf233-overlay.dtb \
     overlays/bmp085_i2c-sensor-overlay.dtb \
+    overlays/boomberry-dac-overlay.dtb \
+    overlays/boomberry-digi-overlay.dtb \
     overlays/dht11-overlay.dtb \
+    overlays/dpi24-overlay.dtb \
     overlays/dwc2-overlay.dtb \
     overlays/dwc-otg-overlay.dtb \
     overlays/enc28j60-overlay.dtb \
@@ -28,12 +31,12 @@ KERNEL_DEVICETREE = " \
     overlays/hifiberry-digi-overlay.dtb \
     overlays/hy28a-overlay.dtb \
     overlays/hy28b-overlay.dtb \
+    overlays/i2c0-bcm2708-overlay.dtb \
+    overlays/i2c1-bcm2708-overlay.dtb \
     overlays/i2c-gpio-overlay.dtb \
     overlays/i2c-mux-pca9548a-overlay.dtb \
     overlays/i2c-pwm-pca9685a-overlay.dtb \
     overlays/i2c-rtc-overlay.dtb \
-    overlays/i2c0-bcm2708-overlay.dtb \
-    overlays/i2c1-bcm2708-overlay.dtb \
     overlays/i2s-mmap-overlay.dtb \
     overlays/iqaudio-dac-overlay.dtb \
     overlays/iqaudio-dacplus-overlay.dtb \
@@ -52,6 +55,7 @@ KERNEL_DEVICETREE = " \
     overlays/pps-gpio-overlay.dtb \
     overlays/pwm-2chan-overlay.dtb \
     overlays/pwm-overlay.dtb \
+    overlays/qca7000-overlay.dtb \
     overlays/raspidac3-overlay.dtb \
     overlays/rpi-backlight-overlay.dtb \
     overlays/rpi-dac-overlay.dtb \
@@ -60,6 +64,7 @@ KERNEL_DEVICETREE = " \
     overlays/rpi-proto-overlay.dtb \
     overlays/rpi-sense-overlay.dtb \
     overlays/sdhost-overlay.dtb \
+    overlays/sdio-1bit-overlay.dtb \
     overlays/sdio-overlay.dtb \
     overlays/sdtweak-overlay.dtb \
     overlays/smi-dev-overlay.dtb \
