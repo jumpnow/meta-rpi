@@ -13,7 +13,7 @@ This layer depends on:
     URI: https://github.com/meta-qt5/meta-qt5.git
     branch: jethro
     revision: HEAD
-    commit: 9bfcf79
+    commit: ea37a0b
 
     URI: git://git.yoctoproject.org/meta-raspberrypi 
     branch: jethro

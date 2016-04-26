@@ -1,9 +1,9 @@
-LINUX_VERSION = "4.4.6"
+LINUX_VERSION = "4.4.8"
 
-SRCREV = "12d5fa2dc64a11ac0d2faefeee501f6ed97dbc3b"
+SRCREV = "fe7ad6aa5c6940817fe971d80a7b2a1d6052190a"
 SRC_URI = "git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.4.y"
 
-PR = "r11"
+PR = "r12"
 
 require recipes-kernel/linux/linux-raspberrypi.inc
 
@@ -37,6 +37,7 @@ KERNEL_DEVICETREE = " \
     overlays/i2c-mux-pca9548a-overlay.dtb \
     overlays/i2c-pwm-pca9685a-overlay.dtb \
     overlays/i2c-rtc-overlay.dtb \
+    overlays/i2s-gpio28-31-overlay.dtb \
     overlays/i2s-mmap-overlay.dtb \
     overlays/iqaudio-dac-overlay.dtb \
     overlays/iqaudio-dacplus-overlay.dtb \
@@ -50,6 +51,7 @@ KERNEL_DEVICETREE = " \
     overlays/pi3-miniuart-bt-overlay.dtb \
     overlays/piscreen2r-overlay.dtb \
     overlays/piscreen-overlay.dtb \
+    overlays/pitft22-overlay.dtb \
     overlays/pitft28-capacitive-overlay.dtb \
     overlays/pitft28-resistive-overlay.dtb \
     overlays/pps-gpio-overlay.dtb \
