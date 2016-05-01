@@ -1,9 +1,9 @@
 LINUX_VERSION = "4.4.8"
 
-SRCREV = "fe7ad6aa5c6940817fe971d80a7b2a1d6052190a"
+SRCREV = "f6f3129ad7b49499004510b6a252f222c029efcb"
 SRC_URI = "git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.4.y"
 
-PR = "r12"
+PR = "r13"
 
 require recipes-kernel/linux/linux-raspberrypi.inc
 
@@ -14,6 +14,7 @@ KERNEL_DEVICETREE = " \
     bcm2710-rpi-3-b.dtb \
     \
     overlays/ads7846-overlay.dtb \
+    overlays/akkordion-iqdacplus-overlay.dtb \
     overlays/at86rf233-overlay.dtb \
     overlays/bmp085_i2c-sensor-overlay.dtb \
     overlays/boomberry-dac-overlay.dtb \
