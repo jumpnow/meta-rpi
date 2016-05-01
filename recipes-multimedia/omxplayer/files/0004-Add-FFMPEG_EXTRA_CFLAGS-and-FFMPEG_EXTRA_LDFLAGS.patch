@@ -1,0 +1,26 @@
+From c7ca38965f72496a6e01f21c06300130ba9be4a8 Mon Sep 17 00:00:00 2001
+From: Scott Ellis <scott@jumpnowtek.com>
+Date: Sun, 1 May 2016 07:05:39 -0400
+Subject: [PATCH 4/6] Add FFMPEG_EXTRA_CFLAGS and FFMPEG_EXTRA_LDFLAGS
+
+---
+ Makefile.ffmpeg | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/Makefile.ffmpeg b/Makefile.ffmpeg
+index 6910558..65383a3 100644
+--- a/Makefile.ffmpeg
++++ b/Makefile.ffmpeg
+@@ -21,7 +21,8 @@ configure:
+ 	CFLAGS="$(CFLAGS) ${INCLUDES}" \
+ 	LDFLAGS="" \
+   ./configure \
+-			--extra-cflags="-mfpu=vfp -mfloat-abi=$(FLOAT) -mno-apcs-stack-check -mstructure-size-boundary=32 -mno-sched-prolog" \
++			--extra-cflags="-mfpu=vfp -mfloat-abi=$(FLOAT) -mno-apcs-stack-check -mstructure-size-boundary=32 -mno-sched-prolog ${FFMPEG_EXTRA_CFLAGS}" \
++			--extra-ldflags="${FFMPEG_EXTRA_LDFLAGS}" \
+ 			--enable-cross-compile \
+ 			--enable-shared \
+ 			--disable-static \
+-- 
+2.5.0
+
