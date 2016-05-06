@@ -16,6 +16,7 @@ CORE_OS = " \
  "
 
 WIFI_SUPPORT = " \
+    crda \
     iw \
     linux-firmware-brcm43430 \
     linux-firmware-ralink \
@@ -55,21 +56,16 @@ DEV_EXTRAS = " \
     ntp-tickadj \
     serialecho \
     spiloop \
-    zeromq \
-    zeromq-dev \
  "
 
 EXTRA_TOOLS_INSTALL = " \
-    bc \
     bzip2 \
     devmem2 \
     dosfstools \
     ethtool \
     findutils \
     i2c-tools \
-    iftop \
     iperf \
-    htop \
     less \
     nano \
     procps \
@@ -78,7 +74,6 @@ EXTRA_TOOLS_INSTALL = " \
     tcpdump \
     unzip \
     util-linux \
-    vim-tiny \
     wget \
     zip \
  "

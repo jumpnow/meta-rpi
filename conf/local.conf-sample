@@ -1,16 +1,21 @@
-# Local configuration for meta-raspberrypi images
-# Yocto Project 2.0.1 Poky distribution [jethro] branch
+# Local configuration for meta-rpi images
+# Yocto Project 2.1 Poky distribution [krogoth] branch
 # This is a sysvinit system
 
 LICENSE_FLAGS_WHITELIST = "commercial"
 
-DISTRO_FEATURES_append = " systemd"
-DISTRO_FEATURES_remove = "bluetooth bluez5 pcmcia irda xattr zeroconf pci 3g nfs nfc pulseaudio"
+SANITY_TESTED_DISTROS += "Ubuntu-16.04"
+
+BBMASK = "meta-rpi/recipes-multimedia/"
+
+DISTRO_FEATURES = "ext2 usbhost ${DISTRO_FEATURES_LIBC}"
+
+DISTRO_FEATURES_BACKFILL_CONSIDERED += "pulseaudio"
 
 PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 PREFERRED_PROVIDER_jpeg-native = "libjpeg-turbo-native"
 
-PREFERRED_PROVIDER_udev = "systemd"
+PREFERRED_PROVIDER_udev = "eudev"
 VIRTUAL_RUNTIME_init_manager = "sysvinit"
 
 MACHINE_FEATURES_remove = "apm"
@@ -19,15 +24,14 @@ IMAGE_FSTYPES = "tar.bz2"
 
 # the default is 4.1.x
 PREFERRED_VERSION_linux-raspberrypi = "4.4.%"
-#PREFERRED_VERSION_linux-raspberrypi = "4.5.%"
 
 MACHINE = "raspberrypi2"
 
-#DL_DIR = "/oe-sources"
+# DL_DIR = "${HOME}/oe-sources"
 
-#SSTATE_DIR = "/oe4/rpi/sstate-cache"
+# SSTATE_DIR = "/oe8/rpi/sstate-cache"
 
-#TMPDIR = "/oe4/rpi/tmp-jethro"
+# TMPDIR = "/oe8/rpi/tmp-krogoth"
 
 DISTRO = "poky"
 
@@ -35,7 +39,7 @@ PACKAGE_CLASSES = "package_ipk"
 
 DISABLE_OVERSCAN = "1"
 DISPMANX_OFFLINE = "1"
-ENABLE_SPI_BUS = "1"
+ENABLE_UART = "1"
 ENABLE_RPI3_SERIAL_CONSOLE = "1"
 
 # i686 or x86_64
