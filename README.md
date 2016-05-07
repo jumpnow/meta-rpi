@@ -8,7 +8,7 @@ This layer depends on:
     URI: git://git.openembedded.org/meta-openembedded
     branch: krogoth
     revision: HEAD
-    commit: cb87e40
+    commit: 2092396
 
     URI: https://github.com/meta-qt5/meta-qt5.git
     branch: krogoth
