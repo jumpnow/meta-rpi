@@ -7,6 +7,7 @@ PR = "r1"
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
     bcm2708-rpi-b-plus.dtb \
+    bcm2708-rpi-cm.dtb \
     bcm2709-rpi-2-b.dtb \
     bcm2710-rpi-3-b.dtb \
     \
