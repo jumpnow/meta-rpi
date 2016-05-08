@@ -73,7 +73,7 @@ sudo mount ${DEV} /media/card
 echo "Extracting ${IMAGE}-image-${MACHINE}.tar.bz2 to /media/card"
 sudo tar -C /media/card -xjf ${SRCDIR}/${IMAGE}-image-${MACHINE}.tar.bz2
 
-echo "Writing hostname to /etc/hostname"
+echo "Writing ${TARGET_HOSTNAME} to /etc/hostname"
 export TARGET_HOSTNAME
 sudo -E bash -c 'echo ${TARGET_HOSTNAME} > /media/card/etc/hostname'        
 
