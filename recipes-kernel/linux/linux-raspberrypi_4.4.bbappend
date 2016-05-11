@@ -1,8 +1,8 @@
-LINUX_VERSION = "4.4.8"
+LINUX_VERSION = "4.4.9"
 
-SRCREV = "f6f3129ad7b49499004510b6a252f222c029efcb"
+SRCREV = "4b1da001d7e02e6301d468c6a4ead5614e44e234"
 
-PR = "r1"
+PR = "r2"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
@@ -33,7 +33,7 @@ KERNEL_DEVICETREE = " \
     overlays/i2c0-bcm2708-overlay.dtb \
     overlays/i2c1-bcm2708-overlay.dtb \
     overlays/i2c-gpio-overlay.dtb \
-    overlays/i2c-mux-pca9548a-overlay.dtb \
+    overlays/i2c-mux-overlay.dtb \
     overlays/i2c-pwm-pca9685a-overlay.dtb \
     overlays/i2c-rtc-overlay.dtb \
     overlays/i2s-gpio28-31-overlay.dtb \
