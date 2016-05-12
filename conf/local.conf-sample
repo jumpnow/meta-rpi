@@ -20,7 +20,7 @@ VIRTUAL_RUNTIME_init_manager = "sysvinit"
 
 MACHINE_FEATURES_remove = "apm"
 
-IMAGE_FSTYPES = "tar.bz2"
+IMAGE_FSTYPES = "tar.xz"
 
 # the default is 4.1.x
 PREFERRED_VERSION_linux-raspberrypi = "4.4.%"

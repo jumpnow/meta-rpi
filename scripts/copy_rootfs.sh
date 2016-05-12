@@ -52,8 +52,8 @@ fi
 echo -e "HOSTNAME: $TARGET_HOSTNAME\n"
 
 
-if [ ! -f "${SRCDIR}/${IMAGE}-image-${MACHINE}.tar.bz2" ]; then
-        echo "File not found: ${SRCDIR}/${IMAGE}-image-${MACHINE}.tar.bz2"
+if [ ! -f "${SRCDIR}/${IMAGE}-image-${MACHINE}.tar.xz" ]; then
+        echo "File not found: ${SRCDIR}/${IMAGE}-image-${MACHINE}.tar.xz"
         exit 1
 fi
 
@@ -70,8 +70,8 @@ sudo mkfs.ext4 -q -L ROOT ${DEV}
 echo "Mounting ${DEV}"
 sudo mount ${DEV} /media/card
 
-echo "Extracting ${IMAGE}-image-${MACHINE}.tar.bz2 to /media/card"
-sudo tar -C /media/card -xjf ${SRCDIR}/${IMAGE}-image-${MACHINE}.tar.bz2
+echo "Extracting ${IMAGE}-image-${MACHINE}.tar.xz to /media/card"
+sudo tar -C /media/card -xJf ${SRCDIR}/${IMAGE}-image-${MACHINE}.tar.xz
 
 echo "Writing ${TARGET_HOSTNAME} to /etc/hostname"
 export TARGET_HOSTNAME
