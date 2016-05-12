@@ -1,8 +1,8 @@
 LINUX_VERSION = "4.4.9"
 
-SRCREV = "4b1da001d7e02e6301d468c6a4ead5614e44e234"
+SRCREV = "3b440738b5c1adc3ec3ee72ceca799d1b8d264df"
 
-PR = "r2"
+PR = "r3"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
@@ -12,6 +12,7 @@ KERNEL_DEVICETREE = " \
     bcm2710-rpi-3-b.dtb \
     \
     overlays/ads7846-overlay.dtb \
+    overlays/adau1977-adc-overlay.dtb \
     overlays/akkordion-iqdacplus-overlay.dtb \
     overlays/at86rf233-overlay.dtb \
     overlays/bmp085_i2c-sensor-overlay.dtb \
