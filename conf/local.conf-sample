@@ -4,8 +4,6 @@
 
 LICENSE_FLAGS_WHITELIST = "commercial"
 
-SANITY_TESTED_DISTROS += "Ubuntu-16.04"
-
 BBMASK = "meta-rpi/recipes-multimedia/"
 
 DISTRO_FEATURES = "ext2 usbhost ${DISTRO_FEATURES_LIBC}"
