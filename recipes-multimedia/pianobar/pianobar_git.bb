@@ -1,4 +1,4 @@
-CRIPTION = "Console-based pandora.com player"
+DESCRIPTION = "Console-based pandora.com player"
 AUTHOR = "Lars-Dominik Braun <lars@6xq.net>"
 HOMEPAGE = "https://6xq.net/pianobar/"
 LICENSE = "MIT"
@@ -6,9 +6,9 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=cfeb8ae0065c00f1bf4f5a963872e934"
 
 DEPENDS = "libao gnutls libgcrypt json-c faad2 ffmpeg curl"
 
-PR = "r2"
+PR = "r3"
 
-SRCREV = "0ec2df77a72edde7b65a4ac8e7ffff4470120a51"
+SRCREV = "ece960fb9f119ae294d6a9fa2b9e318b423a9983"
 SRC_URI = " \
     git://github.com/PromyLOPh/pianobar;protocol=git \
     file://config \
