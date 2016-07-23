@@ -112,8 +112,8 @@ if [ $? -ne 0 ]; then
 	exit 1
 fi
 
-echo "Renaming overlay dtbs"
-sudo rename -e 's/Image-//' /media/card/overlays/*.dtb
+echo "Renaming overlay dtbs to dtbos"
+sudo rename 's/Image-([\w\-]+)-overlay.dtb/$1.dtbo/' /media/card/overlays/*.dtb
 
 echo "Copying dtbs"
 for f in ${DTBS}; do
