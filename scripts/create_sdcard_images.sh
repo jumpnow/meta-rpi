@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DSTDIR=~/rpi/download
-IMG=qt5-x11
+DSTDIR=~/rpi/upload
+IMG=qt5
 IMG_LONG="${IMG}-image-${MACHINE}"
 
 if [ "x${1}" = "x" ]; then
@@ -59,8 +59,8 @@ HOSTNAME=${MACH}
 
 SRCDIR=${OETMP}/deploy/images/${MACHINE}
 
-if [ ! -f "${SRCDIR}/${IMG_LONG}.tar.bz2" ]; then
-	echo "File not found: ${SRCDIR}/${IMG_LONG}.tar.bz2"
+if [ ! -f "${SRCDIR}/${IMG_LONG}.tar.xz" ]; then
+	echo "File not found: ${SRCDIR}/${IMG_LONG}.tar.xz"
 	exit 1
 fi
 
