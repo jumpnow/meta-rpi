@@ -67,7 +67,9 @@ EXTRA_TOOLS_INSTALL = " \
     i2c-tools \
     iperf \
     less \
+    memtester \
     nano \
+    netcat \
     procps \
     rsync \
     sysfsutils \
