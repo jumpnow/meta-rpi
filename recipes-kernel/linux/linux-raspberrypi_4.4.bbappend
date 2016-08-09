@@ -1,8 +1,8 @@
 LINUX_VERSION = "4.4.16"
 
-SRCREV = "cff67c7e03f4333149f2a8f6eafd3bc44475114a"
+SRCREV = "db84877e3a3108654b9df83227f0bc7aef03d04f"
 
-PR = "r6"
+PR = "r7"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
@@ -30,6 +30,7 @@ KERNEL_DEVICETREE = " \
     overlays/hifiberry-dac-overlay.dtb \
     overlays/hifiberry-dacplus-overlay.dtb \
     overlays/hifiberry-digi-overlay.dtb \
+    overlays/hifiberry-digi-pro-overlay.dtb \
     overlays/hy28a-overlay.dtb \
     overlays/hy28b-overlay.dtb \
     overlays/i2c0-bcm2708-overlay.dtb \
