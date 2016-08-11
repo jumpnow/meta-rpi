@@ -1,0 +1,7 @@
+# See the project README for possible arguments
+#
+#   https://github.com/sarfata/pi-blaster
+#
+ENABLED="no"
+VERBOSE="yes"
+DAEMON_ARGS="--pcm --gpio 17"

@@ -1,0 +1,47 @@
+From 9ebdc0820a921ee6da35aee94f83ff49d16a8be0 Mon Sep 17 00:00:00 2001
+From: Scott Ellis <scott@jumpnowtek.com>
+Date: Thu, 11 Aug 2016 13:54:29 -0400
+Subject: [PATCH 3/3] Fix init.d start script so args work
+
+---
+ debian/pi-blaster.init | 19 ++-----------------
+ 1 file changed, 2 insertions(+), 17 deletions(-)
+
+diff --git a/debian/pi-blaster.init b/debian/pi-blaster.init
+index d7ca39d..6f3cf12 100644
+--- a/debian/pi-blaster.init
++++ b/debian/pi-blaster.init
+@@ -27,28 +27,13 @@ SCRIPTNAME=/etc/init.d/$NAME
+ # Read configuration variable file if it is present
+ [ -r /etc/default/$NAME ] && . /etc/default/$NAME
+ 
+-# Load the VERBOSE setting and other rcS variables
+-#. /lib/init/vars.sh
+-
+-# Define LSB log_* functions.
+-# Depend on lsb-base (>= 3.2-14) to ensure that this file is present
+-# and status_of_proc is working.
+-#. /lib/lsb/init-functions
+-
+ #
+ # Function that starts the daemon/service
+ #
+ do_start()
+ {
+-	# Return
+-	#   0 if daemon has been started
+-	#   1 if daemon was already running
+-	#   2 if daemon could not be started
+-	start-stop-daemon --start --quiet --exec $DAEMON --test > /dev/null \
+-		|| return 1
+-	start-stop-daemon --start --quiet --exec $DAEMON -- \
+-		$DAEMON_ARGS \
+-		|| return 2
++	[ "$ENABLED" = yes ] || return 1
++	start-stop-daemon --start --quiet --exec $DAEMON -- $DAEMON_ARGS || return 2
+ }
+ 
+ #
+-- 
+2.7.4
+
