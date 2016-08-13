@@ -1,14 +1,14 @@
-From f4752235837d2f7732b0c976fc1ef2d1519c8350 Mon Sep 17 00:00:00 2001
+From bc8b05a6929c7421ffcb8654226ee8bb771db867 Mon Sep 17 00:00:00 2001
 From: Scott Ellis <scott@jumpnowtek.com>
 Date: Thu, 11 Aug 2016 10:01:32 -0400
-Subject: [PATCH 2/2] Set period to 50 ms and resolution to 50 us
+Subject: [PATCH 2/3] Set period to 50 ms and resolution to 50 us
 
 ---
  pi-blaster.c | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/pi-blaster.c b/pi-blaster.c
-index 7507651..57d33ce 100644
+index 7507651..2a509cf 100644
 --- a/pi-blaster.c
 +++ b/pi-blaster.c
 @@ -107,8 +107,8 @@ static uint8_t pin2gpio[MAX_CHANNELS];
