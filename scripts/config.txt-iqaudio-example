@@ -1,4 +1,5 @@
 enable_uart=1
+dtparams=audio=off
 dtoverlay=iqaudio-dacplus
 dtoverlay=i2s-mmap
 dtparam=spi=off
