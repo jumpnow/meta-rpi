@@ -27,7 +27,8 @@ DTBS="bcm2708-rpi-b.dtb \
       bcm2708-rpi-b-plus.dtb \
       bcm2708-rpi-cm.dtb \
       bcm2709-rpi-2-b.dtb \
-      bcm2710-rpi-3-b.dtb"
+      bcm2710-rpi-3-b.dtb \
+      bcm2710-rpi-cm3.dtb"
 
 if [ "x${1}" = "x" ]; then
 	echo -e "\nUsage: ${0} <block device>\n"
