@@ -4,8 +4,6 @@
 
 LICENSE_FLAGS_WHITELIST = "commercial"
 
-BBMASK = "meta-rpi/recipes-multimedia/"
-
 DISTRO_FEATURES = "ext2 usbhost ${DISTRO_FEATURES_LIBC}"
 
 DISTRO_FEATURES_BACKFILL_CONSIDERED += "pulseaudio"
@@ -20,7 +18,6 @@ MACHINE_FEATURES_remove = "apm"
 
 IMAGE_FSTYPES = "tar.xz"
 
-# the default is 4.1.x
 PREFERRED_VERSION_linux-raspberrypi = "4.4.%"
 
 MACHINE = "raspberrypi2"
