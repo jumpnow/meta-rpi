@@ -1,8 +1,8 @@
-LINUX_VERSION = "4.4.17"
+LINUX_VERSION = "4.4.18"
 
-SRCREV = "157e000aa2ec831c02b4eb842df38ed1316097c9"
+SRCREV = "fea4885d11d2578e7552940cf0b8ad652e4110d9"
 
-PR = "r9"
+PR = "r10"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
@@ -18,6 +18,7 @@ KERNEL_DEVICETREE = " \
     overlays/akkordion-iqdacplus-overlay.dtb \
     overlays/at86rf233-overlay.dtb \
     overlays/audioinjector-wm8731-audio-overlay.dtb \
+    overlays/audremap-overlay.dtb \
     overlays/bmp085_i2c-sensor-overlay.dtb \
     overlays/dht11-overlay.dtb \
     overlays/dionaudio-loco-overlay.dtb \
@@ -49,6 +50,7 @@ KERNEL_DEVICETREE = " \
     overlays/justboom-digi-overlay.dtb \
     overlays/lirc-rpi-overlay.dtb \
     overlays/mcp23017-overlay.dtb \
+    overlays/mcp23s17-overlay.dtb \
     overlays/mcp2515-can0-overlay.dtb \
     overlays/mcp2515-can1-overlay.dtb \
     overlays/mmc-overlay.dtb \
