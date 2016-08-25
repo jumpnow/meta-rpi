@@ -1,8 +1,8 @@
-LINUX_VERSION = "4.4.18"
+LINUX_VERSION = "4.4.19"
 
-SRCREV = "fea4885d11d2578e7552940cf0b8ad652e4110d9"
+SRCREV = "5ba1281cbd7f1d8db419f41919a51dedc4d5afa3"
 
-PR = "r10"
+PR = "r11"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
@@ -75,6 +75,7 @@ KERNEL_DEVICETREE = " \
     overlays/rpi-proto-overlay.dtb \
     overlays/rpi-sense-overlay.dtb \
     overlays/rra-digidac1-wm8741-audio-overlay.dtb \
+    overlays/sc16is750-i2c-overlay.dtb \
     overlays/sc16is752-spi1-overlay.dtb \
     overlays/sdhost-overlay.dtb \
     overlays/sdio-1bit-overlay.dtb \
