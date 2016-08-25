@@ -3,7 +3,7 @@ This layer depends on:
     URI: git://git.yoctoproject.org/poky.git
     branch: krogoth
     revision: HEAD
-    commit: 12eb72e
+    commit: fc75bea
 
     URI: git://git.openembedded.org/meta-openembedded
     branch: krogoth
