@@ -1,3 +1,3 @@
-PACKAGECONFIG_append = " accessibility linuxfb"
+PACKAGECONFIG_append = " accessibility eglfs fontconfig gles2"
 
 DEPENDS += "userland"
