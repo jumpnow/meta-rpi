@@ -1,8 +1,8 @@
 LINUX_VERSION = "4.4.19"
 
-SRCREV = "5ba1281cbd7f1d8db419f41919a51dedc4d5afa3"
+SRCREV = "81b502c6cb1877548c7a9e3774101c8f17b1c3ca"
 
-PR = "r11"
+PR = "r12"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
