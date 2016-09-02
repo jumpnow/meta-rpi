@@ -48,8 +48,13 @@ QT5_PKGS = " \
     qtxmlpatterns-mkspecs \
 "
 
+QML_APPS = " \
+    qqtest \
+"
+
 IMAGE_INSTALL += " \
     ${QT5_PKGS} \
+    ${QML_APPS} \
 "
 
 export IMAGE_BASENAME = "qt5-image"
