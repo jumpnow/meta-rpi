@@ -8,12 +8,12 @@ This layer depends on:
     URI: git://git.openembedded.org/meta-openembedded
     branch: krogoth
     revision: HEAD
-    commit: 247b126
+    commit: 895b25b
 
     URI: https://github.com/meta-qt5/meta-qt5.git
     branch: master
     revision: HEAD
-    commit: d9cd5ed
+    commit: aa413cc
 
     URI: git://git.yoctoproject.org/meta-raspberrypi 
     branch: master
