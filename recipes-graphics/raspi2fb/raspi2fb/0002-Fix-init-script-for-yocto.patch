@@ -1,0 +1,123 @@
+From 411fbd469110c4c799aeaff8944665409710e1a9 Mon Sep 17 00:00:00 2001
+From: Scott Ellis <scott@jumpnowtek.com>
+Date: Thu, 8 Sep 2016 06:29:10 -0400
+Subject: [PATCH 2/2] Fix init script for yocto
+
+---
+ raspi2fb.init.d | 68 +++++++--------------------------------------------------
+ 1 file changed, 8 insertions(+), 60 deletions(-)
+
+diff --git a/raspi2fb.init.d b/raspi2fb.init.d
+index 2eef25d..9e6dc45 100755
+--- a/raspi2fb.init.d
++++ b/raspi2fb.init.d
+@@ -18,7 +18,7 @@
+ PATH=/sbin:/usr/sbin:/bin:/usr/bin
+ DESC="Copy Raspberry Pi screen to a secondary framebuffer"
+ NAME=raspi2fb
+-DAEMON=/usr/local/bin/$NAME
++DAEMON=/usr/bin/$NAME
+ PIDFILE=/var/run/$NAME.pid
+ DAEMON_ARGS="--daemon --pidfile $PIDFILE"
+ SCRIPTNAME=/etc/init.d/$NAME
+@@ -29,31 +29,14 @@ SCRIPTNAME=/etc/init.d/$NAME
+ # Read configuration variable file if it is present
+ [ -r /etc/default/$NAME ] && . /etc/default/$NAME
+ 
+-# Load the VERBOSE setting and other rcS variables
+-. /lib/init/vars.sh
+-
+-# Define LSB log_* functions.
+-# Depend on lsb-base (>= 3.2-14) to ensure that this file is present
+-# and status_of_proc is working.
+-. /lib/lsb/init-functions
+-
+ #
+ # Function that starts the daemon/service
+ #
+ do_start()
+ {
+-	# Return
+-	#   0 if daemon has been started
+-	#   1 if daemon was already running
+-	#   2 if daemon could not be started
+-	start-stop-daemon --start --quiet --pidfile $PIDFILE --exec $DAEMON --test > /dev/null \
+-		|| return 1
+ 	start-stop-daemon --start --quiet --pidfile $PIDFILE --exec $DAEMON -- \
+ 		$DAEMON_ARGS \
+-		|| return 2
+-	# Add code here, if necessary, that waits for the process to be ready
+-	# to handle requests from services started subsequently which depend
+-	# on this one.  As a last resort, sleep for some time.
++		|| return 1 
+ }
+ 
+ #
+@@ -97,58 +80,23 @@ do_reload() {
+ 
+ case "$1" in
+   start)
+-	[ "$VERBOSE" != no ] && log_daemon_msg "Starting $DESC" "$NAME"
++	[ "$VERBOSE" != no ] && echo "Starting $DESC" "$NAME"
+ 	do_start
+-	case "$?" in
+-		0|1) [ "$VERBOSE" != no ] && log_end_msg 0 ;;
+-		2) [ "$VERBOSE" != no ] && log_end_msg 1 ;;
+-	esac
+ 	;;
+   stop)
+-	[ "$VERBOSE" != no ] && log_daemon_msg "Stopping $DESC" "$NAME"
++	[ "$VERBOSE" != no ] && echo "Stopping $DESC" "$NAME"
+ 	do_stop
+-	case "$?" in
+-		0|1) [ "$VERBOSE" != no ] && log_end_msg 0 ;;
+-		2) [ "$VERBOSE" != no ] && log_end_msg 1 ;;
+-	esac
+ 	;;
+   status)
+ 	status_of_proc "$DAEMON" "$NAME" && exit 0 || exit $?
+ 	;;
+-  #reload|force-reload)
+-	#
+-	# If do_reload() is not implemented then leave this commented out
+-	# and leave 'force-reload' as an alias for 'restart'.
+-	#
+-	#log_daemon_msg "Reloading $DESC" "$NAME"
+-	#do_reload
+-	#log_end_msg $?
+-	#;;
+-  restart|force-reload)
+-	#
+-	# If the "reload" option is implemented then remove the
+-	# 'force-reload' alias
+-	#
+-	log_daemon_msg "Restarting $DESC" "$NAME"
++  restart)
++	echo "Restarting $DESC" "$NAME"
+ 	do_stop
+-	case "$?" in
+-	  0|1)
+-		do_start
+-		case "$?" in
+-			0) log_end_msg 0 ;;
+-			1) log_end_msg 1 ;; # Old process is still running
+-			*) log_end_msg 1 ;; # Failed to start
+-		esac
+-		;;
+-	  *)
+-		# Failed to stop
+-		log_end_msg 1
+-		;;
+-	esac
++	do_start
+ 	;;
+   *)
+-	#echo "Usage: $SCRIPTNAME {start|stop|restart|reload|force-reload}" >&2
+-	echo "Usage: $SCRIPTNAME {start|stop|status|restart|force-reload}" >&2
++	echo "Usage: $SCRIPTNAME {start|stop|status|restart}" >&2
+ 	exit 3
+ 	;;
+ esac
+-- 
+2.7.4
+

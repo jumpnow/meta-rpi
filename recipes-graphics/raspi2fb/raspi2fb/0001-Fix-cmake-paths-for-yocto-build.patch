@@ -1,0 +1,39 @@
+From 1f9275772f3801c0646bb5b26d817a9649b89388 Mon Sep 17 00:00:00 2001
+From: Scott Ellis <scott@jumpnowtek.com>
+Date: Thu, 8 Sep 2016 05:53:00 -0400
+Subject: [PATCH 1/2] Fix cmake paths for yocto build
+
+---
+ CMakeLists.txt | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 380c7b7..7cabbe8 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -3,16 +3,16 @@ cmake_minimum_required(VERSION 2.6)
+ set(CMAKE_BUILD_TYPE Release)
+ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
+ 
+-include_directories(/opt/vc/include)
+-include_directories(/opt/vc/include/interface/vcos/pthreads)
+-include_directories(/opt/vc/include/interface/vmcs_host)
+-include_directories(/opt/vc/include/interface/vmcs_host/linux)
++include_directories(/usr/include)
++include_directories(/usr/include/interface/vcos/pthreads)
++include_directories(/usr/include/interface/vmcs_host)
++include_directories(/usr/include/interface/vmcs_host/linux)
+ 
+-link_directories(/opt/vc/lib)
++link_directories(/usr/lib)
+ 
+ add_executable(raspi2fb raspi2fb.c syslogUtilities.c)
+ 
+-target_link_libraries(raspi2fb bcm_host bsd)
++target_link_libraries(raspi2fb bcm_host bsd vchostif)
+ 
+ set_property(TARGET raspi2fb PROPERTY SKIP_BUILD_RPATH TRUE)
+ install (TARGETS raspi2fb RUNTIME DESTINATION bin)
+-- 
+2.7.4
+
