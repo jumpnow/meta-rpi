@@ -66,6 +66,7 @@ EXTRA_TOOLS_INSTALL = " \
     findutils \
     i2c-tools \
     iperf \
+    iproute2 \
     less \
     memtester \
     nano \
@@ -80,17 +81,23 @@ EXTRA_TOOLS_INSTALL = " \
     zip \
  "
 
+CAN_TOOLS = " \
+    canutils \
+ "
+
 RPI_STUFF = " \
-    omxplayer \
     bcm2835-tests \
-    wiringpi \
+    omxplayer \
+    pi-blaster \
+    raspi2fb \
     rpio \
     rpi-gpio \
-    pi-blaster \
     userland \
+    wiringpi \
  "
 
 IMAGE_INSTALL += " \
+    ${CAN_TOOLS} \
     ${CORE_OS} \
     ${DEV_SDK_INSTALL} \
     ${DEV_EXTRAS} \
