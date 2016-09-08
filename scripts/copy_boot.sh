@@ -151,6 +151,17 @@ if [ -f ./config.txt ]; then
 	fi
 fi
   
+if [ -f ./cmdline.txt ]; then
+	echo "Copying local cmdline.txt to card"
+	sudo cp ./cmdline.txt /media/card
+
+	if [ $? -ne 0 ]; then
+		echo "Error copying local cmdline.txt to card"
+		sudo umount ${DEV}
+		exit 1
+	fi
+fi
+
 echo "Unmounting ${DEV}"
 sudo umount ${DEV}
 
