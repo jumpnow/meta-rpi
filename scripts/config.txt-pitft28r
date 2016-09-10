@@ -1,0 +1,9 @@
+dispmanx_offline=1
+enable_uart=1
+disable_overscan=1
+
+dtparam=spi=on
+dtparam=i2c1=on
+dtparam=i2c_arm=on
+
+dtoverlay=pitft28-resistive,rotate=90,speed=32000000,fps=20
