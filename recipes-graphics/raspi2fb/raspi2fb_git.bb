@@ -10,7 +10,10 @@ SRC_URI = "\
     git://github.com/AndrewFromMelbourne/raspi2fb \
     file://0001-Fix-cmake-paths-for-yocto-build.patch \
     file://0002-Fix-init-script-for-yocto.patch \
+    file://default \
 "
+
+PR = "r1"
 
 S = "${WORKDIR}/git"
 
@@ -19,6 +22,9 @@ inherit cmake
 do_install_append () {
     install -d ${D}${sysconfdir}/init.d
     install -m 0755 ${S}/raspi2fb.init.d ${D}${sysconfdir}/init.d/raspi2fb
+
+    install -d ${D}${sysconfdir}/default
+    install -m 0664 ${WORKDIR}/default ${D}${sysconfdir}/default/raspi2fb
 }
 
 FILES_${PN} = "${bindir} ${sysconfdir}"
