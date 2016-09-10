@@ -1,11 +1,14 @@
 LINUX_VERSION = "4.4.20"
 
-SRCREV = "39a2aeec831777de2a18308ed59d3614e7e9d092"
+SRCREV = "73bada585aa9b896d2af124457141280f8cae19e"
+
+FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.4:"
 
 SRC_URI += " \
+    file://0001-Add-Adafruit-pitft35-touchscreen-support.patch \
 "
 
-PR = "r14"
+PR = "r15"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
@@ -66,6 +69,7 @@ KERNEL_DEVICETREE = " \
     overlays/pitft22-overlay.dtb \
     overlays/pitft28-capacitive-overlay.dtb \
     overlays/pitft28-resistive-overlay.dtb \
+    overlays/pitft35-resistive-overlay.dtb \
     overlays/pps-gpio-overlay.dtb \
     overlays/pwm-2chan-overlay.dtb \
     overlays/pwm-overlay.dtb \
