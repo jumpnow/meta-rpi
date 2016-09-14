@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/AndrewFromMelbourne/raspi2fb"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
-DEPENDS += "userland"
+DEPENDS += "libbsd userland"
 
 SRCREV = "e4a07dc2f33b13e51bffcd92ebecaa24dd86dfad"
 SRC_URI = "\
@@ -13,7 +13,7 @@ SRC_URI = "\
     file://default \
 "
 
-PR = "r1"
+PR = "r2"
 
 S = "${WORKDIR}/git"
 
