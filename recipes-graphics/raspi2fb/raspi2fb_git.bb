@@ -13,7 +13,7 @@ SRC_URI = "\
     file://default \
 "
 
-PR = "r2"
+PR = "r3"
 
 S = "${WORKDIR}/git"
 
@@ -28,5 +28,3 @@ do_install_append () {
 }
 
 FILES_${PN} = "${bindir} ${sysconfdir}"
-
-RDEPENDS_${PN} += "libbsd userland"
