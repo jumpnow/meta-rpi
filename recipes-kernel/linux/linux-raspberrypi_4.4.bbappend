@@ -1,6 +1,6 @@
 LINUX_VERSION = "4.4.20"
 
-SRCREV = "73bada585aa9b896d2af124457141280f8cae19e"
+SRCREV = "24e62728b3fc4f118c8ae17b374bce189bb188fc"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.4:"
 
@@ -8,7 +8,7 @@ SRC_URI += " \
     file://0001-Add-Adafruit-pitft35-touchscreen-support.patch \
 "
 
-PR = "r15"
+PR = "r16"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
@@ -28,6 +28,7 @@ KERNEL_DEVICETREE = " \
     overlays/bmp085_i2c-sensor-overlay.dtb \
     overlays/dht11-overlay.dtb \
     overlays/dionaudio-loco-overlay.dtb \
+    overlays/dpi18-overlay.dtb \
     overlays/dpi24-overlay.dtb \
     overlays/dwc2-overlay.dtb \
     overlays/dwc-otg-overlay.dtb \
@@ -102,6 +103,7 @@ KERNEL_DEVICETREE = " \
     overlays/spi-rtc-overlay.dtb \
     overlays/tinylcd35-overlay.dtb \
     overlays/uart1-overlay.dtb \
+    overlays/vc4-fkms-v3d-overlay.dtb \
     overlays/vc4-kms-v3d-overlay.dtb \
     overlays/vga666-overlay.dtb \
     overlays/w1-gpio-overlay.dtb \

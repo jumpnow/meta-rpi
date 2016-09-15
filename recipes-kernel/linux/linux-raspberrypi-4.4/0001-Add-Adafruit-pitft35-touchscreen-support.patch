@@ -1,4 +1,4 @@
-From 7aa04e4d9da8014e54764a68fa1871f578254349 Mon Sep 17 00:00:00 2001
+From 82bb7101a69612b34064e2b90b4aad6b4bc233d8 Mon Sep 17 00:00:00 2001
 From: Scott Ellis <scott@jumpnowtek.com>
 Date: Sat, 10 Sep 2016 06:14:14 -0400
 Subject: [PATCH] Add Adafruit pitft35 touchscreen support
@@ -12,10 +12,10 @@ Subject: [PATCH] Add Adafruit pitft35 touchscreen support
  create mode 100644 arch/arm/boot/dts/overlays/pitft35-resistive-overlay.dts
 
 diff --git a/arch/arm/boot/dts/overlays/Makefile b/arch/arm/boot/dts/overlays/Makefile
-index dbf42d0..6945159 100644
+index c04a647..c8486bd 100644
 --- a/arch/arm/boot/dts/overlays/Makefile
 +++ b/arch/arm/boot/dts/overlays/Makefile
-@@ -63,6 +63,7 @@ dtbo-$(RPI_DT_OVERLAYS) += piscreen2r.dtbo
+@@ -64,6 +64,7 @@ dtbo-$(RPI_DT_OVERLAYS) += piscreen2r.dtbo
  dtbo-$(RPI_DT_OVERLAYS) += pitft22.dtbo
  dtbo-$(RPI_DT_OVERLAYS) += pitft28-capacitive.dtbo
  dtbo-$(RPI_DT_OVERLAYS) += pitft28-resistive.dtbo
@@ -25,12 +25,12 @@ index dbf42d0..6945159 100644
  dtbo-$(RPI_DT_OVERLAYS) += pwm-2chan.dtbo
 diff --git a/arch/arm/boot/dts/overlays/pitft35-resistive-overlay.dts b/arch/arm/boot/dts/overlays/pitft35-resistive-overlay.dts
 new file mode 100644
-index 0000000..a0c9773
+index 0000000..25cb5cc
 --- /dev/null
 +++ b/arch/arm/boot/dts/overlays/pitft35-resistive-overlay.dts
 @@ -0,0 +1,121 @@
 +/*
-+ * Device Tree overlay for Adafruit PiTFT 2.8" resistive touch screen
++ * Device Tree overlay for Adafruit PiTFT 3.5" resistive touch screen
 + *
 + */
 +
