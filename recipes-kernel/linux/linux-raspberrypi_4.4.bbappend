@@ -1,6 +1,6 @@
-LINUX_VERSION = "4.4.20"
+LINUX_VERSION = "4.4.21"
 
-SRCREV = "24e62728b3fc4f118c8ae17b374bce189bb188fc"
+SRCREV = "2d31cd571e6f2ac61a3eda273d973058e1bb1f58"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.4:"
 
@@ -8,7 +8,7 @@ SRC_URI += " \
     file://0001-Add-Adafruit-pitft35-touchscreen-support.patch \
 "
 
-PR = "r16"
+PR = "r17"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
