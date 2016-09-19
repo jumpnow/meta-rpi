@@ -1,14 +1,15 @@
 LINUX_VERSION = "4.4.21"
 
-SRCREV = "2d31cd571e6f2ac61a3eda273d973058e1bb1f58"
+SRCREV = "9669a50a3a8e4f33b4fe138277bc4407e1eab9b2"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.4:"
 
 SRC_URI += " \
     file://0001-Add-Adafruit-pitft35-touchscreen-support.patch \
+    file://0002-dts-Add-pwm-overlays-with-clock-enabled.patch \
 "
 
-PR = "r17"
+PR = "r18"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
@@ -22,6 +23,7 @@ KERNEL_DEVICETREE = " \
     overlays/ads1015-overlay.dtb \
     overlays/ads7846-overlay.dtb \
     overlays/akkordion-iqdacplus-overlay.dtb \
+    overlays/allo-piano-dac-pcm512x-audio-overlay.dtb \
     overlays/at86rf233-overlay.dtb \
     overlays/audioinjector-wm8731-audio-overlay.dtb \
     overlays/audremap-overlay.dtb \
@@ -73,7 +75,9 @@ KERNEL_DEVICETREE = " \
     overlays/pitft35-resistive-overlay.dtb \
     overlays/pps-gpio-overlay.dtb \
     overlays/pwm-2chan-overlay.dtb \
+    overlays/pwm-2chan-with-clk-overlay.dtb \
     overlays/pwm-overlay.dtb \
+    overlays/pwm-with-clk-overlay.dtb \
     overlays/qca7000-overlay.dtb \
     overlays/raspidac3-overlay.dtb \
     overlays/rpi-backlight-overlay.dtb \

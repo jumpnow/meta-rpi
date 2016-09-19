@@ -1,14 +1,15 @@
-From 82bb7101a69612b34064e2b90b4aad6b4bc233d8 Mon Sep 17 00:00:00 2001
+From 41e2846efb2b1f865d4955a25c55622f78f68de9 Mon Sep 17 00:00:00 2001
 From: Scott Ellis <scott@jumpnowtek.com>
 Date: Sat, 10 Sep 2016 06:14:14 -0400
-Subject: [PATCH] Add Adafruit pitft35 touchscreen support
+Subject: [PATCH 1/2] Add Adafruit pitft35 touchscreen support
 
 ---
  arch/arm/boot/dts/overlays/Makefile                |   1 +
+ arch/arm/boot/dts/overlays/README                  |  12 ++
  .../dts/overlays/pitft35-resistive-overlay.dts     | 121 +++++++++++++++++++++
  arch/arm/configs/bcm2709_defconfig                 |   1 +
  arch/arm/configs/bcmrpi_defconfig                  |   1 +
- 4 files changed, 124 insertions(+)
+ 5 files changed, 136 insertions(+)
  create mode 100644 arch/arm/boot/dts/overlays/pitft35-resistive-overlay.dts
 
 diff --git a/arch/arm/boot/dts/overlays/Makefile b/arch/arm/boot/dts/overlays/Makefile
@@ -23,6 +24,29 @@ index c04a647..c8486bd 100644
  dtbo-$(RPI_DT_OVERLAYS) += pps-gpio.dtbo
  dtbo-$(RPI_DT_OVERLAYS) += pwm.dtbo
  dtbo-$(RPI_DT_OVERLAYS) += pwm-2chan.dtbo
+diff --git a/arch/arm/boot/dts/overlays/README b/arch/arm/boot/dts/overlays/README
+index 7401b28..3547147 100644
+--- a/arch/arm/boot/dts/overlays/README
++++ b/arch/arm/boot/dts/overlays/README
+@@ -834,6 +834,18 @@ Params: speed                   Display SPI bus speed
+         debug                   Debug output level {0-7}
+ 
+ 
++Name:   pitft35-resistive
++Info:   Adafruit PiTFT 3.5" resistive touch screen
++Load:   dtoverlay=pitft35-resistive,<param>=<val>
++Params: speed                   Display SPI bus speed
++
++        rotate                  Display rotation {0,90,180,270}
++
++        fps                     Delay between frame updates
++
++        debug                   Debug output level {0-7}
++
++
+ Name:   pps-gpio
+ Info:   Configures the pps-gpio (pulse-per-second time signal via GPIO).
+ Load:   dtoverlay=pps-gpio,<param>=<val>
 diff --git a/arch/arm/boot/dts/overlays/pitft35-resistive-overlay.dts b/arch/arm/boot/dts/overlays/pitft35-resistive-overlay.dts
 new file mode 100644
 index 0000000..25cb5cc
