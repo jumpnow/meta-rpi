@@ -4,12 +4,14 @@ SRCREV = "9669a50a3a8e4f33b4fe138277bc4407e1eab9b2"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.4:"
 
-SRC_URI += " \
+SRC_URI = " \
+    git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.4.y \
     file://0001-Add-Adafruit-pitft35-touchscreen-support.patch \
     file://0002-dts-Add-pwm-overlays-with-clock-enabled.patch \
+    file://defconfig \
 "
 
-PR = "r18"
+PR = "r19"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
