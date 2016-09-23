@@ -47,7 +47,7 @@ if [ -z "${MACHINE}" ]; then
 fi
 
 if [ "${MACHINE}" = "raspberrypi2" ]; then
-	MACH="rpi2"
+	MACH="rpi3"
 elif [ "${MACHINE}" = "raspberrypi" ]; then
 	MACH="rpi"
 else
