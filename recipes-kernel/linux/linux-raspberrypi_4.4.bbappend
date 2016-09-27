@@ -1,17 +1,16 @@
 LINUX_VERSION = "4.4.22"
 
-SRCREV = "f6ff0ee124072bbd404e6648ea5184b4c9ce298d"
+SRCREV = "24d83b27a2e4205a3741c2e3d2e1ded298437ac8"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.4:"
 
 SRC_URI = " \
     git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.4.y \
-    file://0001-Add-Adafruit-pitft35-touchscreen-support.patch \
-    file://0002-dts-Add-pwm-overlays-with-clock-enabled.patch \
+    file://0001-dts-Add-pwm-overlays-with-clock-enabled.patch \
     file://defconfig \
 "
 
-PR = "r21"
+PR = "r22"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
