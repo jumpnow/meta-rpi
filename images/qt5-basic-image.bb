@@ -24,6 +24,13 @@ QT_SERIALPORT = " \
     qtserialport-mkspecs \
 "
 
+TSLIB = " \
+    tslib-conf \
+    tslib-calibrate \
+    tslib-dev \
+    tslib \
+"
+
 IMAGE_INSTALL += " \
     ${FONTS} \
     ${QT_TOOLS} \
@@ -32,6 +39,7 @@ IMAGE_INSTALL += " \
     qfontchooser \
     qkeytest \
     qshowfonts \
+    ${TSLIB} \
     tspress \
 "
 
