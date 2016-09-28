@@ -63,6 +63,7 @@ EXTRA_TOOLS_INSTALL = " \
     devmem2 \
     dosfstools \
     ethtool \
+    fbset \
     findutils \
     i2c-tools \
     iperf \
