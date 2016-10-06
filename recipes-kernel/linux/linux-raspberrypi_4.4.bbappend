@@ -7,10 +7,11 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.4:"
 SRC_URI = " \
     git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.4.y \
     file://0001-dts-Add-pwm-overlays-with-clock-enabled.patch \
+    file://0002-Add-ads1015-driver-to-config.patch \
     file://defconfig \
 "
 
-PR = "r24"
+PR = "r25"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
