@@ -3,12 +3,12 @@ This layer depends on:
     URI: git://git.yoctoproject.org/poky.git
     branch: krogoth
     revision: HEAD
-    commit: ed4ed53
+    commit: e93596f
 
     URI: git://git.openembedded.org/meta-openembedded
     branch: krogoth
     revision: HEAD
-    commit: 895b25b
+    commit: 851a064
 
     URI: https://github.com/meta-qt5/meta-qt5.git
     branch: master
