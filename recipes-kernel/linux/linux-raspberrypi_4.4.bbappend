@@ -1,6 +1,6 @@
 LINUX_VERSION = "4.4.27"
 
-SRCREV = "bc6f89ea2c5d5bd7d55143e1f1eedc773b3f57d9"
+SRCREV = "1c8b82bcb72f95d8f9d606326178192a2abc9c9c"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.4:"
 
@@ -11,7 +11,7 @@ SRC_URI = " \
     file://defconfig \
 "
 
-PR = "r29"
+PR = "r30"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
@@ -71,6 +71,7 @@ KERNEL_DEVICETREE = " \
     overlays/pi3-miniuart-bt-overlay.dtb \
     overlays/piscreen2r-overlay.dtb \
     overlays/piscreen-overlay.dtb \
+    overlays/pisound-overlay.dtb \
     overlays/pitft22-overlay.dtb \
     overlays/pitft28-capacitive-overlay.dtb \
     overlays/pitft28-resistive-overlay.dtb \
