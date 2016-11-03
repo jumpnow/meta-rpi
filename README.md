@@ -18,6 +18,6 @@ This layer depends on:
     URI: git://git.yoctoproject.org/meta-raspberrypi 
     branch: master
     revision: HEAD
-    commit: 17a6933
+    commit: de016ce
 
     meta-rpi layer maintainer: Scott Ellis <scott@jumpnowtek.com>
