@@ -1,0 +1,17 @@
+ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface_group=root
+update_config=1
+fast_reauth=1
+ap_scan=1
+
+#network={
+#    key_mgmt=WPA-PSK
+#    ssid="<ssid>"
+#    psk="<passphrase>"
+#}
+
+# open network
+#network={
+#    key_mgmt=NONE
+#    ssid="<ssid>"
+#}
