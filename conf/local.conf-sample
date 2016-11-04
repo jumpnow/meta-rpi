@@ -4,6 +4,8 @@
 
 LICENSE_FLAGS_WHITELIST = "commercial"
 
+BBMASK = "meta-raspberrypi/recipes-kernel/linux-firmware"
+
 DISTRO_FEATURES = "ext2 opengl usbhost ${DISTRO_FEATURES_LIBC}"
 
 DISTRO_FEATURES_BACKFILL_CONSIDERED += "pulseaudio"
