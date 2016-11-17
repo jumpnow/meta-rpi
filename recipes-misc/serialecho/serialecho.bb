@@ -8,6 +8,8 @@ SRC_URI = "git://github.com/scottellis/serialecho.git"
 
 S = "${WORKDIR}/git"
 
+TARGET_CC_ARCH += "${LDFLAGS}"
+
 do_install() {
     install -d ${D}${bindir}
     install -m 755 serialecho ${D}${bindir}
