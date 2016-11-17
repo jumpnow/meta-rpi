@@ -1,0 +1,10 @@
+dispmanx_offline=1
+
+enable_uart=1
+
+dtoverlay=pi3-disable-bt
+
+hdmi_force_hotplug=1
+hdmi_group=2
+hdmi_mode=87
+hdmi_cvt=1024 600 60 3 0 0 0
