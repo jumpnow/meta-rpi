@@ -6,13 +6,13 @@ BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
 BBLAYERS ?= " \
-    ${HOME}/poky-krogoth/meta \
-    ${HOME}/poky-krogoth/meta-poky \
-    ${HOME}/poky-krogoth/meta-openembedded/meta-oe \
-    ${HOME}/poky-krogoth/meta-openembedded/meta-multimedia \
-    ${HOME}/poky-krogoth/meta-openembedded/meta-networking \
-    ${HOME}/poky-krogoth/meta-openembedded/meta-python \
-    ${HOME}/poky-krogoth/meta-qt5 \
-    ${HOME}/poky-krogoth/meta-raspberrypi \
+    ${HOME}/poky-morty/meta \
+    ${HOME}/poky-morty/meta-poky \
+    ${HOME}/poky-morty/meta-openembedded/meta-oe \
+    ${HOME}/poky-morty/meta-openembedded/meta-multimedia \
+    ${HOME}/poky-morty/meta-openembedded/meta-networking \
+    ${HOME}/poky-morty/meta-openembedded/meta-python \
+    ${HOME}/poky-morty/meta-qt5 \
+    ${HOME}/poky-morty/meta-raspberrypi \
     ${HOME}/rpi/meta-rpi \
   "

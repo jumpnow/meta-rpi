@@ -1,10 +1,10 @@
 # Local configuration for meta-rpi images
-# Yocto Project 2.1 Poky distribution [krogoth] branch
+# Yocto Project 2.2 Poky distribution [morty] branch
 # This is a sysvinit system
 
 LICENSE_FLAGS_WHITELIST = "commercial"
 
-BBMASK = "meta-raspberrypi/recipes-kernel/linux-firmware"
+BBMASK = "meta-rpi/recipes-kernel/linux-firmware"
 
 DISTRO_FEATURES = "ext2 opengl usbhost ${DISTRO_FEATURES_LIBC}"
 
@@ -24,11 +24,11 @@ PREFERRED_VERSION_linux-raspberrypi = "4.4.%"
 
 MACHINE = "raspberrypi2"
 
-# DL_DIR = "${HOME}/oe-sources"
+#DL_DIR = "${HOME}/oe-sources"
 
-# SSTATE_DIR = "/oe8/rpi/sstate-cache"
+#SSTATE_DIR = "/oe6/rpi/sstate-cache"
 
-# TMPDIR = "/oe8/rpi/tmp-krogoth"
+#TMPDIR = "/oe6/rpi/tmp-morty"
 
 DISTRO = "poky"
 

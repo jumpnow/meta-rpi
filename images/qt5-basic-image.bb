@@ -25,10 +25,11 @@ QT_SERIALPORT = " \
 "
 
 TSLIB = " \
+    tslib \
     tslib-conf \
     tslib-calibrate \
     tslib-dev \
-    tslib \
+    tslib-tests \
 "
 
 IMAGE_INSTALL += " \

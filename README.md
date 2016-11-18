@@ -1,19 +1,19 @@
 This layer depends on:
 
     URI: git://git.yoctoproject.org/poky.git
-    branch: krogoth
+    branch: morty
     revision: HEAD
-    commit: 3bf928a
+    commit: 7345447
 
     URI: git://git.openembedded.org/meta-openembedded
-    branch: krogoth
+    branch: morty
     revision: HEAD
-    commit: 851a064
+    commit: 659d9d3
 
     URI: https://github.com/meta-qt5/meta-qt5.git
     branch: morty
     revision: HEAD
-    commit: 81fb771
+    commit: 9aa870e
 
     URI: git://git.yoctoproject.org/meta-raspberrypi 
     branch: master

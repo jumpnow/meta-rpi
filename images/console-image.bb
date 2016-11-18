@@ -13,19 +13,19 @@ CORE_OS = " \
     openssh openssh-keygen openssh-sftp-server \
     term-prompt \
     tzdata \
- "
+"
 
 WIFI_SUPPORT = " \
     crda \
     iw \
-    linux-firmware-brcm43430 \
+    linux-firmware-bcm43430 \
     linux-firmware-ralink \
     linux-firmware-rtl8192ce \
     linux-firmware-rtl8192cu \
     linux-firmware-rtl8192su \
     wireless-tools \
     wpa-supplicant \
- "
+"
 
 DEV_SDK_INSTALL = " \
     binutils \
@@ -51,14 +51,14 @@ DEV_SDK_INSTALL = " \
     perl-modules \
     pkgconfig \
     python-modules \
- "
+"
 
 DEV_EXTRAS = " \
     ntp \
     ntp-tickadj \
-    serialecho \
+    serialecho  \
     spiloop \
- "
+"
 
 EXTRA_TOOLS_INSTALL = " \
     bzip2 \
@@ -82,11 +82,11 @@ EXTRA_TOOLS_INSTALL = " \
     util-linux \
     wget \
     zip \
- "
+"
 
 CAN_TOOLS = " \
     canutils \
- "
+"
 
 RPI_STUFF = " \
     bcm2835-tests \
@@ -96,8 +96,7 @@ RPI_STUFF = " \
     rpio \
     rpi-gpio \
     userland \
-    wiringpi \
- "
+"
 
 IMAGE_INSTALL += " \
     ${CAN_TOOLS} \
@@ -107,7 +106,7 @@ IMAGE_INSTALL += " \
     ${EXTRA_TOOLS_INSTALL} \
     ${RPI_STUFF} \
     ${WIFI_SUPPORT} \
- "
+"
 
 set_local_timezone() {
     ln -sf /usr/share/zoneinfo/EST5EDT ${IMAGE_ROOTFS}/etc/localtime
