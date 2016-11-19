@@ -4,7 +4,7 @@ LICENSE_append = " & Firmware-broadcom_brcm80211"
 
 LIC_FILES_CHKSUM_append = " file://${WORKDIR}/LICENSE.broadcom_brcm80211;md5=8cba1397cda6386db37210439a0da3eb"
 
-NO_GENERIC_LICENSE[Firmware-broadcom_brcm80211] = "LICENSE.broadcom_brcm80211"
+NO_GENERIC_LICENSE[Firmware-broadcom_brcm80211] = "${WORKDIR}/LICENSE.broadcom_brcm80211"
 
 SRC_URI_append = " \
     file://brcmfmac43430-sdio.bin \
@@ -21,6 +21,7 @@ PACKAGES =+ "${PN}-brcm43430 ${PN}-brcm43430-license"
 
 LICENSE_${PN}-brcm43430 = "Firmware-broadcom_brcm80211"
 LICENSE_${PN}-brcm43430-license = "Firmware-broadcom_brcm80211"
+
 FILES_${PN}-brcm43430-license = "/lib/firmware/LICENSE.broadcom_brcm80211"
 FILES_${PN}-brcm43430 = " \
     /lib/firmware/brcm/brcmfmac43430-sdio.bin \
