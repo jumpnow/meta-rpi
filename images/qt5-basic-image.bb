@@ -15,6 +15,7 @@ QT_TOOLS = " \
 
 FONTS = " \
     fontconfig \
+    fontconfig-dev \
     fontconfig-utils \
     ttf-bitstream-vera \
 "
