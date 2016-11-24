@@ -32,7 +32,7 @@ else
 fi
 
 
-SIZE=`fdisk -l $DRIVE | grep "Disk $DRIVE" | cut -d' ' -f5`
+SIZE=`fdisk -l $DRIVE | grep "$DRIVE" | cut -d' ' -f5 | grep -o -E '[0-9]+'`
 
 echo DISK SIZE – $SIZE bytes
 
