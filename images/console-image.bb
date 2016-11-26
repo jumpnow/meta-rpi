@@ -51,6 +51,8 @@ DEV_SDK_INSTALL = " \
     perl-modules \
     pkgconfig \
     python-modules \
+    python3-modules \
+    python3-pydoc \
 "
 
 DEV_EXTRAS = " \
