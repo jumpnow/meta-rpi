@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=cfeb8ae0065c00f1bf4f5a963872e934"
 
 DEPENDS = "libao gnutls libgcrypt json-c faad2 ffmpeg curl"
 
-PR = "r3"
+PR = "r4"
 
 SRCREV = "ece960fb9f119ae294d6a9fa2b9e318b423a9983"
 SRC_URI = " \
