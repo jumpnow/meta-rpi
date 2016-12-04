@@ -1,6 +1,6 @@
-LINUX_VERSION = "4.4.35"
+LINUX_VERSION = "4.4.36"
 
-SRCREV = "e8fb956140512d2d6a2a703ffbffeec563aee004"
+SRCREV = "f8c559c30361a52f5b5b8e2835e55d962fe4f341"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.4:"
 
@@ -11,7 +11,7 @@ SRC_URI = " \
     file://defconfig \
 "
 
-PR = "r37"
+PR = "r38"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
@@ -37,6 +37,7 @@ KERNEL_DEVICETREE = " \
     overlays/dwc2-overlay.dtb \
     overlays/dwc-otg-overlay.dtb \
     overlays/enc28j60-overlay.dtb \
+    overlays/enc28j60-spi2-overlay.dtb \
     overlays/gpio-ir-overlay.dtb \
     overlays/gpio-poweroff-overlay.dtb \
     overlays/hifiberry-amp-overlay.dtb \
