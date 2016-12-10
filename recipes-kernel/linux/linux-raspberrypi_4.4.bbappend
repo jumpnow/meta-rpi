@@ -1,6 +1,6 @@
-LINUX_VERSION = "4.4.36"
+LINUX_VERSION = "4.4.37"
 
-SRCREV = "f8c559c30361a52f5b5b8e2835e55d962fe4f341"
+SRCREV = "830c04fea80e48ecf1de1fc64c703b495713af17"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.4:"
 
@@ -11,7 +11,7 @@ SRC_URI = " \
     file://defconfig \
 "
 
-PR = "r38"
+PR = "r39"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
@@ -53,6 +53,7 @@ KERNEL_DEVICETREE = " \
     overlays/i2c-mux-overlay.dtb \
     overlays/i2c-pwm-pca9685a-overlay.dtb \
     overlays/i2c-rtc-overlay.dtb \
+    overlays/i2c-sensor-overlay.dtb \
     overlays/i2s-gpio28-31-overlay.dtb \
     overlays/i2s-mmap-overlay.dtb \
     overlays/iqaudio-dac-overlay.dtb \
