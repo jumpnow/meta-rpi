@@ -10,10 +10,10 @@ This layer depends on:
     revision: HEAD
     commit: 1efa5d6
 
-    URI: https://github.com/meta-qt5/meta-qt5.git
-    branch: morty
+    URI: https://code.qt.io/yocto/meta-qt5
+    branch: 5.8 
     revision: HEAD
-    commit: 9aa870e
+    commit: c95e558
 
     URI: git://git.yoctoproject.org/meta-raspberrypi 
     branch: master

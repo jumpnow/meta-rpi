@@ -16,7 +16,6 @@ QT5_PKGS = " \
     qtdeclarative \
     qtdeclarative-dev \
     qtdeclarative-mkspecs \
-    qtdeclarative-plugins \
     qtdeclarative-qmlplugins \
     qtgraphicaleffects \
     qtgraphicaleffects-dev \
