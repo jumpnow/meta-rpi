@@ -4,9 +4,9 @@ HOMEPAGE = "https://6xq.net/pianobar/"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://COPYING;md5=cfeb8ae0065c00f1bf4f5a963872e934"
 
-DEPENDS = "libao gnutls libgcrypt json-c faad2 ffmpeg curl"
+DEPENDS = "curl faad2 ffmpeg gnutls json-c libao libgcrypt"
 
-PR = "r4"
+PR = "r5"
 
 SRCREV = "ece960fb9f119ae294d6a9fa2b9e318b423a9983"
 SRC_URI = " \
@@ -34,6 +34,6 @@ pkg_postinst_${PN}() {
     fi
 }
 
-RDEPENDS_${PN} += "libao-plugin-libalsa"
+RDEPENDS_${PN} += "libao-plugin-libalsa libavfilter"
 
 FILES_${PN} = "${bindir} ${datadir}"
