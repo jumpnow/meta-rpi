@@ -4,34 +4,20 @@ DSTDIR=~/rpi/upload
 IMG=qt5
 IMG_LONG="${IMG}-image-${MACHINE}"
 
+if [ ! -d /media/card ]; then
+        echo "Temporary mount point [/media/card] not found"
+        exit 1
+fi
+
 if [ "x${1}" = "x" ]; then
-	echo "Usage: ${0} <block device>"
-	exit 1
-fi
-
-if [ "${1}" = "sda" ]; then
-	echo "Sorry, not going to work on /dev/sda"
-	exit 1
-fi
-
-DEV=${1}
-
-if [ ! -b /dev/${DEV} ]; then
-	echo "Block device not found: /dev/${DEV}"
-	exit 1
-fi
-
-if [ "x${2}" = "x" ]; then
 	CARDSIZE=2
 else
-	if [ "${2}" -eq 2 ]; then
+	if [ "${1}" -eq 2 ]; then
 		CARDSIZE=2
-	elif [ "${2}" -eq 4 ]; then
+	elif [ "${1}" -eq 4 ]; then
 		CARDSIZE=4
-	elif [ "${2}" -gt 4 ]; then
-		CARDSIZE=8
 	else
-		echo "Unsupported card size: ${2}"
+		echo "Unsupported card size: ${1}"
 		exit 1
 	fi
 fi
@@ -64,42 +50,73 @@ if [ ! -f "${SRCDIR}/${IMG_LONG}.tar.xz" ]; then
 	exit 1
 fi
 
-if [ "${CARDSIZE}" -eq 8 ]; then
-	echo -e "\n***** Zeroing 8GB of the SD card *****\n"
-	sudo dd if=/dev/zero of=/dev/${DEV} bs=1M count=7400
-elif [ "${CARDSIZE}" -eq 4 ]; then
-	echo -e "\n***** Zeroing 4GB of the SD card *****\n"
-	sudo dd if=/dev/zero of=/dev/${DEV} bs=1M count=3600
-elif [ "${CARDSIZE}" -eq 2 ]; then
-	echo -e "\n***** Zeroing 2GB of the SD card *****\n"
-	sudo dd if=/dev/zero of=/dev/${DEV} bs=1M count=1800
-else
-	echo "Unsupported card size: ${CARDSIZE}"
-	exit 1
+SDIMG=${IMG}-${MACH}-${CARDSIZE}gb.img
+
+if [ -f "${DSTDIR}/${SDIMG}" ]; then
+        rm ${DSTDIR}/${SDIMG}
 fi
 
-echo -e "\n***** Partitioning the SD card *****"
-sudo ./mk2parts.sh ${DEV} 
+if [ -f "${DSTDIR}/${SDIMG}.xz" ]; then
+        rm -f ${DSTDIR}/${SDIMG}.xz*
+fi
+
+echo -e "\n***** Creating the loop device *****"
+LOOPDEV=`losetup -f`
+
+echo -e "\n***** Creating an empty SD image file *****"
+dd if=/dev/zero of=${DSTDIR}/${SDIMG} bs=1G count=${CARDSIZE}
+
+echo -e "\n***** Partitioning the SD image file *****"
+sudo fdisk ${DSTDIR}/${SDIMG} <<END
+o
+n
+p
+1
+
++64M
+n
+p
+2
+
+
+t
+1
+c
+a
+1
+w
+END
+
+echo -e "\n***** Attaching to the loop device *****"
+sudo losetup -P ${LOOPDEV} ${DSTDIR}/${SDIMG}
 
 echo -e "\n***** Copying the boot partition *****"
+DEV=${LOOPDEV}p1
 ./copy_boot.sh ${DEV} 
 
+if [ $? -ne 0 ]; then
+	sudo losetup -D
+	exit
+fi
+
 echo -e "\n***** Copying the rootfs *****"
+DEV=${LOOPDEV}p2
 ./copy_rootfs.sh ${DEV} ${IMG} ${HOSTNAME} 
 
-sleep 5
+if [ $? -ne 0 ]; then
+	sudo losetup -D
+	exit
+fi
 
-echo -e "\n***** Copying the SD card image *****\n"
-FULL_NAME=${IMG}-${MACH}-${CARDSIZE}gb.img
-
-sudo dd if=/dev/${DEV} of=${DSTDIR}/${FULL_NAME} bs=1M
+echo -e "\n***** Detatching loop device *****"
+sudo losetup -D
 
 echo -e "\n***** Compressing the SD card image *****"
-sudo xz -9 ${DSTDIR}/${FULL_NAME}
+sudo xz -9 ${DSTDIR}/${SDIMG}
 
 echo -e "\n***** Creating an md5sum *****"
 cd ${DSTDIR}
-md5sum ${FULL_NAME}.xz > ${FULL_NAME}.xz.md5
+md5sum ${SDIMG}.xz > ${SDIMG}.xz.md5
 cd ${OLDPWD}
 
 echo -e "\n***** Done *****\n"
