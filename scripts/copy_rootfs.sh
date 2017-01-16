@@ -57,11 +57,15 @@ if [ ! -f "${SRCDIR}/${IMAGE}-image-${MACHINE}.tar.xz" ]; then
         exit 1
 fi
 
-DEV=/dev/${1}2
+if [ -b ${1} ]; then
+	DEV=${1}
+else
+	DEV=/dev/${1}2
 
-if [ ! -b $DEV ]; then
-	echo "Block device $DEV does not exist"
-	exit 1
+	if [ ! -b $DEV ]; then
+		echo "Block device $DEV does not exist"
+		exit 1
+	fi
 fi
 
 echo "Formatting ${DEV} as ext4"

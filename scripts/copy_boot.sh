@@ -76,11 +76,15 @@ if [ ! -f ${SRCDIR}/Image ]; then
 	exit 1
 fi
 
-DEV=/dev/${1}1
+if [ -b ${1} ]; then
+	DEV=${1}
+else
+	DEV=/dev/${1}1
 
-if [ ! -b ${DEV} ]; then
-	echo -e "\nBlock device not found: ${DEV}\n"
-	exit 1
+	if [ ! -b ${DEV} ]; then
+		echo -e "\nBlock device not found: ${DEV}\n"
+		exit 1
+	fi
 fi
 
 echo "Formatting FAT partition on ${DEV}"
