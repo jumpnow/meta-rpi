@@ -1,6 +1,6 @@
-LINUX_VERSION = "4.4.41"
+LINUX_VERSION = "4.4.43"
 
-SRCREV = "4897c5c2f7adb4f77d638121e9959174dff87b9c"
+SRCREV = "1662a03162dd165cf0095a89617b73a1a2d5ab7c"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.4:"
 
@@ -11,7 +11,7 @@ SRC_URI = " \
     file://defconfig \
 "
 
-PR = "r43"
+PR = "r44"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
@@ -70,6 +70,7 @@ KERNEL_DEVICETREE = " \
     overlays/mz61581-overlay.dtb \
     overlays/pi3-act-led-overlay.dtb \
     overlays/pi3-disable-bt-overlay.dtb \
+    overlays/pi3-disable-wifi-overlay.dtb \
     overlays/pi3-miniuart-bt-overlay.dtb \
     overlays/piscreen2r-overlay.dtb \
     overlays/piscreen-overlay.dtb \
