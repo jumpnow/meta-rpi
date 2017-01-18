@@ -1,6 +1,6 @@
 LINUX_VERSION = "4.4.43"
 
-SRCREV = "1662a03162dd165cf0095a89617b73a1a2d5ab7c"
+SRCREV = "17ca1c930978a9ea6ddfec61fd0e2043e8ab3b17"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.4:"
 
@@ -11,7 +11,7 @@ SRC_URI = " \
     file://defconfig \
 "
 
-PR = "r44"
+PR = "r45"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
@@ -102,6 +102,7 @@ KERNEL_DEVICETREE = " \
     overlays/smi-dev-overlay.dtb \
     overlays/smi-nand-overlay.dtb \
     overlays/smi-overlay.dtb \
+    overlays/spi0-cs-overlay.dtb \
     overlays/spi0-hw-cs-overlay.dtb \
     overlays/spi1-1cs-overlay.dtb \
     overlays/spi1-2cs-overlay.dtb \
