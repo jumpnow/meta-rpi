@@ -82,8 +82,12 @@ else
 	DEV=/dev/${1}1
 
 	if [ ! -b ${DEV} ]; then
-		echo -e "\nBlock device not found: ${DEV}\n"
-		exit 1
+		DEV=/dev/${1}p1
+
+		if [ ! -b ${DEV} ]; then
+			echo "Block device not found: /dev/${1}1 or /dev/${1}p1"
+			exit 1
+		fi
 	fi
 fi
 
