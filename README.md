@@ -16,7 +16,7 @@ This layer depends on:
     commit: da138c9
 
     URI: git://git.yoctoproject.org/meta-raspberrypi 
-    branch: master
+    branch: morty
     revision: HEAD
     commit: e1f69da
 
