@@ -8,10 +8,11 @@ SRC_URI = " \
     git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.4.y \
     file://0001-dts-Add-pwm-overlays-with-clock-enabled.patch \
     file://0002-Add-ads1015-driver-to-config.patch \
+    file://0003-dts-Add-overlay-for-mcp3008-adc.patch \
     file://defconfig \
 "
 
-PR = "r47"
+PR = "r48"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
@@ -66,6 +67,7 @@ KERNEL_DEVICETREE = " \
     overlays/mcp23s17-overlay.dtb \
     overlays/mcp2515-can0-overlay.dtb \
     overlays/mcp2515-can1-overlay.dtb \
+    overlays/mcp3008-overlay.dtb \
     overlays/mmc-overlay.dtb \
     overlays/mz61581-overlay.dtb \
     overlays/pi3-act-led-overlay.dtb \
