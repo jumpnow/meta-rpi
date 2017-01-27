@@ -1,6 +1,6 @@
 LINUX_VERSION = "4.4.44"
 
-SRCREV = "ed7ca59bf09261e098e24bae1df35b7e0dd33f3f"
+SRCREV = "d12afc3d358a520c5dce014a68de7a8f80ae3c7e"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.4:"
 
@@ -8,11 +8,10 @@ SRC_URI = " \
     git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.4.y \
     file://0001-dts-Add-pwm-overlays-with-clock-enabled.patch \
     file://0002-Add-ads1015-driver-to-config.patch \
-    file://0003-dts-Add-overlay-for-mcp3008-adc.patch \
     file://defconfig \
 "
 
-PR = "r48"
+PR = "r49"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
