@@ -1,6 +1,6 @@
-LINUX_VERSION = "4.4.45"
+LINUX_VERSION = "4.4.48"
 
-SRCREV = "25aa8634418934f094e13ac75c902416194d1dbd"
+SRCREV = "3273ed969add6d80fcaacc9a1756b6f544c8194a"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.4:"
 
@@ -11,7 +11,7 @@ SRC_URI = " \
     file://defconfig \
 "
 
-PR = "r50"
+PR = "r51"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
