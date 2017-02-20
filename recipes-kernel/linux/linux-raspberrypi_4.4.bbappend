@@ -8,10 +8,11 @@ SRC_URI = " \
     git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.4.y \
     file://0001-dts-Add-pwm-overlays-with-clock-enabled.patch \
     file://0002-Add-ads1015-driver-to-config.patch \
+    file://0003-Add-ads1115-overlay.patch \
     file://defconfig \
 "
 
-PR = "r51"
+PR = "r52"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
@@ -23,6 +24,7 @@ KERNEL_DEVICETREE = " \
     \
     overlays/adau1977-adc-overlay.dtb \
     overlays/ads1015-overlay.dtb \
+    overlays/ads1115-overlay.dtb \
     overlays/ads7846-overlay.dtb \
     overlays/akkordion-iqdacplus-overlay.dtb \
     overlays/allo-piano-dac-pcm512x-audio-overlay.dtb \
