@@ -1,6 +1,4 @@
-enable_uart=1
 dtparams=audio=off
+dtparam=i2c_arm=on
 dtoverlay=iqaudio-dacplus
 dtoverlay=i2s-mmap
-dtparam=spi=off
-dtparam=i2c_arm=on
