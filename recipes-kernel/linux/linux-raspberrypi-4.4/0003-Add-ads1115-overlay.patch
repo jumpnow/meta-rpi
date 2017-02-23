@@ -1,4 +1,4 @@
-From e7b12fa4d3322848136f0961470b724175208026 Mon Sep 17 00:00:00 2001
+From 7122baf71614e74dcd73f90d2b14eda45d0f76d1 Mon Sep 17 00:00:00 2001
 From: Scott Ellis <scott@jumpnowtek.com>
 Date: Sun, 19 Feb 2017 06:33:18 -0500
 Subject: [PATCH 3/3] Add ads1115 overlay
@@ -57,12 +57,12 @@ index 11dfb51..4364070 100644
  Load:   dtoverlay=ads7846,<param>=<val>
 diff --git a/arch/arm/boot/dts/overlays/ads1115-overlay.dts b/arch/arm/boot/dts/overlays/ads1115-overlay.dts
 new file mode 100644
-index 0000000..04c0d42
+index 0000000..5183a8b
 --- /dev/null
 +++ b/arch/arm/boot/dts/overlays/ads1115-overlay.dts
 @@ -0,0 +1,103 @@
 +/*
-+ * Overlay for Texas Instruments ADS1115 A/D Converters
++ * TI ADS1115 multi-channel ADC overlay
 + */
 +
 +/dts-v1/;
@@ -145,23 +145,23 @@ index 0000000..04c0d42
 +    };
 +
 +    __overrides__ {
-+        addr =        <&ads1115>,"reg:0";
-+        cha =         <0>,"=1";
-+        cha_mux =     <&channel_a>,"reg:0";
-+        cha_gain =    <&channel_a>,"ti,gain:0";
-+        cha_rate =    <&channel_a>,"ti,datarate:0";
-+        chb =         <0>,"=2";
-+        chb_mux =     <&channel_b>,"reg:0";
-+        chb_gain =    <&channel_b>,"ti,gain:0";
-+        chb_rate =    <&channel_b>,"ti,datarate:0";
-+        chc =         <0>,"=3";
-+        chc_mux =     <&channel_c>,"reg:0";
-+        chc_gain =    <&channel_c>,"ti,gain:0";
-+        chc_rate =    <&channel_c>,"ti,datarate:0";
-+        chd =         <0>,"=4";
-+        chd_mux =     <&channel_d>,"reg:0";
-+        chd_gain =    <&channel_d>,"ti,gain:0";
-+        chd_rate =    <&channel_d>,"ti,datarate:0";
++        addr =            <&ads1115>,"reg:0";
++        cha_enable =      <0>,"=1";
++        cha_cfg =         <&channel_a>,"reg:0";
++        cha_gain =        <&channel_a>,"ti,gain:0";
++        cha_datarate =    <&channel_a>,"ti,datarate:0";
++        chb_enable =      <0>,"=2";
++        chb_cfg =         <&channel_b>,"reg:0";
++        chb_gain =        <&channel_b>,"ti,gain:0";
++        chb_datarate =    <&channel_b>,"ti,datarate:0";
++        chc_enable =      <0>,"=3";
++        chc_cfg =         <&channel_c>,"reg:0";
++        chc_gain =        <&channel_c>,"ti,gain:0";
++        chc_datarate =    <&channel_c>,"ti,datarate:0";
++        chd_enable =      <0>,"=4";
++        chd_cfg =         <&channel_d>,"reg:0";
++        chd_gain =        <&channel_d>,"ti,gain:0";
++        chd_datarate =    <&channel_d>,"ti,datarate:0";
 +   };
 +};
 -- 

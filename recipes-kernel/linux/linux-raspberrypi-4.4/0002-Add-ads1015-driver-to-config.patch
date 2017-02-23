@@ -1,4 +1,4 @@
-From 446b4c33dc789d2c612001824ca51d31d58b8a34 Mon Sep 17 00:00:00 2001
+From 10ce8438530457a8fdfff21f031e9cdb1ee6b703 Mon Sep 17 00:00:00 2001
 From: Scott Ellis <scott@jumpnowtek.com>
 Date: Thu, 29 Sep 2016 15:16:32 -0400
 Subject: [PATCH 2/3] Add ads1015 driver to config
