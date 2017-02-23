@@ -13,11 +13,11 @@ This layer depends on:
     URI: https://github.com/meta-qt5/meta-qt5.git
     branch: morty
     revision: HEAD
-    commit: 4020adf
+    commit: 3601fd2
 
     URI: git://git.yoctoproject.org/meta-raspberrypi 
     branch: morty
     revision: HEAD
-    commit: 7398030
+    commit: cce6292
 
     meta-rpi layer maintainer: Scott Ellis <scott@jumpnowtek.com>
