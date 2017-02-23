@@ -1,0 +1,66 @@
+/*
+This is the 2-channel overlay - only use it if you need both channels.
+
+Legal pin,function combinations for each channel:
+  PWM0: 12,4(Alt0) 18,2(Alt5) 40,4(Alt0)            52,5(Alt1)
+  PWM1: 13,4(Alt0) 19,2(Alt5) 41,4(Alt0) 45,4(Alt0) 53,5(Alt1)
+
+N.B.:
+  1) Pin 18 is the only one available on all platforms, and
+     it is the one used by the I2S audio interface.
+     Pins 12 and 13 might be better choices on an A+, B+ or Pi2.
+  2) The onboard analogue audio output uses both PWM channels.
+  3) So be careful mixing audio and PWM.
+*/
+
+/dts-v1/;
+/plugin/;
+
+/ {
+	compatible = "brcm,bcm2835", "brcm,bcm2708";
+
+	fragment@0 {
+		target = <&gpio>;
+		__overlay__ {
+			pwm_pins: pwm_pins {
+				brcm,pins = <18 19>;
+				brcm,function = <2 2>; /* Alt5 */
+			};
+		};
+	};
+
+	fragment@1 {
+		target = <&clk_pwm>;
+		__overlay__ {
+			// Rename the fixed "pwm" clock to avoid a clash
+			clock-output-names = "fake_pwm";
+		};
+	};
+
+	fragment@2 {
+		target = <&pwm>;
+		__overlay__ {
+			#clock-cells = <1>;
+			clocks = <&cprman 30>; /* 30 is the BCM2835_CLOCK_PWM */
+			assigned-clocks = <&cprman 30>;
+			assigned-clock-rates = <10000000>;
+			pinctrl-names = "default";
+			pinctrl-0 = <&pwm_pins>;
+			status = "okay";
+		};
+	};
+
+	fragment@3 {
+		target = <&cprman>;
+		__overlay__ {
+			status = "okay";
+		};
+	};
+
+	__overrides__ {
+		pin   = <&pwm_pins>,"brcm,pins:0";
+		pin2  = <&pwm_pins>,"brcm,pins:4";
+		func  = <&pwm_pins>,"brcm,function:0";
+		func2 = <&pwm_pins>,"brcm,function:4";
+	};
+};
