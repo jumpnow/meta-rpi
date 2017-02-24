@@ -1,4 +1,2 @@
-enable_uart=1
 dtparams=audio=off
-dtoverlay=i2s-mmap
 dtoverlay=hifiberry-amp

@@ -1,4 +1,3 @@
 dtparams=audio=off
 dtparam=i2c_arm=on
 dtoverlay=iqaudio-dacplus
-dtoverlay=i2s-mmap
