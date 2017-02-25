@@ -1,18 +1,17 @@
-LINUX_VERSION = "4.9.11"
+LINUX_VERSION = "4.9.12"
 
-SRCREV = "204050d0eafb565b68abf512710036c10ef1bd23"
+SRCREV = "c1271995832a090a94eb3b1c1678cb51b84ef1ca"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.9:"
 
 SRC_URI = " \
     git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.9.y \
     file://0001-dts-Add-pwm-overlays-with-clock-enabled.patch \
-    file://0002-Add-ads1015-driver-to-config.patch \
-    file://0003-Add-overlay-for-ads1115.patch \
+    file://0002-Add-overlay-for-ads1115.patch \
     file://defconfig \
 "
 
-PR = "r1"
+PR = "r2"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
