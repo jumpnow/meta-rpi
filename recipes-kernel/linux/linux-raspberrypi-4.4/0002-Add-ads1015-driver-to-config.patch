@@ -1,4 +1,4 @@
-From 8d6f0dec522b9fd301e5eff530ed0e48e331c783 Mon Sep 17 00:00:00 2001
+From 10ce8438530457a8fdfff21f031e9cdb1ee6b703 Mon Sep 17 00:00:00 2001
 From: Scott Ellis <scott@jumpnowtek.com>
 Date: Thu, 29 Sep 2016 15:16:32 -0400
 Subject: [PATCH 2/3] Add ads1015 driver to config
@@ -9,10 +9,10 @@ Subject: [PATCH 2/3] Add ads1015 driver to config
  2 files changed, 2 insertions(+)
 
 diff --git a/arch/arm/configs/bcm2709_defconfig b/arch/arm/configs/bcm2709_defconfig
-index 1059e37..3b3d66c 100644
+index 783d2c2..884badf 100644
 --- a/arch/arm/configs/bcm2709_defconfig
 +++ b/arch/arm/configs/bcm2709_defconfig
-@@ -646,6 +646,7 @@ CONFIG_BATTERY_DS2760=m
+@@ -650,6 +650,7 @@ CONFIG_BATTERY_DS2760=m
  CONFIG_POWER_RESET=y
  CONFIG_POWER_RESET_GPIO=y
  CONFIG_HWMON=m
@@ -21,10 +21,10 @@ index 1059e37..3b3d66c 100644
  CONFIG_SENSORS_SHT21=m
  CONFIG_SENSORS_SHTC1=m
 diff --git a/arch/arm/configs/bcmrpi_defconfig b/arch/arm/configs/bcmrpi_defconfig
-index db61bb8..9575a4a 100644
+index be7bf41..542736d 100644
 --- a/arch/arm/configs/bcmrpi_defconfig
 +++ b/arch/arm/configs/bcmrpi_defconfig
-@@ -638,6 +638,7 @@ CONFIG_BATTERY_DS2760=m
+@@ -642,6 +642,7 @@ CONFIG_BATTERY_DS2760=m
  CONFIG_POWER_RESET=y
  CONFIG_POWER_RESET_GPIO=y
  CONFIG_HWMON=m

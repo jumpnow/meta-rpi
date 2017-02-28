@@ -1,6 +1,6 @@
-LINUX_VERSION = "4.4.32"
+LINUX_VERSION = "4.4.50"
 
-SRCREV = "abe33682e797932abcdc0fd1421f30cddc1f101a"
+SRCREV = "e223d71ef728c559aa865d0c5a4cedbdf8789cfd"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.4:"
 
@@ -8,10 +8,11 @@ SRC_URI = " \
     git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.4.y \
     file://0001-dts-Add-pwm-overlays-with-clock-enabled.patch \
     file://0002-Add-ads1015-driver-to-config.patch \
+    file://0003-Add-ads1115-overlay.patch \
     file://defconfig \
 "
 
-PR = "r34"
+PR = "r54"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
@@ -23,6 +24,7 @@ KERNEL_DEVICETREE = " \
     \
     overlays/adau1977-adc-overlay.dtb \
     overlays/ads1015-overlay.dtb \
+    overlays/ads1115-overlay.dtb \
     overlays/ads7846-overlay.dtb \
     overlays/akkordion-iqdacplus-overlay.dtb \
     overlays/allo-piano-dac-pcm512x-audio-overlay.dtb \
@@ -37,6 +39,7 @@ KERNEL_DEVICETREE = " \
     overlays/dwc2-overlay.dtb \
     overlays/dwc-otg-overlay.dtb \
     overlays/enc28j60-overlay.dtb \
+    overlays/enc28j60-spi2-overlay.dtb \
     overlays/gpio-ir-overlay.dtb \
     overlays/gpio-poweroff-overlay.dtb \
     overlays/hifiberry-amp-overlay.dtb \
@@ -52,6 +55,7 @@ KERNEL_DEVICETREE = " \
     overlays/i2c-mux-overlay.dtb \
     overlays/i2c-pwm-pca9685a-overlay.dtb \
     overlays/i2c-rtc-overlay.dtb \
+    overlays/i2c-sensor-overlay.dtb \
     overlays/i2s-gpio28-31-overlay.dtb \
     overlays/i2s-mmap-overlay.dtb \
     overlays/iqaudio-dac-overlay.dtb \
@@ -64,10 +68,12 @@ KERNEL_DEVICETREE = " \
     overlays/mcp23s17-overlay.dtb \
     overlays/mcp2515-can0-overlay.dtb \
     overlays/mcp2515-can1-overlay.dtb \
+    overlays/mcp3008-overlay.dtb \
     overlays/mmc-overlay.dtb \
     overlays/mz61581-overlay.dtb \
     overlays/pi3-act-led-overlay.dtb \
     overlays/pi3-disable-bt-overlay.dtb \
+    overlays/pi3-disable-wifi-overlay.dtb \
     overlays/pi3-miniuart-bt-overlay.dtb \
     overlays/piscreen2r-overlay.dtb \
     overlays/piscreen-overlay.dtb \
@@ -99,6 +105,7 @@ KERNEL_DEVICETREE = " \
     overlays/smi-dev-overlay.dtb \
     overlays/smi-nand-overlay.dtb \
     overlays/smi-overlay.dtb \
+    overlays/spi0-cs-overlay.dtb \
     overlays/spi0-hw-cs-overlay.dtb \
     overlays/spi1-1cs-overlay.dtb \
     overlays/spi1-2cs-overlay.dtb \
