@@ -1,17 +1,16 @@
 LINUX_VERSION = "4.9.13"
 
-SRCREV = "883de20e54e16f89a878c9957fd265e352ebf5c3"
+SRCREV = "173791eb5db0ed7f5d5a406ba0b09ad8a8118e3e"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.9:"
 
 SRC_URI = " \
     git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.9.y \
     file://0001-dts-Add-pwm-overlays-with-clock-enabled.patch \
-    file://0002-Add-overlay-for-ads1115-ADCs.patch \
     file://defconfig \
 "
 
-PR = "r3"
+PR = "r4"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-b.dtb \
@@ -34,12 +33,14 @@ KERNEL_DEVICETREE = " \
     overlays/bmp085_i2c-sensor-overlay.dtb \
     overlays/dht11-overlay.dtb \
     overlays/dionaudio-loco-overlay.dtb \
+    overlays/dionaudio-loco-v2-overlay.dtb \
     overlays/dpi18-overlay.dtb \
     overlays/dpi24-overlay.dtb \
     overlays/dwc2-overlay.dtb \
     overlays/dwc-otg-overlay.dtb \
     overlays/enc28j60-overlay.dtb \
     overlays/enc28j60-spi2-overlay.dtb \
+    overlays/fe-pi-audio-overlay.dtb \
     overlays/gpio-ir-overlay.dtb \
     overlays/gpio-poweroff-overlay.dtb \
     overlays/hifiberry-amp-overlay.dtb \
