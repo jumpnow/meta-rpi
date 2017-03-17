@@ -3,12 +3,12 @@ This layer depends on:
     URI: git://git.yoctoproject.org/poky.git
     branch: morty
     revision: HEAD
-    commit: 6a1f33c
+    commit: 6c08cf2
 
     URI: git://git.openembedded.org/meta-openembedded
     branch: morty
     revision: HEAD
-    commit: 1efa5d6
+    commit: fe5c833
 
     URI: https://github.com/meta-qt5/meta-qt5.git
     branch: morty
