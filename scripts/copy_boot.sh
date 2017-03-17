@@ -24,7 +24,8 @@ BOOTLDRFILES="bootcode.bin \
               start_x.elf"
 
 if [ "${MACHINE}" == "raspberrypi" ]; then
-	DTBS="bcm2708-rpi-b.dtb \
+	DTBS="bcm2708-rpi-0-w.dtb \
+              bcm2708-rpi-b.dtb \
 	      bcm2708-rpi-b-plus.dtb \
 	      bcm2708-rpi-cm.dtb"
 else
