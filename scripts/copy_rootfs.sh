@@ -79,7 +79,7 @@ echo "Mounting ${DEV}"
 sudo mount ${DEV} /media/card
 
 echo "Extracting ${IMAGE}-image-${MACHINE}.tar.xz to /media/card"
-sudo tar -C /media/card -xJf ${SRCDIR}/${IMAGE}-image-${MACHINE}.tar.xz
+sudo tar --numeric-owner -C /media/card -xJf ${SRCDIR}/${IMAGE}-image-${MACHINE}.tar.xz
 
 echo "Writing ${TARGET_HOSTNAME} to /etc/hostname"
 export TARGET_HOSTNAME
