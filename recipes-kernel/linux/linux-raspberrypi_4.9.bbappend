@@ -1,6 +1,6 @@
-LINUX_VERSION = "4.9.17"
+LINUX_VERSION = "4.9.19"
 
-SRCREV = "cd6413a82a66de6ecce828ce67df4f6e3290ea86"
+SRCREV = "8ecb17cc7792dac77eadcc4f306daa0a8f03d28d"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.9:"
 
@@ -10,7 +10,7 @@ SRC_URI = " \
     file://defconfig \
 "
 
-PR = "r10"
+PR = "r11"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-0-w.dtb \
@@ -27,7 +27,9 @@ KERNEL_DEVICETREE = " \
     overlays/ads1115-overlay.dtb \
     overlays/ads7846-overlay.dtb \
     overlays/akkordion-iqdacplus-overlay.dtb \
+    overlays/allo-boss-dac-pcm512x-audio-overlay.dtb \
     overlays/allo-piano-dac-pcm512x-audio-overlay.dtb \
+    overlays/allo-piano-dac-plus-pcm512x-audio-overlay.dtb \
     overlays/at86rf233-overlay.dtb \
     overlays/audioinjector-addons-overlay.dtb \
     overlays/audioinjector-wm8731-audio-overlay.dtb \
@@ -43,6 +45,7 @@ KERNEL_DEVICETREE = " \
     overlays/enc28j60-overlay.dtb \
     overlays/enc28j60-spi2-overlay.dtb \
     overlays/fe-pi-audio-overlay.dtb \
+    overlays/googlevoicehat-soundcard-overlay.dtb \
     overlays/gpio-ir-overlay.dtb \
     overlays/gpio-poweroff-overlay.dtb \
     overlays/hifiberry-amp-overlay.dtb \
