@@ -7,6 +7,4 @@ iface eth0 inet dhcp
 #auto wlan0
 iface wlan0 inet dhcp
         wireless_mode managed
-        wireless_essid any
-        wpa-driver wext
         wpa-conf /etc/wpa_supplicant.conf
