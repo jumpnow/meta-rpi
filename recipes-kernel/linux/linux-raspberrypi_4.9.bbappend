@@ -6,11 +6,10 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.9:"
 
 SRC_URI = " \
     git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.9.y \
-    file://0001-dts-Add-pwm-overlays-with-clock-enabled.patch \
     file://defconfig \
 "
 
-PR = "r12"
+PR = "r13"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-0-w.dtb \
@@ -91,9 +90,7 @@ KERNEL_DEVICETREE = " \
     overlays/pitft35-resistive-overlay.dtb \
     overlays/pps-gpio-overlay.dtb \
     overlays/pwm-2chan-overlay.dtb \
-    overlays/pwm-2chan-with-clk-overlay.dtb \
     overlays/pwm-overlay.dtb \
-    overlays/pwm-with-clk-overlay.dtb \
     overlays/qca7000-overlay.dtb \
     overlays/raspidac3-overlay.dtb \
     overlays/rpi-backlight-overlay.dtb \
