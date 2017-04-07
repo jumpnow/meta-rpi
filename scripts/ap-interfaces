@@ -1,0 +1,14 @@
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet dhcp
+
+auto wlan0
+iface wlan0 inet static
+        address 192.168.50.1
+        netmask 255.255.255.0
+        network 192.168.50.0
+        broadcast 192.168.50.255
+
+#up iptables-restore < /etc/nat.rules
