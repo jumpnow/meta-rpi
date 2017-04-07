@@ -88,11 +88,17 @@ sudo -E bash -c 'echo ${TARGET_HOSTNAME} > /media/card/etc/hostname'
 if [ -f ${SRCDIR}/interfaces ]; then
 	echo "Writing interfaces to /media/card/etc/network/"
 	sudo cp ${SRCDIR}/interfaces /media/card/etc/network/interfaces
+elif [ -f ./interfaces ]; then
+	echo "Writing ./interfaces to /media/card/etc/network/"
+	sudo cp ./interfaces /media/card/etc/network/interfaces
 fi
 
 if [ -f ${SRCDIR}/wpa_supplicant.conf ]; then
 	echo "Writing wpa_supplicant.conf to /media/card/etc/"
 	sudo cp ${SRCDIR}/wpa_supplicant.conf /media/card/etc/wpa_supplicant.conf
+elif [ -f ./wpa_supplicant.conf ]; then
+	echo "Writing ./wpa_supplicant.conf to /media/card/etc/"
+	sudo cp ./wpa_supplicant.conf /media/card/etc/wpa_supplicant.conf
 fi
 
 echo "Unmounting ${DEV}"
