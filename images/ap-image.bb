@@ -1,7 +1,7 @@
 SUMMARY = "An RPi access point"
 HOMEPAGE = "http://www.jumpnowtek.com"
 
-require console-image.bb
+require iot-image.bb
 
 AP_TOOLS = " \
     hostapd \
