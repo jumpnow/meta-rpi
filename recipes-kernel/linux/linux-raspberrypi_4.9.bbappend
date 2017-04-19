@@ -1,6 +1,6 @@
-LINUX_VERSION = "4.9.21"
+LINUX_VERSION = "4.9.23"
 
-SRCREV = "5e4ee836560d4c0371e109bf469e1ad808ae7a44"
+SRCREV = "53460a0a50f3dd5e60266e945d0ac794ce0eca77"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.9:"
 
@@ -9,7 +9,7 @@ SRC_URI = " \
     file://defconfig \
 "
 
-PR = "r15"
+PR = "r17"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-0-w.dtb \
@@ -100,6 +100,7 @@ KERNEL_DEVICETREE = " \
     overlays/rpi-ft5406-overlay.dtb \
     overlays/rpi-proto-overlay.dtb \
     overlays/rpi-sense-overlay.dtb \
+    overlays/rpi-tv-overlay.dtb \
     overlays/rra-digidac1-wm8741-audio-overlay.dtb \
     overlays/sc16is750-i2c-overlay.dtb \
     overlays/sc16is752-spi1-overlay.dtb \
