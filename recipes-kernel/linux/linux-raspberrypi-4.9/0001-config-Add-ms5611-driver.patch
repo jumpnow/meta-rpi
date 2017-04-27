@@ -1,0 +1,39 @@
+From 59f502e573df3676a5c95811934221b6fad483b7 Mon Sep 17 00:00:00 2001
+From: Scott Ellis <scott@jumpnowtek.com>
+Date: Wed, 26 Apr 2017 08:11:06 -0400
+Subject: [PATCH 1/5] config: Add ms5611 driver
+
+---
+ arch/arm/configs/bcm2709_defconfig | 2 ++
+ arch/arm/configs/bcmrpi_defconfig  | 2 ++
+ 2 files changed, 4 insertions(+)
+
+diff --git a/arch/arm/configs/bcm2709_defconfig b/arch/arm/configs/bcm2709_defconfig
+index d5624bb..40b2213 100644
+--- a/arch/arm/configs/bcm2709_defconfig
++++ b/arch/arm/configs/bcm2709_defconfig
+@@ -1176,6 +1176,8 @@ CONFIG_MCP3422=m
+ CONFIG_DHT11=m
+ CONFIG_HTU21=m
+ CONFIG_BMP280=m
++CONFIG_MS5611=m
++CONFIG_MS5611_SPI=m
+ CONFIG_PWM_BCM2835=m
+ CONFIG_PWM_PCA9685=m
+ CONFIG_RASPBERRYPI_FIRMWARE=y
+diff --git a/arch/arm/configs/bcmrpi_defconfig b/arch/arm/configs/bcmrpi_defconfig
+index a338c31..c70502b 100644
+--- a/arch/arm/configs/bcmrpi_defconfig
++++ b/arch/arm/configs/bcmrpi_defconfig
+@@ -1184,6 +1184,8 @@ CONFIG_MCP3422=m
+ CONFIG_DHT11=m
+ CONFIG_HTU21=m
+ CONFIG_BMP280=m
++CONFIG_MS5611=m
++CONFIG_MS5611_SPI=m
+ CONFIG_PWM_BCM2835=m
+ CONFIG_PWM_PCA9685=m
+ CONFIG_RASPBERRYPI_FIRMWARE=y
+-- 
+2.7.4
+

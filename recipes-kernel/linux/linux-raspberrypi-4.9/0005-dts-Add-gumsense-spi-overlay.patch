@@ -1,0 +1,147 @@
+From 24a9468927975172e9485a0ba497e2993dfe98ae Mon Sep 17 00:00:00 2001
+From: Scott Ellis <scott@jumpnowtek.com>
+Date: Thu, 27 Apr 2017 12:11:19 -0400
+Subject: [PATCH 5/5] dts: Add gumsense spi overlay
+
+---
+ arch/arm/boot/dts/overlays/Makefile                |   1 +
+ .../arm/boot/dts/overlays/gumsense-spi-overlay.dts | 115 +++++++++++++++++++++
+ 2 files changed, 116 insertions(+)
+ create mode 100755 arch/arm/boot/dts/overlays/gumsense-spi-overlay.dts
+
+diff --git a/arch/arm/boot/dts/overlays/Makefile b/arch/arm/boot/dts/overlays/Makefile
+index e2f66a5..3bd03e0 100644
+--- a/arch/arm/boot/dts/overlays/Makefile
++++ b/arch/arm/boot/dts/overlays/Makefile
+@@ -28,6 +28,7 @@ dtbo-$(CONFIG_ARCH_BCM2835) += \
+ 	googlevoicehat-soundcard.dtbo \
+ 	gpio-ir.dtbo \
+ 	gpio-poweroff.dtbo \
++	gumsense-spi.dtbo \
+ 	hifiberry-amp.dtbo \
+ 	hifiberry-dac.dtbo \
+ 	hifiberry-dacplus.dtbo \
+diff --git a/arch/arm/boot/dts/overlays/gumsense-spi-overlay.dts b/arch/arm/boot/dts/overlays/gumsense-spi-overlay.dts
+new file mode 100755
+index 0000000..ea9e1d7
+--- /dev/null
++++ b/arch/arm/boot/dts/overlays/gumsense-spi-overlay.dts
+@@ -0,0 +1,115 @@
++/*
++ * Overlay for the Gumstix Pi Sensor board SPI0 devices
++ *  CS0 - lsm303d accelerometer or magnetometer
++ *  CS1 - l3gd20h gyroscope
++ *  CS2 (GPIO_4) - ms5611 barometric pressure sensor
++ */
++
++/dts-v1/;
++/plugin/;
++
++/ {
++	compatible = "brcm,bcm2835", "brcm,bcm2708", "brcm,bcm2709";
++
++	fragment@0 {
++		target = <&spidev0>;
++		__dormant__ {
++			status = "disabled";
++		};
++	};
++
++	fragment@1 {
++		target = <&spidev1>;
++		__dormant__ {
++			status = "disabled";
++		};
++	};
++
++	fragment@2 {
++		target = <&gpio>;
++		__overlay__ {
++			spi0_cs_extra: spi0_cs_extra {
++				brcm,pins = <4>;
++				brcm,function = <1>;
++			};
++		};
++	};
++
++	fragment@3 {
++		target = <&spi0>;
++		__overlay__ {
++			status = "okay";
++			#address-cells = <1>;
++			#size-cells = <0>;
++			pinctrl-0 = <&spi0_pins &spi0_cs_pins &spi0_cs_extra>;
++			cs-gpios = <&gpio 8 1>, <&gpio 7 1>, <&gpio 4 1>;
++		};
++	};
++
++	fragment@4 {
++		target = <&spi0>;
++		__dormant__ {
++			status = "okay";
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			accel: lsm303d@0 {
++				compatible = "st,lsm303dlhc_accel";
++				reg = <0>;
++				spi-max-frequency = <4000000>;
++			};
++		};
++	};
++
++	fragment@5 {
++		target = <&spi0>;
++		__dormant__ {
++			status = "okay";
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			mag: lsm303d@0 {
++				compatible = "st,lsm303dlhc_magn";
++				reg = <0>;
++				spi-max-frequency = <4000000>;
++			};
++		};
++	};
++
++	fragment@6 {
++		target = <&spi0>;
++		__dormant__ {
++			status = "okay";
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			gyro: l3gd20h@1 {
++				compatible = "st,l3gd20h";
++				reg = <1>;
++				spi-max-frequency = <4000000>;
++			};
++		};
++	};
++
++	fragment@7 {
++		target = <&spi0>;
++		__dormant__ {
++			status = "okay";
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			pressure: ms5611@2 {
++				compatible = "ms5611";
++				reg = <2>;
++				spi-max-frequency = <8000000>;
++			};
++		};
++	};
++
++	__overrides__ {
++		accel = <0>, "+0+4";
++		mag = <0>, "+0+5";
++		gyro = <0>, "+1+6";
++		pressure = <0>, "+7";
++	};
++};
+-- 
+2.7.4
+

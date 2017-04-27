@@ -1,0 +1,39 @@
+From 5d100c57573b0dd5e63ae0964e99d8f4b5aa2964 Mon Sep 17 00:00:00 2001
+From: Scott Ellis <scott@jumpnowtek.com>
+Date: Wed, 26 Apr 2017 17:39:17 -0400
+Subject: [PATCH 3/5] iio: st: Fix whoami values for accel mag sensor
+
+---
+ drivers/iio/accel/st_accel_core.c       | 2 +-
+ drivers/iio/magnetometer/st_magn_core.c | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/iio/accel/st_accel_core.c b/drivers/iio/accel/st_accel_core.c
+index 3a557e3..d673478 100644
+--- a/drivers/iio/accel/st_accel_core.c
++++ b/drivers/iio/accel/st_accel_core.c
+@@ -44,7 +44,7 @@
+ #define ST_ACCEL_FS_AVL_400G			400
+ 
+ /* CUSTOM VALUES FOR SENSOR 1 */
+-#define ST_ACCEL_1_WAI_EXP			0x33
++#define ST_ACCEL_1_WAI_EXP			0x49
+ #define ST_ACCEL_1_ODR_ADDR			0x20
+ #define ST_ACCEL_1_ODR_MASK			0xf0
+ #define ST_ACCEL_1_ODR_AVL_1HZ_VAL		0x01
+diff --git a/drivers/iio/magnetometer/st_magn_core.c b/drivers/iio/magnetometer/st_magn_core.c
+index 3e1f06b..de68c9d 100644
+--- a/drivers/iio/magnetometer/st_magn_core.c
++++ b/drivers/iio/magnetometer/st_magn_core.c
+@@ -87,7 +87,7 @@
+ #define ST_MAGN_0_MULTIREAD_BIT			false
+ 
+ /* CUSTOM VALUES FOR SENSOR 1 */
+-#define ST_MAGN_1_WAI_EXP			0x3c
++#define ST_MAGN_1_WAI_EXP			0x49
+ #define ST_MAGN_1_ODR_ADDR			0x00
+ #define ST_MAGN_1_ODR_MASK			0x1c
+ #define ST_MAGN_1_ODR_AVL_1HZ_VAL		0x00
+-- 
+2.7.4
+

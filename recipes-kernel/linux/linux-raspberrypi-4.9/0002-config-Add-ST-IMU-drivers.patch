@@ -1,0 +1,65 @@
+From 4aa00b0347d3600592928666ff9a7bcc88cc4df9 Mon Sep 17 00:00:00 2001
+From: Scott Ellis <scott@jumpnowtek.com>
+Date: Wed, 26 Apr 2017 14:11:32 -0400
+Subject: [PATCH 2/5] config: Add ST IMU drivers
+
+---
+ arch/arm/configs/bcm2709_defconfig | 13 +++++++++++++
+ arch/arm/configs/bcmrpi_defconfig  | 13 +++++++++++++
+ 2 files changed, 26 insertions(+)
+
+diff --git a/arch/arm/configs/bcm2709_defconfig b/arch/arm/configs/bcm2709_defconfig
+index 40b2213..c811151 100644
+--- a/arch/arm/configs/bcm2709_defconfig
++++ b/arch/arm/configs/bcm2709_defconfig
+@@ -1171,8 +1171,21 @@ CONFIG_IIO=m
+ CONFIG_IIO_BUFFER=y
+ CONFIG_IIO_BUFFER_CB=m
+ CONFIG_IIO_KFIFO_BUF=m
++CONFIG_IIO_ST_ACCEL_3AXIS=m
++CONFIG_IIO_ST_ACCEL_I2C_3AXIS=m
++CONFIG_IIO_ST_ACCEL_SPI_3AXIS=m
+ CONFIG_MCP320X=m
+ CONFIG_MCP3422=m
++CONFIG_IIO_MS_SENSORS_I2C=m
++CONFIG_IIO_ST_SENSORS_I2C=m
++CONFIG_IIO_ST_SENSORS_SPI=m
++CONFIG_IIO_ST_SENSORS_CORE=m
++CONFIG_IIO_ST_GYRO_3AXIS=m
++CONFIG_IIO_ST_GYRO_I2C_3AXIS=m
++CONFIG_IIO_ST_GYRO_SPI_3AXIS=m
++CONFIG_IIO_ST_MAGN_3AXIS=m
++CONFIG_IIO_ST_MAGN_I2C_3AXIS=m
++CONFIG_IIO_ST_MAGN_SPI_3AXIS=m
+ CONFIG_DHT11=m
+ CONFIG_HTU21=m
+ CONFIG_BMP280=m
+diff --git a/arch/arm/configs/bcmrpi_defconfig b/arch/arm/configs/bcmrpi_defconfig
+index c70502b..f95134f 100644
+--- a/arch/arm/configs/bcmrpi_defconfig
++++ b/arch/arm/configs/bcmrpi_defconfig
+@@ -1179,8 +1179,21 @@ CONFIG_IIO=m
+ CONFIG_IIO_BUFFER=y
+ CONFIG_IIO_BUFFER_CB=m
+ CONFIG_IIO_KFIFO_BUF=m
++CONFIG_IIO_ST_ACCEL_3AXIS=m
++CONFIG_IIO_ST_ACCEL_I2C_3AXIS=m
++CONFIG_IIO_ST_ACCEL_SPI_3AXIS=m
+ CONFIG_MCP320X=m
+ CONFIG_MCP3422=m
++CONFIG_IIO_MS_SENSORS_I2C=m
++CONFIG_IIO_ST_SENSORS_I2C=m
++CONFIG_IIO_ST_SENSORS_SPI=m
++CONFIG_IIO_ST_SENSORS_CORE=m
++CONFIG_IIO_ST_GYRO_3AXIS=m
++CONFIG_IIO_ST_GYRO_I2C_3AXIS=m
++CONFIG_IIO_ST_GYRO_SPI_3AXIS=m
++CONFIG_IIO_ST_MAGN_3AXIS=m
++CONFIG_IIO_ST_MAGN_I2C_3AXIS=m
++CONFIG_IIO_ST_MAGN_SPI_3AXIS=m
+ CONFIG_DHT11=m
+ CONFIG_HTU21=m
+ CONFIG_BMP280=m
+-- 
+2.7.4
+

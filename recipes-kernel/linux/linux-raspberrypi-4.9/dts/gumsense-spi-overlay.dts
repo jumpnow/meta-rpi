@@ -1,0 +1,115 @@
+/*
+ * Overlay for the Gumstix Pi Sensor board SPI0 devices
+ *  CS0 - lsm303d accelerometer or magnetometer
+ *  CS1 - l3gd20h gyroscope
+ *  CS2 (GPIO_4) - ms5611 barometric pressure sensor
+ */
+
+/dts-v1/;
+/plugin/;
+
+/ {
+	compatible = "brcm,bcm2835", "brcm,bcm2708", "brcm,bcm2709";
+
+	fragment@0 {
+		target = <&spidev0>;
+		__dormant__ {
+			status = "disabled";
+		};
+	};
+
+	fragment@1 {
+		target = <&spidev1>;
+		__dormant__ {
+			status = "disabled";
+		};
+	};
+
+	fragment@2 {
+		target = <&gpio>;
+		__overlay__ {
+			spi0_cs_extra: spi0_cs_extra {
+				brcm,pins = <4>;
+				brcm,function = <1>;
+			};
+		};
+	};
+
+	fragment@3 {
+		target = <&spi0>;
+		__overlay__ {
+			status = "okay";
+			#address-cells = <1>;
+			#size-cells = <0>;
+			pinctrl-0 = <&spi0_pins &spi0_cs_pins &spi0_cs_extra>;
+			cs-gpios = <&gpio 8 1>, <&gpio 7 1>, <&gpio 4 1>;
+		};
+	};
+
+	fragment@4 {
+		target = <&spi0>;
+		__dormant__ {
+			status = "okay";
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			accel: lsm303d@0 {
+				compatible = "st,lsm303dlhc_accel";
+				reg = <0>;
+				spi-max-frequency = <4000000>;
+			};
+		};
+	};
+
+	fragment@5 {
+		target = <&spi0>;
+		__dormant__ {
+			status = "okay";
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			mag: lsm303d@0 {
+				compatible = "st,lsm303dlhc_magn";
+				reg = <0>;
+				spi-max-frequency = <4000000>;
+			};
+		};
+	};
+
+	fragment@6 {
+		target = <&spi0>;
+		__dormant__ {
+			status = "okay";
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			gyro: l3gd20h@1 {
+				compatible = "st,l3gd20h";
+				reg = <1>;
+				spi-max-frequency = <4000000>;
+			};
+		};
+	};
+
+	fragment@7 {
+		target = <&spi0>;
+		__dormant__ {
+			status = "okay";
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			pressure: ms5611@2 {
+				compatible = "ms5611";
+				reg = <2>;
+				spi-max-frequency = <8000000>;
+			};
+		};
+	};
+
+	__overrides__ {
+		accel = <0>, "+0+4";
+		mag = <0>, "+0+5";
+		gyro = <0>, "+1+6";
+		pressure = <0>, "+7";
+	};
+};

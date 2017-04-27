@@ -1,15 +1,20 @@
 LINUX_VERSION = "4.9.24"
 
-SRCREV = "7c5acf4118fa34454a9021b4372f88a03b69b179"
+SRCREV = "ef3b440e0e4d9ca70060483aa33d5b1201ceceb8"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.9:"
 
 SRC_URI = " \
     git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.9.y \
     file://defconfig \
+    file://0001-config-Add-ms5611-driver.patch \
+    file://0002-config-Add-ST-IMU-drivers.patch \
+    file://0003-iio-st-Fix-whoami-values-for-accel-mag-sensor.patch \
+    file://0004-iio-st_gyro-Add-l3gd20h-device-name.patch \
+    file://0005-dts-Add-gumsense-spi-overlay.patch \
 "
 
-PR = "r19"
+PR = "r20"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-0-w.dtb \
@@ -47,6 +52,7 @@ KERNEL_DEVICETREE = " \
     overlays/googlevoicehat-soundcard-overlay.dtb \
     overlays/gpio-ir-overlay.dtb \
     overlays/gpio-poweroff-overlay.dtb \
+    overlays/gumsense-spi-overlay.dtb \
     overlays/hifiberry-amp-overlay.dtb \
     overlays/hifiberry-dac-overlay.dtb \
     overlays/hifiberry-dacplus-overlay.dtb \

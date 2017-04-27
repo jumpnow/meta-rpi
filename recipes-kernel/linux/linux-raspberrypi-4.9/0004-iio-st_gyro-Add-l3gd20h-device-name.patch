@@ -1,0 +1,51 @@
+From c1a696c7cf00db114393ccf636f81a529b574e63 Mon Sep 17 00:00:00 2001
+From: Scott Ellis <scott@jumpnowtek.com>
+Date: Thu, 27 Apr 2017 06:57:24 -0400
+Subject: [PATCH 4/5] iio: st_gyro: Add l3gd20h device name
+
+---
+ drivers/iio/gyro/st_gyro.h      | 1 +
+ drivers/iio/gyro/st_gyro_core.c | 2 +-
+ drivers/iio/gyro/st_gyro_spi.c  | 1 +
+ 3 files changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/iio/gyro/st_gyro.h b/drivers/iio/gyro/st_gyro.h
+index a5c5c4e..2110b77 100644
+--- a/drivers/iio/gyro/st_gyro.h
++++ b/drivers/iio/gyro/st_gyro.h
+@@ -22,6 +22,7 @@
+ #define L3G4IS_GYRO_DEV_NAME		"l3g4is_ui"
+ #define LSM330_GYRO_DEV_NAME		"lsm330_gyro"
+ #define LSM9DS0_GYRO_DEV_NAME		"lsm9ds0_gyro"
++#define L3GD20H_GYRO_DEV_NAME		"l3gd20h"
+ 
+ /**
+  * struct st_sensors_platform_data - gyro platform data
+diff --git a/drivers/iio/gyro/st_gyro_core.c b/drivers/iio/gyro/st_gyro_core.c
+index aea034d..e504676 100644
+--- a/drivers/iio/gyro/st_gyro_core.c
++++ b/drivers/iio/gyro/st_gyro_core.c
+@@ -269,7 +269,7 @@ static const struct st_sensor_settings st_gyro_sensors_settings[] = {
+ 		.wai = ST_GYRO_3_WAI_EXP,
+ 		.wai_addr = ST_SENSORS_DEFAULT_WAI_ADDRESS,
+ 		.sensors_supported = {
+-			[0] = L3GD20_GYRO_DEV_NAME,
++			[0] = L3GD20H_GYRO_DEV_NAME,
+ 		},
+ 		.ch = (struct iio_chan_spec *)st_gyro_16bit_channels,
+ 		.odr = {
+diff --git a/drivers/iio/gyro/st_gyro_spi.c b/drivers/iio/gyro/st_gyro_spi.c
+index fbf2fae..b41bff5 100644
+--- a/drivers/iio/gyro/st_gyro_spi.c
++++ b/drivers/iio/gyro/st_gyro_spi.c
+@@ -55,6 +55,7 @@ static const struct spi_device_id st_gyro_id_table[] = {
+ 	{ L3G4IS_GYRO_DEV_NAME },
+ 	{ LSM330_GYRO_DEV_NAME },
+ 	{ LSM9DS0_GYRO_DEV_NAME },
++	{ L3GD20H_GYRO_DEV_NAME },
+ 	{},
+ };
+ MODULE_DEVICE_TABLE(spi, st_gyro_id_table);
+-- 
+2.7.4
+
