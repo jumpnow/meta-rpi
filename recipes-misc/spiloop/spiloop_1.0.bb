@@ -10,6 +10,8 @@ PR = "r2"
 
 S = "${WORKDIR}/git"
 
+TARGET_CC_ARCH += "${LDFLAGS}"
+
 do_install() {
     install -d ${D}${bindir}
     install -m 755 spiloop ${D}${bindir}
