@@ -1,10 +1,13 @@
-RPIFW_SRCREV = "284e48ac210ba175027c0da96c1ad7265ea98e52"
-RPIFW_DATE = "20170504"
-RPIFW_SRC_URI = "git://github.com/raspberrypi/firmware.git;protocol=git;branch=master"
-RPIFW_S = "${WORKDIR}/git"
+RPIFW_DATE = "20170509"
+SRCREV = "f3b0e1f044081f6df8fa74fd523317e2efa402c3"
+SRC_URI[md5sum] = "faa270585f06c92d9d7aba96e4faa415"
+SRC_URI[sha256sum] = "61c1bf7ce28da401090752d81129ed07230124f4b4c94f1cef258855d869b462"
 
-SRCREV = "${RPIFW_SRCREV}"
+RPIFW_SRC_URI = "https://codeload.github.com/raspberrypi/firmware/tar.gz/${SRCREV}"
+RPIFW_S = "${WORKDIR}/firmware-${SRCREV}"
 
-LIC_FILES_CHKSUM = "file://LICENCE.broadcom;md5=4a4d169737c0786fb9482bb6d30401d1"
+PR = "r56"
 
-PR = "r55"
+do_unpack() {
+    tar -C ${WORKDIR} -xzf ${DL_DIR}/${SRCREV}
+}
