@@ -1,5 +1,5 @@
 # Local configuration for meta-rpi images
-# Yocto Project 2.2 Poky distribution [morty] branch
+# Yocto Project 2.3 Poky distribution [pyro] branch
 # This is a sysvinit system
 
 LICENSE_FLAGS_WHITELIST = "commercial"
@@ -24,16 +24,14 @@ MACHINE = "raspberrypi2"
 
 #DL_DIR = "${HOME}/oe-sources"
 
-#SSTATE_DIR = "/oe6/rpi/sstate-cache"
+#SSTATE_DIR = "/oe8/rpi/sstate-cache"
 
-#TMPDIR = "/oe6/rpi/tmp-morty"
+#TMPDIR = "/oe8/rpi/tmp-pyro"
 
 DISTRO = "poky"
 
 PACKAGE_CLASSES = "package_ipk"
 
-DISABLE_OVERSCAN = "1"
-DISPMANX_OFFLINE = "1"
 ENABLE_UART = "1"
 ENABLE_RPI3_SERIAL_CONSOLE = "1"
 
