@@ -70,7 +70,7 @@ EXTRA_TOOLS_INSTALL = " \
     fbset \
     findutils \
     i2c-tools \
-    iperf \
+    iperf3 \
     iproute2 \
     less \
     memtester \
