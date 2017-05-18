@@ -17,8 +17,8 @@ CORE_OS = " \
 "
 
 ALSA += " \
-    alsa-dev \
-    alsa-lib \
+    libasound \
+    alsa-conf \
     alsa-utils \
     alsa-utils-scripts \
  "
