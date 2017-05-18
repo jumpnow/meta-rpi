@@ -6,9 +6,11 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=cfeb8ae0065c00f1bf4f5a963872e934"
 
 DEPENDS = "curl faad2 ffmpeg gnutls json-c libao libgcrypt"
 
-PR = "r5"
+PR = "r6"
 
-SRCREV = "ece960fb9f119ae294d6a9fa2b9e318b423a9983"
+inherit pkgconfig
+
+SRCREV = "700c807d87100b2b8011388fff2117c6d8a69570"
 SRC_URI = " \
     git://github.com/PromyLOPh/pianobar;protocol=git \
     file://config \
