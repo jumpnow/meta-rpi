@@ -2,7 +2,7 @@ SUMMARY = "A basic console dev image for doing some IOT work"
 HOMEPAGE = "http://www.jumpnowtek.com"
 LICENSE = "MIT"
 
-require console-image.bb
+require console-basic-image.bb
 
 MQTT = " \
     libmosquitto1 \
@@ -19,8 +19,6 @@ IMAGE_INSTALL += " \
 
 disable_unused_services() {
     rm ${IMAGE_ROOTFS}/etc/rc5.d/S15mountnfs.sh
-    rm ${IMAGE_ROOTFS}/etc/rc5.d/S15pi-blaster.boot.sh
-    rm ${IMAGE_ROOTFS}/etc/rc5.d/S20samba.sh
 }
 
 ROOTFS_POSTPROCESS_COMMAND += " \
