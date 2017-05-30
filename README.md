@@ -3,7 +3,7 @@ This layer depends on:
     URI: git://git.yoctoproject.org/poky.git
     branch: pyro
     revision: HEAD
-    commit: e5aa1ac
+    commit: 31389f8
 
     URI: git://git.openembedded.org/meta-openembedded
     branch: pyro
@@ -16,8 +16,8 @@ This layer depends on:
     commit: 6606c48
 
     URI: git://git.yoctoproject.org/meta-raspberrypi 
-    branch: master
+    branch: pyro
     revision: HEAD
-    commit: 4f2dd0f
+    commit: f6764c8
 
     meta-rpi layer maintainer: Scott Ellis <scott@jumpnowtek.com>
