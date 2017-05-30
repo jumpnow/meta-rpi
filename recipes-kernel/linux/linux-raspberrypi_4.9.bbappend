@@ -1,6 +1,6 @@
-LINUX_VERSION = "4.9.29"
+LINUX_VERSION = "4.9.30"
 
-SRCREV = "aececb287e90fb7bd17872f67db4b55c09f36135"
+SRCREV = "31e73f03aa61482b89067ea3ea14670acd319e2e"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.9:"
 
@@ -9,7 +9,7 @@ SRC_URI = " \
     file://defconfig \
 "
 
-PR = "r29"
+PR = "r30"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-0-w.dtb \
@@ -44,6 +44,7 @@ KERNEL_DEVICETREE = " \
     overlays/enc28j60-overlay.dtb \
     overlays/enc28j60-spi2-overlay.dtb \
     overlays/fe-pi-audio-overlay.dtb \
+    overlays/goodix-overlay.dtb \
     overlays/googlevoicehat-soundcard-overlay.dtb \
     overlays/gpio-ir-overlay.dtb \
     overlays/gpio-poweroff-overlay.dtb \
@@ -76,6 +77,7 @@ KERNEL_DEVICETREE = " \
     overlays/mcp3008-overlay.dtb \
     overlays/midi-uart0-overlay.dtb \
     overlays/mmc-overlay.dtb \
+    overlays/mpu6050-overlay.dtb \
     overlays/mz61581-overlay.dtb \
     overlays/pi3-act-led-overlay.dtb \
     overlays/pi3-disable-bt-overlay.dtb \
@@ -93,6 +95,7 @@ KERNEL_DEVICETREE = " \
     overlays/pwm-overlay.dtb \
     overlays/qca7000-overlay.dtb \
     overlays/raspidac3-overlay.dtb \
+    overlays/rotary-encoder-overlay.dtb \
     overlays/rpi-backlight-overlay.dtb \
     overlays/rpi-cirrus-wm5102-overlay.dtb \
     overlays/rpi-dac-overlay.dtb \
