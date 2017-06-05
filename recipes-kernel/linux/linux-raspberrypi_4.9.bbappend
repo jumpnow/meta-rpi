@@ -1,6 +1,6 @@
 LINUX_VERSION = "4.9.30"
 
-SRCREV = "31e73f03aa61482b89067ea3ea14670acd319e2e"
+SRCREV = "cc47711971d0f26a94aead1bcb30b1a9d71ad880"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.9:"
 
@@ -9,7 +9,7 @@ SRC_URI = " \
     file://defconfig \
 "
 
-PR = "r30"
+PR = "r31"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-0-w.dtb \
@@ -27,6 +27,7 @@ KERNEL_DEVICETREE = " \
     overlays/ads7846-overlay.dtb \
     overlays/akkordion-iqdacplus-overlay.dtb \
     overlays/allo-boss-dac-pcm512x-audio-overlay.dtb \
+    overlays/allo-digione-overlay.dtb \
     overlays/allo-piano-dac-pcm512x-audio-overlay.dtb \
     overlays/allo-piano-dac-plus-pcm512x-audio-overlay.dtb \
     overlays/at86rf233-overlay.dtb \
