@@ -18,6 +18,14 @@ CORE_OS = " \
 
 ALSA += " \
     libasound \
+    libavcodec \
+    libavdevice \
+    libavfilter \
+    libavformat \
+    libavutil \
+    libpostproc \
+    libswresample \
+    libswscale \
     alsa-conf \
     alsa-utils \
     alsa-utils-scripts \
