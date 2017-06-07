@@ -117,7 +117,11 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "Copying overlay dtbos"
-sudo cp ${SRCDIR}/Image-*.dtbo /media/card/overlays/
+for f in ${SRCDIR}/Image-*.dtbo; do
+	if [ -L $f ]; then
+		sudo cp $f /media/card/overlays
+	fi
+done
 
 if [ $? -ne 0 ]; then
 	echo "Error copying overlays"
