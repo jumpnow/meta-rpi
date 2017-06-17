@@ -24,9 +24,9 @@ MACHINE = "raspberrypi2"
 
 #DL_DIR = "${HOME}/oe-sources"
 
-#SSTATE_DIR = "/oe8/rpi/sstate-cache"
+#SSTATE_DIR = "/oe4/rpi/sstate-cache"
 
-#TMPDIR = "/oe8/rpi/tmp-pyro"
+#TMPDIR = "/oe4/rpi/tmp-pyro"
 
 DISTRO = "poky"
 
@@ -38,12 +38,16 @@ ENABLE_RPI3_SERIAL_CONSOLE = "1"
 # i686 or x86_64
 SDKMACHINE = "x86_64"
 
-EXTRA_IMAGE_FEATURES = "debug-tweaks"
+#EXTRA_IMAGE_FEATURES = "debug-tweaks"
+INHERIT += "extrausers"
+EXTRA_USERS_PARAMS = "usermod -P changeme root; "
 
 USER_CLASSES = "image-mklibs image-prelink"
 
 PATCHRESOLVE = "noop"
 
 RM_OLD_IMAGE = "1"
+
+INHERIT += "rm_work"
 
 CONF_VERSION = "1"
