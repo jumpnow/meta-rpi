@@ -1,6 +1,6 @@
-LINUX_VERSION = "4.9.30"
+LINUX_VERSION = "4.9.32"
 
-SRCREV = "e54215a9bc4d7b75dc4a991f4bbfc4f42102fbc7"
+SRCREV = "3aafce2a8bf59f03056253f22c3d19709ff5b7a6"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.9:"
 
@@ -9,7 +9,7 @@ SRC_URI = " \
     file://defconfig \
 "
 
-PR = "r32"
+PR = "r34"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-0-w.dtb \
@@ -77,6 +77,7 @@ KERNEL_DEVICETREE = " \
     overlays/mcp2515-can1.dtbo \
     overlays/mcp3008.dtbo \
     overlays/midi-uart0.dtbo \
+    overlays/midi-uart1.dtbo \
     overlays/mmc.dtbo \
     overlays/mpu6050.dtbo \
     overlays/mz61581.dtbo \
