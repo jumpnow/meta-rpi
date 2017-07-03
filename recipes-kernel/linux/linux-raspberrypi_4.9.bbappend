@@ -1,6 +1,6 @@
-LINUX_VERSION = "4.9.34"
+LINUX_VERSION = "4.9.35"
 
-SRCREV = "3e22e20f80899847293ef835b083e36ecb866d2d"
+SRCREV = "be2540e540f5442d7b372208787fb64100af0c54"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.9:"
 
@@ -9,7 +9,7 @@ SRC_URI = " \
     file://defconfig \
 "
 
-PR = "r35"
+PR = "r36"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-0-w.dtb \
@@ -62,6 +62,7 @@ KERNEL_DEVICETREE = " \
     overlays/i2c-gpio.dtbo \
     overlays/i2c-mux.dtbo \
     overlays/i2c-pwm-pca9685a.dtbo \
+    overlays/i2c-rtc-gpio.dtbo \
     overlays/i2c-rtc.dtbo \
     overlays/i2c-sensor.dtbo \
     overlays/i2s-gpio28-31.dtbo \
