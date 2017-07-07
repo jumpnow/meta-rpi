@@ -12,6 +12,7 @@ CORE_OS = " \
     ntp \
     ntp-tickadj \
     openssh openssh-keygen openssh-sftp-server \
+    procps \
     term-prompt \
     tzdata \
 "
