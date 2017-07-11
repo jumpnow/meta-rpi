@@ -1,6 +1,6 @@
 LINUX_VERSION = "4.9.36"
 
-SRCREV = "3ecb1db76d0803121fd5a43fb1c814dfe1ed6965"
+SRCREV = "c0e97d579b9efca6e554dfdfcaf930c58b79c77f"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.9:"
 
@@ -9,7 +9,7 @@ SRC_URI = " \
     file://defconfig \
 "
 
-PR = "r37"
+PR = "r38"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-0-w.dtb \
@@ -49,6 +49,7 @@ KERNEL_DEVICETREE = " \
     overlays/googlevoicehat-soundcard.dtbo \
     overlays/gpio-ir.dtbo \
     overlays/gpio-poweroff.dtbo \
+    overlays/gpio-shutdown.dtbo \
     overlays/hifiberry-amp.dtbo \
     overlays/hifiberry-dac.dtbo \
     overlays/hifiberry-dacplus.dtbo \
