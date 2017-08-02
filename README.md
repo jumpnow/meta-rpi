@@ -3,7 +3,7 @@ This layer depends on:
     URI: git://git.yoctoproject.org/poky.git
     branch: pyro
     revision: HEAD
-    commit: 5686f4e
+    commit: 4a39979
 
     URI: git://git.openembedded.org/meta-openembedded
     branch: pyro
