@@ -17,6 +17,14 @@ CORE_OS = " \
     tzdata \
 "
 
+WIFI_SUPPORT = " \
+    crda \
+    iw \
+    linux-firmware-brcm43430 \
+    wireless-tools \
+    wpa-supplicant \
+"
+
 ALSA += " \
     libasound \
     libavcodec \
@@ -35,6 +43,7 @@ ALSA += " \
 IMAGE_INSTALL += " \
     ${ALSA} \
     ${CORE_OS} \
+    ${WIFI_SUPPORT} \
     iqaudio-mute \
     pianobar \
  "
