@@ -13,7 +13,7 @@ This layer depends on:
     URI: git://code.qt.io/yocto/meta-qt5.git
     branch: 5.9
     revision: HEAD
-    commit: 5bac910
+    commit: 2859a61
 
     URI: git://git.yoctoproject.org/meta-raspberrypi 
     branch: pyro
