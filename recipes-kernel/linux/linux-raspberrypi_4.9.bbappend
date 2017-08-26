@@ -1,6 +1,6 @@
-LINUX_VERSION = "4.9.44"
+LINUX_VERSION = "4.9.45"
 
-SRCREV = "dbe9b03bef2b949093b4393d5f4efd8ef5cdb772"
+SRCREV = "3ce72830a8c8bba33c37ebe4bee71ac3177451b0"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.9:"
 
