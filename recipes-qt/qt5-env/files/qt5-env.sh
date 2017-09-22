@@ -26,3 +26,11 @@ export QT_QPA_PLATFORM=eglfs
 #export QT_QPA_EGLFS_PHYSICAL_HEIGHT=50
 # set a rotate value appropriate with the one used in the overlay 
 #export QT_QPA_EVDEV_TOUCHSCREEN_PARAMETERS=/dev/input/touchscreen0:rotate=90
+
+if [ -z "${XDG_RUNTIME_DIR}" ]; then
+    export XDG_RUNTIME_DIR=/tmp/user/${UID}
+
+    if [ ! -d ${XDG_RUNTIME_DIR} ]; then
+        mkdir -p ${XDG_RUNTIME_DIR}
+    fi
+fi
