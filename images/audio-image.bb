@@ -9,6 +9,8 @@ inherit core-image
 DEPENDS += "bcm2835-bootfiles"
 
 CORE_OS = " \
+    firewall \
+    iptables \
     ntp \
     ntp-tickadj \
     openssh openssh-keygen openssh-sftp-server \
