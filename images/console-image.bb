@@ -72,6 +72,7 @@ EXTRA_TOOLS_INSTALL = " \
     i2c-tools \
     iperf3 \
     iproute2 \
+    iptables \
     less \
     memtester \
     nano \
