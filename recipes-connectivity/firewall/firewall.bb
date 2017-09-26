@@ -21,3 +21,5 @@ do_install() {
 }
 
 FILES_${PN} = "${sysconfdir}"
+
+RDEPENDS_${PN} = "iptables"
