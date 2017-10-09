@@ -22,7 +22,7 @@ CORE_OS = " \
 WIFI_SUPPORT = " \
     crda \
     iw \
-    linux-firmware-brcm43430 \
+    linux-firmware-bcm43430 \
     wireless-tools \
     wpa-supplicant \
 "
