@@ -3,17 +3,17 @@ This layer depends on:
     URI: git://git.yoctoproject.org/poky.git
     branch: pyro
     revision: HEAD
-    commit: 717303e
+    commit: 827eb5b
 
     URI: git://git.openembedded.org/meta-openembedded
     branch: pyro
     revision: HEAD
-    commit: 5e82995
+    commit: dfbdd28
 
-    URI: git://code.qt.io/yocto/meta-qt5.git
-    branch: 5.9
+    URI: https://github.com/meta-qt5/meta-qt5
+    branch: pyro
     revision: HEAD
-    commit: 88a25de
+    commit: c6aa602
 
     URI: git://git.yoctoproject.org/meta-raspberrypi 
     branch: pyro
