@@ -1,22 +1,22 @@
 This layer depends on:
 
     URI: git://git.yoctoproject.org/poky.git
-    branch: pyro
+    branch: rocko
     revision: HEAD
-    commit: 827eb5b
+    commit: 65d23bd
 
     URI: git://git.openembedded.org/meta-openembedded
-    branch: pyro
+    branch: rocko
     revision: HEAD
-    commit: dfbdd28
+    commit: 6e3fc5b
 
     URI: https://github.com/meta-qt5/meta-qt5
-    branch: pyro
+    branch: rocko
     revision: HEAD
-    commit: c6aa602
+    commit: 2c3ef00
 
     URI: git://git.yoctoproject.org/meta-raspberrypi 
-    branch: pyro
+    branch: rocko
     revision: HEAD
     commit: ed3b254
 

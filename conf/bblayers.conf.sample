@@ -6,13 +6,13 @@ BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
 BBLAYERS ?= " \
-    ${HOME}/poky-pyro/meta \
-    ${HOME}/poky-pyro/meta-poky \
-    ${HOME}/poky-pyro/meta-openembedded/meta-oe \
-    ${HOME}/poky-pyro/meta-openembedded/meta-multimedia \
-    ${HOME}/poky-pyro/meta-openembedded/meta-networking \
-    ${HOME}/poky-pyro/meta-openembedded/meta-python \
-    ${HOME}/poky-pyro/meta-qt5 \
-    ${HOME}/poky-pyro/meta-raspberrypi \
+    ${HOME}/poky-rocko/meta \
+    ${HOME}/poky-rocko/meta-poky \
+    ${HOME}/poky-rocko/meta-openembedded/meta-oe \
+    ${HOME}/poky-rocko/meta-openembedded/meta-multimedia \
+    ${HOME}/poky-rocko/meta-openembedded/meta-networking \
+    ${HOME}/poky-rocko/meta-openembedded/meta-python \
+    ${HOME}/poky-rocko/meta-qt5 \
+    ${HOME}/poky-rocko/meta-raspberrypi \
     ${HOME}/rpi/meta-rpi \
   "

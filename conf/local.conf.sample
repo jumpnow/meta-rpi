@@ -1,5 +1,5 @@
 # Local configuration for meta-rpi images
-# Yocto Project 2.3 Poky distribution [pyro] branch
+# Yocto Project 2.4 Poky distribution [rocko] branch
 # This is a sysvinit system
 
 LICENSE_FLAGS_WHITELIST = "commercial"
@@ -26,7 +26,7 @@ MACHINE = "raspberrypi2"
 
 #SSTATE_DIR = "/oe4/rpi/sstate-cache"
 
-#TMPDIR = "/oe4/rpi/tmp-pyro"
+#TMPDIR = "/oe4/rpi/tmp-rocko"
 
 DISTRO = "poky"
 
@@ -40,7 +40,7 @@ SDKMACHINE = "x86_64"
 
 #EXTRA_IMAGE_FEATURES = "debug-tweaks"
 INHERIT += "extrausers"
-EXTRA_USERS_PARAMS = "usermod -P changeme root; "
+EXTRA_USERS_PARAMS = "usermod -P jumpnowtek root; "
 
 USER_CLASSES = "image-mklibs image-prelink"
 

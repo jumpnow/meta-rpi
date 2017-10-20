@@ -3,13 +3,6 @@ LINUX_VERSION_EXTENSION = "-jumpnow"
 
 SRCREV = "b017e4f94b17ac322340159f63c546e8d115b104"
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/linux-raspberrypi-4.9:"
-
-SRC_URI = " \
-    git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.9.y \
-    file://defconfig \
-"
-
 PR = "r57"
 
 KERNEL_DEVICETREE = " \
