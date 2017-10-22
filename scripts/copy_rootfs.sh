@@ -21,6 +21,11 @@ if [ ! -d /media/card ]; then
 	exit 1
 fi
 
+if mount | grep " /media/card " > /dev/null; then
+    echo "Something is already mounted in folder /media/card"
+    exit 1
+fi
+
 if [ "x${2}" = "x" ]; then
         IMAGE=console
 else
@@ -77,6 +82,11 @@ sudo mkfs.ext4 -q -L ROOT ${DEV}
 
 echo "Mounting ${DEV}"
 sudo mount ${DEV} /media/card
+
+if ! mount | grep ${DEV} > /dev/null; then
+    echo "Failed to mount device: ${DEV}"
+    exit 1
+fi
 
 echo "Extracting ${IMAGE}-image-${MACHINE}.tar.xz to /media/card"
 sudo tar --numeric-owner -C /media/card -xJf ${SRCDIR}/${IMAGE}-image-${MACHINE}.tar.xz
