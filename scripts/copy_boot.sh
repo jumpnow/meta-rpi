@@ -103,8 +103,9 @@ sudo mkfs.vfat -F 32 ${DEV} -n BOOT
 echo "Mounting ${DEV}"
 sudo mount ${DEV} /media/card
 
-if ! mount | grep ${DEV} > /dev/null; then
-    echo "Failed to mount device: ${DEV}"
+M_RET=$?
+if [ ${M_RET} -ne 0 ]; then
+    echo "Failed to mount device '${DEV}' with error code ${M_RET}"
     exit 1
 fi
 
