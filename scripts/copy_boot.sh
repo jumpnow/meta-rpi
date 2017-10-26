@@ -44,6 +44,11 @@ if [ ! -d /media/card ]; then
 	exit 1
 fi
 
+if mount | grep " /media/card " > /dev/null; then
+    echo "Something is already mounted in folder /media/card"
+    exit 1
+fi
+
 if [ -z "$OETMP" ]; then
 	echo -e "\nWorking from local directory"
 	SRCDIR=.
@@ -97,6 +102,12 @@ sudo mkfs.vfat -F 32 ${DEV} -n BOOT
 
 echo "Mounting ${DEV}"
 sudo mount ${DEV} /media/card
+
+M_RET=$?
+if [ ${M_RET} -ne 0 ]; then
+    echo "Failed to mount device '${DEV}' with error code ${M_RET}"
+    exit 1
+fi
 
 echo "Copying bootloader files"
 sudo cp ${SRCDIR}/bcm2835-bootfiles/* /media/card
