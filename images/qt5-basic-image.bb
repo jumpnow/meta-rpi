@@ -36,9 +36,6 @@ IMAGE_INSTALL += " \
     ${FONTS} \
     ${QT_TOOLS} \
     qcolorcheck \
-    qfontchooser \
-    qkeytest \
-    qshowfonts \
     ${TSLIB} \
     tspress \
 "

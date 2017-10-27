@@ -19,10 +19,6 @@ WIFI_SUPPORT = " \
     crda \
     iw \
     linux-firmware-bcm43430 \
-    linux-firmware-ralink \
-    linux-firmware-rtl8192ce \
-    linux-firmware-rtl8192cu \
-    linux-firmware-rtl8192su \
     wireless-tools \
     wpa-supplicant \
 "
@@ -48,11 +44,8 @@ DEV_SDK_INSTALL = " \
     libstdc++-dev \
     libtool \
     make \
-    perl-modules \
     pkgconfig \
-    python-modules \
     python3-modules \
-    python3-pydoc \
 "
 
 DEV_EXTRAS = " \
@@ -75,11 +68,9 @@ EXTRA_TOOLS_INSTALL = " \
     iproute2 \
     iptables \
     less \
-    memtester \
     nano \
     netcat \
     procps \
-    rsync \
     sysfsutils \
     tcpdump \
     unzip \
@@ -89,14 +80,9 @@ EXTRA_TOOLS_INSTALL = " \
     zip \
 "
 
-CAN_TOOLS = " \
-    canutils \
-"
-
 RPI_STUFF = " \
     bcm2835-tests \
     omxplayer \
-    pi-blaster \
     raspi2fb \
     rpio \
     rpi-gpio \
@@ -104,7 +90,6 @@ RPI_STUFF = " \
 "
 
 IMAGE_INSTALL += " \
-    ${CAN_TOOLS} \
     ${CORE_OS} \
     ${DEV_SDK_INSTALL} \
     ${DEV_EXTRAS} \
