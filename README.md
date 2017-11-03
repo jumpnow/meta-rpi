@@ -3,7 +3,7 @@ This layer depends on:
     URI: git://git.yoctoproject.org/poky.git
     branch: rocko
     revision: HEAD
-    commit: 65d23bd
+    commit: f7b90ab
 
     URI: git://git.openembedded.org/meta-openembedded
     branch: rocko
@@ -13,7 +13,7 @@ This layer depends on:
     URI: https://github.com/meta-qt5/meta-qt5
     branch: rocko
     revision: HEAD
-    commit: 2c3ef00
+    commit: d87335a
 
     URI: git://git.yoctoproject.org/meta-raspberrypi 
     branch: rocko
