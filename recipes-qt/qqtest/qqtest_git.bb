@@ -5,9 +5,9 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 
 DEPENDS += "qtdeclarative"
 
-PR = "r0"
+PR = "r1"
 
-SRCREV = "${AUTOREV}"
+SRCREV = "21214e15acf0f66157e97ebb98de05e7419764d9"
 SRC_URI = "git://github.com/scottellis/qqtest.git"
 
 S = "${WORKDIR}/git"
