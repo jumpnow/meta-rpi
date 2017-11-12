@@ -75,7 +75,6 @@ EXTRA_TOOLS_INSTALL = " \
     tcpdump \
     unzip \
     util-linux \
-    vim \
     wget \
     zip \
 "
