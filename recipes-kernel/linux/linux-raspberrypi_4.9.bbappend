@@ -1,9 +1,9 @@
-LINUX_VERSION = "4.9.61"
+LINUX_VERSION = "4.9.65"
 LINUX_VERSION_EXTENSION = "-jumpnow"
 
-SRCREV = "bc9f2c9a82627c0436a3c5eb118ffd2227a8cf04"
+SRCREV = "4b0e95e896406ed4d50ac50f032f3f99fbcdff23"
 
-PR = "r61"
+PR = "r62"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-0-w.dtb \
