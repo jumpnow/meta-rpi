@@ -20,11 +20,7 @@ IMAGE_FSTYPES = "tar.xz"
 
 PREFERRED_VERSION_linux-raspberrypi = "4.9.%"
 
-# if not using u-boot, you can continue to choose either
-# raspberrypi0 or raspberrypi2 since there are only two types
-# of processor
-# if you are using u-boot, then you must choose the specific
-# board you are using
+# Choose the board you are building for
 #MACHINE="raspberrypi"
 #MACHINE="raspberrypi0"
 #MACHINE="raspberrypi0-wifi"
@@ -33,11 +29,11 @@ MACHINE = "raspberrypi3"
 #MACHINE="raspberrypi-cm"
 #MACHINE="raspberrypi-cm3"
 
-# choices are Image or zImage if not using u-boot (typical)
-# choices are uImage or zImage if using u-boot, though if you
-# choose zImage with u-boot you will also have to change the
-# boot script boot command
+# Choices are Image or zImage if NOT using u-boot (no u-boot is the default)
+# Choices are uImage or zImage if using u-boot, though if you choose zImage
+# with u-boot you will also have to change the boot script boot command
 KERNEL_IMAGETYPE = "zImage"
+
 ENABLE_UART="1"
 
 #DL_DIR = "${HOME}/oe-sources"
