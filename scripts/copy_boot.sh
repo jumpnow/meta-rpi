@@ -1,15 +1,29 @@
 #!/bin/bash
 
+KERNEL_IMAGETYPE=zImage
+
 if [ -z "${MACHINE}" ]; then
 	echo "Environment variable MACHINE not set"
 	echo "Example: export MACHINE=raspberrypi2 or export MACHINE=raspberrypi"
 	exit 1
 fi
 
-if [ "${MACHINE}" != "raspberrypi2" ] && [ "${MACHINE}" != "raspberrypi" ]; then
-	echo "Invalid MACHINE: ${MACHINE}"
-	exit 1
-fi
+case "${MACHINE}" in
+	raspberrypi|raspberrypi0|raspberrypi0-wifi|raspberrypi-cm)
+		DTBS="bcm2708-rpi-0-w.dtb \
+		      bcm2708-rpi-b.dtb \
+		      bcm2708-rpi-b-plus.dtb \
+		      bcm2708-rpi-cm.dtb"
+		;;
+	raspberrypi2|raspberrypi3|raspberrypi-cm3)
+		DTBS="bcm2709-rpi-2-b.dtb \
+		      bcm2710-rpi-3-b.dtb \
+		      bcm2710-rpi-cm3.dtb"
+		;;
+	*)
+		echo "Invalid MACHINE: ${MACHINE}"
+		exit 1
+esac
 
 BOOTLDRFILES="bootcode.bin \
               cmdline.txt \
@@ -22,17 +36,6 @@ BOOTLDRFILES="bootcode.bin \
               start_db.elf \
               start.elf \
               start_x.elf"
-
-if [ "${MACHINE}" == "raspberrypi" ]; then
-	DTBS="bcm2708-rpi-0-w.dtb \
-              bcm2708-rpi-b.dtb \
-	      bcm2708-rpi-b-plus.dtb \
-	      bcm2708-rpi-cm.dtb"
-else
-	DTBS="bcm2709-rpi-2-b.dtb \
-	      bcm2710-rpi-3-b.dtb \
-	      bcm2710-rpi-cm3.dtb"
-fi
 
 if [ "x${1}" = "x" ]; then
 	echo -e "\nUsage: ${0} <block device>\n"
@@ -66,14 +69,14 @@ for f in ${BOOTLDRFILES}; do
 done
 
 for f in ${DTBS}; do
-	if [ ! -f ${SRCDIR}/Image-${f} ]; then
-		echo "dtb not found: ${SRCDIR}/Image-${f}"
+	if [ ! -f ${SRCDIR}/${KERNEL_IMAGETYPE}-${f} ]; then
+		echo "dtb not found: ${SRCDIR}/${KERNEL_IMAGETYPE}-${f}"
 		exit 1
 	fi
 done
 	
-if [ ! -f ${SRCDIR}/Image ]; then
-	echo "Kernel file not found: ${SRCDIR}/Image"
+if [ ! -f ${SRCDIR}/${KERNEL_IMAGETYPE} ]; then
+	echo "Kernel file not found: ${SRCDIR}/${KERNEL_IMAGETYPE}"
 	exit 1
 fi
 
@@ -98,6 +101,11 @@ sudo mkfs.vfat -F 32 ${DEV} -n BOOT
 echo "Mounting ${DEV}"
 sudo mount ${DEV} /media/card
 
+if [ "$?" -ne 0 ]; then
+	echo "Error mounting ${DEV} at /media/card"
+	exit 1
+fi
+
 echo "Copying bootloader files"
 sudo cp ${SRCDIR}/bcm2835-bootfiles/* /media/card
 
@@ -117,7 +125,7 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "Copying overlay dtbos"
-for f in ${SRCDIR}/Image-*.dtbo; do
+for f in ${SRCDIR}/${KERNEL_IMAGETYPE}-*.dtbo; do
 	if [ -L $f ]; then
 		sudo cp $f /media/card/overlays
 	fi
@@ -129,12 +137,28 @@ if [ $? -ne 0 ]; then
 	exit 1
 fi
 
-echo "Stripping 'Image-' from overlay dtbos"
-sudo rename 's/Image-([\w\-]+).dtbo/$1.dtbo/' /media/card/overlays/*.dtbo
+echo "Stripping ${KERNEL_IMAGETYPE}- from overlay dtbos"
+case "${KERNEL_IMAGETYPE}" in
+	Image)
+		sudo rename 's/Image-([\w\-]+).dtbo/$1.dtbo/' /media/card/overlays/*.dtbo
+		;;
+	zImage)
+		sudo rename 's/zImage-([\w\-]+).dtbo/$1.dtbo/' /media/card/overlays/*.dtbo
+		;;
+	uImage)
+		sudo rename 's/zImage-([\w\-]+).dtbo/$1.dtbo/' /media/card/overlays/*.dtbo
+		;;
+esac
+
+if [ $? -ne 0 ]; then
+	echo "Error stripping overlays"
+	sudo umount ${DEV}
+	exit 1
+fi
 
 echo "Copying dtbs"
 for f in ${DTBS}; do
-	sudo cp ${SRCDIR}/Image-${f} /media/card/${f}
+	sudo cp ${SRCDIR}/${KERNEL_IMAGETYPE}-${f} /media/card/${f}
 
 	if [ $? -ne 0 ]; then
 		echo "Error copying dtb: $f"
@@ -143,17 +167,34 @@ for f in ${DTBS}; do
 	fi
 done
 
+#echo "Copying kernel"
+#case "${MACHINE}" in
+#	raspberrypi|raspberrypi0|raspberrypi0-wifi|raspberrypi-cm)
+#		sudo cp ${SRCDIR}/${KERNEL_IMAGETYPE} /media/card/kernel.img
+#		;;
+#	raspberrypi2|raspberrypi3|raspberrypi-cm3)
+#		sudo cp ${SRCDIR}/${KERNEL_IMAGETYPE} /media/card/kernel7.img
+#		;;
+#esac
+
 echo "Copying kernel"
-if [ "${MACHINE}" = "raspberrypi2" ]; then 
-	sudo cp ${SRCDIR}/Image /media/card/kernel7.img
-else
-	sudo cp ${SRCDIR}/Image /media/card/kernel.img
-fi
+sudo cp ${SRCDIR}/${KERNEL_IMAGETYPE} /media/card/${KERNEL_IMAGETYPE}
 
 if [ $? -ne 0 ]; then
 	echo "Error copying kernel"
 	sudo umount ${DEV}
 	exit 1
+fi
+
+if [ -f ${SRCDIR}/u-boot.bin ]; then
+	echo "Copying u-boot.bin to card"
+	sudo cp ${SRCDIR}/u-boot.bin /media/card
+
+	if [ $? -ne 0 ]; then
+		echo "Error copying u-boot"
+		sudo umount ${DEV}
+		exit 1
+	fi
 fi
 
 if [ -f ./config.txt ]; then

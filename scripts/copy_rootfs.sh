@@ -2,12 +2,7 @@
 
 if [ -z "${MACHINE}" ]; then
 	echo "Environment variable MACHINE not set"
-	echo "Example: export MACHINE=raspberrypi2 or export MACHINE=raspberrypi"
-	exit 1
-fi
-
-if [ "${MACHINE}" != "raspberrypi2" ] && [ "${MACHINE}" != "raspberrypi" ]; then
-	echo "Invalid MACHINE: ${MACHINE}"
+	echo "Example: export MACHINE=raspberrypi3 or export MACHINE=raspberrypi0-wifi"
 	exit 1
 fi
 
@@ -75,8 +70,18 @@ fi
 echo "Formatting ${DEV} as ext4"
 sudo mkfs.ext4 -q -L ROOT ${DEV}
 
+if [ "$?" -ne 0 ]; then
+	echo "Error formatting ${DEV} as ext4"
+	exit 1
+fi
+
 echo "Mounting ${DEV}"
 sudo mount ${DEV} /media/card
+
+if [ "$?" -ne 0 ]; then
+	echo "Error mounting ${DEV} at /media/card"
+	exit 1
+fi
 
 echo "Extracting ${IMAGE}-image-${MACHINE}.tar.xz to /media/card"
 sudo tar --numeric-owner -C /media/card -xJf ${SRCDIR}/${IMAGE}-image-${MACHINE}.tar.xz
