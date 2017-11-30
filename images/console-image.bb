@@ -80,11 +80,8 @@ EXTRA_TOOLS_INSTALL = " \
 "
 
 RPI_STUFF = " \
-    bcm2835-tests \
     omxplayer \
     raspi2fb \
-    rpio \
-    rpi-gpio \
     userland \
 "
 
