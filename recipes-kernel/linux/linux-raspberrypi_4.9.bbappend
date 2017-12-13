@@ -1,9 +1,9 @@
-LINUX_VERSION = "4.9.66"
+LINUX_VERSION = "4.9.68"
 LINUX_VERSION_EXTENSION = "-jumpnow"
 
-SRCREV = "240d0482ad9341f7d98b06705d0a55e298034121"
+SRCREV = "d5a3b4cab0c8eacc93e58cfa1bdbd259399caedd"
 
-PR = "r63"
+PR = "r64"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-0-w.dtb \
@@ -24,6 +24,7 @@ KERNEL_DEVICETREE = " \
     overlays/allo-digione.dtbo \
     overlays/allo-piano-dac-pcm512x-audio.dtbo \
     overlays/allo-piano-dac-plus-pcm512x-audio.dtbo \
+    overlays/applepi-dac.dtbo \
     overlays/at86rf233.dtbo \
     overlays/audioinjector-addons.dtbo \
     overlays/audioinjector-wm8731-audio.dtbo \
