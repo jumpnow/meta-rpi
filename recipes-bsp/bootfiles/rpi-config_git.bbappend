@@ -1,8 +1,10 @@
 SRCREV = "648ffc470824c43eb0d16c485f4c24816b32cd6f"
 
 do_deploy_append() {
-    if [ -n "${KERNEL_IMAGETYPE}" ]; then
-        sed -i '/#kernel=/ c\kernel=${KERNEL_IMAGETYPE}' ${DEPLOYDIR}/bcm2835-bootfiles/config.txt
+    if [ -z "${MENDER_ARTIFACT_NAME}" ]; then
+        if [ -n "${KERNEL_IMAGETYPE}" ]; then
+            sed -i '/#kernel=/ c\kernel=${KERNEL_IMAGETYPE}' ${DEPLOYDIR}/bcm2835-bootfiles/config.txt
+        fi
     fi
 
     if [ -n "${DISABLE_SPLASH}" ]; then
