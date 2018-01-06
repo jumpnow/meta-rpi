@@ -1,11 +1,8 @@
-LINUX_VERSION = "4.9.68"
-LINUX_VERSION_EXTENSION = "-jumpnow"
+LINUX_VERSION = "4.9.73"
 
-SRCREV = "d5a3b4cab0c8eacc93e58cfa1bdbd259399caedd"
+SRCREV = "2dbf1a940ae237e69ad39cd22859e6eb34c39bbd"
 
-PR = "r64"
-
-KERNEL_DEVICETREE = " \
+KERNEL_DEVICETREE ?= " \
     bcm2708-rpi-0-w.dtb \
     bcm2708-rpi-b.dtb \
     bcm2708-rpi-b-plus.dtb \
@@ -43,6 +40,7 @@ KERNEL_DEVICETREE = " \
     overlays/goodix.dtbo \
     overlays/googlevoicehat-soundcard.dtbo \
     overlays/gpio-ir.dtbo \
+    overlays/gpio-key.dtbo \
     overlays/gpio-poweroff.dtbo \
     overlays/gpio-shutdown.dtbo \
     overlays/hifiberry-amp.dtbo \
@@ -73,6 +71,8 @@ KERNEL_DEVICETREE = " \
     overlays/mcp2515-can0.dtbo \
     overlays/mcp2515-can1.dtbo \
     overlays/mcp3008.dtbo \
+    overlays/mcp3202.dtbo \
+    overlays/media-center.dtbo \
     overlays/midi-uart0.dtbo \
     overlays/midi-uart1.dtbo \
     overlays/mmc.dtbo \
