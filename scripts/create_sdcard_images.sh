@@ -32,16 +32,7 @@ if [ -z "${MACHINE}" ]; then
 	exit 1
 fi
 
-if [ "${MACHINE}" = "raspberrypi2" ]; then
-	MACH="rpi3"
-elif [ "${MACHINE}" = "raspberrypi" ]; then
-	MACH="rpi"
-else
-	echo "Invalid MACHINE: ${MACHINE}"
-	exit 1
-fi
-
-HOSTNAME=${MACH}
+HOSTNAME=${MACHINE}
 
 SRCDIR=${OETMP}/deploy/images/${MACHINE}
 
@@ -50,7 +41,7 @@ if [ ! -f "${SRCDIR}/${IMG_LONG}.tar.xz" ]; then
 	exit 1
 fi
 
-SDIMG=${IMG}-${MACH}-${CARDSIZE}gb.img
+SDIMG=${IMG}-${MACHINE}-${CARDSIZE}gb.img
 
 if [ -f "${DSTDIR}/${SDIMG}" ]; then
         rm ${DSTDIR}/${SDIMG}
