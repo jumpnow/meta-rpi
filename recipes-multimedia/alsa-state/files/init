@@ -1,0 +1,33 @@
+#!/bin/sh
+
+[ -x /usr/sbin/alsactl ] || exit 0
+
+conf=/etc/asound.state
+
+restore_settings()
+{
+    if [ -f ${conf} ]; then
+        alsactl restore -f ${conf}
+    fi
+}
+
+save_settings()
+{
+    alsactl store -f ${conf}
+}
+
+case "$1" in
+    start)
+        restore_settings
+        ;;
+
+    stop)
+        save_settings
+        ;;
+
+    *)
+        echo "Usage: $0 { start | stop }"
+        ;;
+esac
+
+exit 0
