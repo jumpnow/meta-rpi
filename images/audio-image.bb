@@ -38,6 +38,7 @@ ALSA += " \
     libswresample \
     libswscale \
     alsa-conf \
+    alsa-state \
     alsa-utils \
     alsa-utils-scripts \
  "
