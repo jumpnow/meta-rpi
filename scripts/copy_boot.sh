@@ -68,13 +68,18 @@ for f in ${BOOTLDRFILES}; do
 	fi
 done
 
+have_one_dtb=0
 for f in ${DTBS}; do
-	if [ ! -f ${SRCDIR}/${KERNEL_IMAGETYPE}-${f} ]; then
-		echo "dtb not found: ${SRCDIR}/${KERNEL_IMAGETYPE}-${f}"
-		exit 1
+	if [ -f ${SRCDIR}/${KERNEL_IMAGETYPE}-${f} ]; then
+		have_one_dtb=1
 	fi
 done
-	
+
+if [ $have_one_dtb -eq 0 ]; then
+	echo "No dtb found for this MACHINE"
+	exit 1
+fi
+
 if [ ! -f ${SRCDIR}/${KERNEL_IMAGETYPE} ]; then
 	echo "Kernel file not found: ${SRCDIR}/${KERNEL_IMAGETYPE}"
 	exit 1
@@ -158,24 +163,16 @@ fi
 
 echo "Copying dtbs"
 for f in ${DTBS}; do
-	sudo cp ${SRCDIR}/${KERNEL_IMAGETYPE}-${f} /media/card/${f}
+	if [ -f ${SRCDIR}/${KERNEL_IMAGETYPE}-${f} ]; then
+		sudo cp ${SRCDIR}/${KERNEL_IMAGETYPE}-${f} /media/card/${f}
 
-	if [ $? -ne 0 ]; then
-		echo "Error copying dtb: $f"
-		sudo umount ${DEV}
-		exit 1
+		if [ $? -ne 0 ]; then
+			echo "Error copying dtb: $f"
+			sudo umount ${DEV}
+			exit 1
+		fi
 	fi
 done
-
-#echo "Copying kernel"
-#case "${MACHINE}" in
-#	raspberrypi|raspberrypi0|raspberrypi0-wifi|raspberrypi-cm)
-#		sudo cp ${SRCDIR}/${KERNEL_IMAGETYPE} /media/card/kernel.img
-#		;;
-#	raspberrypi2|raspberrypi3|raspberrypi-cm3)
-#		sudo cp ${SRCDIR}/${KERNEL_IMAGETYPE} /media/card/kernel7.img
-#		;;
-#esac
 
 echo "Copying kernel"
 sudo cp ${SRCDIR}/${KERNEL_IMAGETYPE} /media/card/${KERNEL_IMAGETYPE}
