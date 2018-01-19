@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KERNEL_IMAGETYPE=zImage
+KERNEL_IMAGETYPE=uImage
 
 if [ -z "${MACHINE}" ]; then
 	echo "Environment variable MACHINE not set"
@@ -76,7 +76,7 @@ for f in ${DTBS}; do
 done
 
 if [ $have_one_dtb -eq 0 ]; then
-	echo "No dtb found for this MACHINE"
+	echo "No dtb found for this MACHINE $MACHINE and KERNEL_IMAGETYPE $KERNEL_IMAGETYPE"
 	exit 1
 fi
 
@@ -151,7 +151,7 @@ case "${KERNEL_IMAGETYPE}" in
 		sudo rename 's/zImage-([\w\-]+).dtbo/$1.dtbo/' /media/card/overlays/*.dtbo
 		;;
 	uImage)
-		sudo rename 's/zImage-([\w\-]+).dtbo/$1.dtbo/' /media/card/overlays/*.dtbo
+		sudo rename 's/uImage-([\w\-]+).dtbo/$1.dtbo/' /media/card/overlays/*.dtbo
 		;;
 esac
 
@@ -191,6 +191,19 @@ if [ -f ${SRCDIR}/u-boot.bin ]; then
 		echo "Error copying u-boot"
 		sudo umount ${DEV}
 		exit 1
+	fi
+
+	if [ -f ${SRCDIR}/boot.scr ]; then
+		echo "Copying boot.scr to card"
+		sudo cp ${SRCDIR}/boot.scr /media/card
+
+		if [ $? -ne 0 ]; then
+			echo "Error copying boot.scr"
+			sudo umount ${DEV}
+			exit 1
+		fi
+	else
+		echo "WARNING: No boot script found!"
 	fi
 fi
 
