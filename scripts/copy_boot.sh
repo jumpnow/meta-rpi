@@ -137,16 +137,16 @@ if [ $? -ne 0 ]; then
 	exit 1
 fi
 
-echo "Stripping ${KERNEL_IMAGETYPE}- from overlay dtbos"
+echo "Stripping ${KERNEL_IMAGETYPE}- from overlay dtbs"
 case "${KERNEL_IMAGETYPE}" in
 	Image)
-		sudo rename 's/Image-([\w\-]+).dtbo/$1.dtbo/' /media/card/overlays/*.dtbo
+		sudo rename 's/Image-([\w\-]+)-overlay.dtb/$1.dtbo/' /media/card/overlays/*.dtb
 		;;
 	zImage)
-		sudo rename 's/zImage-([\w\-]+).dtbo/$1.dtbo/' /media/card/overlays/*.dtbo
+		sudo rename 's/zImage-([\w\-]+)-overlay.dtb/$1.dtbo/' /media/card/overlays/*.dtb
 		;;
 	uImage)
-		sudo rename 's/zImage-([\w\-]+).dtbo/$1.dtbo/' /media/card/overlays/*.dtbo
+		sudo rename 's/uImage-([\w\-]+)-overlay.dtb/$1.dtbo/' /media/card/overlays/*.dtb
 		;;
 esac
 
