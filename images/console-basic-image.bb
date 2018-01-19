@@ -49,8 +49,6 @@ DEV_SDK_INSTALL = " \
 DEV_EXTRAS = " \
     ntp \
     ntp-tickadj \
-    serialecho  \
-    spiloop \
 "
 
 EXTRA_TOOLS_INSTALL = " \
@@ -73,10 +71,8 @@ EXTRA_TOOLS_INSTALL = " \
 
 IMAGE_INSTALL += " \
     ${CORE_OS} \
-    ${DEV_SDK_INSTALL} \
     ${DEV_EXTRAS} \
     ${EXTRA_TOOLS_INSTALL} \
-    ${WIFI_SUPPORT} \
 "
 
 set_local_timezone() {
