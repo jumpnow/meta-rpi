@@ -9,13 +9,12 @@ S = "${WORKDIR}"
 
 inherit update-rc.d
 
-INITSCRIPT_NAME = "alsa-state"
+INITSCRIPT_NAME = "alsa-save-restore"
 INITSCRIPT_PARAMS = "start 35 5 stop 5 0 6 ."
 
 do_install() {
         install -d ${D}${sysconfdir}/init.d
-        install -m 0755 ${S}/init ${D}${sysconfdir}/init.d/alsa-state
+        install -m 0755 ${S}/init ${D}${sysconfdir}/init.d/alsa-save-restore
 }
 
 FILES_${PN} += "${sysconfdir}"
-
