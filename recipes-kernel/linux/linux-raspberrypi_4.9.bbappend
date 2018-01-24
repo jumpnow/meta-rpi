@@ -1,6 +1,6 @@
-LINUX_VERSION = "4.9.76"
+LINUX_VERSION = "4.9.77"
 
-SRCREV = "aae807a781807e95c761fe0a5babbc9bd5adaed6"
+SRCREV = "5cd7cd7d90d65d2bb5f7656d46ff039a192d1529"
 
 KERNEL_DEVICETREE ?= " \
     bcm2708-rpi-0-w.dtb \
@@ -36,6 +36,7 @@ KERNEL_DEVICETREE ?= " \
     overlays/dwc-otg.dtbo \
     overlays/enc28j60.dtbo \
     overlays/enc28j60-spi2.dtbo \
+    overlays/exc3000.dtbo \
     overlays/fe-pi-audio.dtbo \
     overlays/goodix.dtbo \
     overlays/googlevoicehat-soundcard.dtbo \
@@ -66,6 +67,7 @@ KERNEL_DEVICETREE ?= " \
     overlays/justboom-dac.dtbo \
     overlays/justboom-digi.dtbo \
     overlays/lirc-rpi.dtbo \
+    overlays/mbed-dac.dtbo \
     overlays/mcp23017.dtbo \
     overlays/mcp23s17.dtbo \
     overlays/mcp2515-can0.dtbo \
@@ -125,6 +127,7 @@ KERNEL_DEVICETREE ?= " \
     overlays/spi-gpio35-39.dtbo \
     overlays/spi-rtc.dtbo \
     overlays/tinylcd35.dtbo \
+    overlays/uart0.dtbo \
     overlays/uart1.dtbo \
     overlays/vc4-fkms-v3d.dtbo \
     overlays/vc4-kms-v3d.dtbo \
