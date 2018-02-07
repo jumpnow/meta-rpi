@@ -2,15 +2,15 @@ This layer depends on:
 
     URI: git://git.yoctoproject.org/poky.git
     branch: rocko
-    commit: 165b337
+    commit: 21ba45a
 
     URI: git://git.openembedded.org/meta-openembedded
     branch: rocko
-    commit: 6e3fc5b
+    commit: a65c1ac
 
     URI: https://github.com/meta-qt5/meta-qt5
     branch: rocko
-    commit: d088f8a
+    commit: db881bb
 
     URI: git://git.yoctoproject.org/meta-raspberrypi 
     branch: rocko
