@@ -18,7 +18,8 @@ MACHINE_FEATURES_remove = "apm"
 
 IMAGE_FSTYPES = "tar.xz"
 
-PREFERRED_VERSION_linux-raspberrypi = "4.9.%"
+# the default is still 4.9
+#PREFERRED_VERSION_linux-raspberrypi = "4.14.%"
 
 # Choose the board you are building for
 #MACHINE="raspberrypi"
