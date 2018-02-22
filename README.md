@@ -2,7 +2,7 @@ This layer depends on:
 
     URI: git://git.yoctoproject.org/poky.git
     branch: rocko
-    commit: 21ba45a
+    commit: 342fbd6
 
     URI: git://git.openembedded.org/meta-openembedded
     branch: rocko
