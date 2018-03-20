@@ -16,7 +16,7 @@ require linux-raspberrypi_4.14.inc
 #KERNEL_DEVICETREE_raspberrypi3 ?= "bcm2710-rpi-3-b.dtb"
 #KERNEL_DEVICETREE_raspberrypi-cm3 ?= "bcm2710-rpi-cm3.dtb"
 
-KERNEL_DEVICETREE ?= " \
+KERNEL_DEVICETREE = " \
     bcm2708-rpi-0-w.dtb \
     bcm2708-rpi-b.dtb \
     bcm2708-rpi-b-plus.dtb \
@@ -50,6 +50,7 @@ KERNEL_DEVICETREE ?= " \
     overlays/dwc-otg.dtbo \
     overlays/enc28j60.dtbo \
     overlays/enc28j60-spi2.dtbo \
+    overlays/exc3000.dtbo \
     overlays/fe-pi-audio.dtbo \
     overlays/goodix.dtbo \
     overlays/googlevoicehat-soundcard.dtbo \
@@ -81,6 +82,7 @@ KERNEL_DEVICETREE ?= " \
     overlays/justboom-dac.dtbo \
     overlays/justboom-digi.dtbo \
     overlays/lirc-rpi.dtbo \
+    overlays/mbed-dac.dtbo \
     overlays/mcp23017.dtbo \
     overlays/mcp23s17.dtbo \
     overlays/mcp2515-can0.dtbo \
@@ -98,6 +100,7 @@ KERNEL_DEVICETREE ?= " \
     overlays/pi3-disable-bt.dtbo \
     overlays/pi3-disable-wifi.dtbo \
     overlays/pi3-miniuart-bt.dtbo \
+    overlays/pibell.dtbo \
     overlays/piscreen2r.dtbo \
     overlays/piscreen.dtbo \
     overlays/pisound.dtbo \
@@ -110,7 +113,6 @@ KERNEL_DEVICETREE ?= " \
     overlays/pwm-ir-tx.dtbo \
     overlays/pwm.dtbo \
     overlays/qca7000.dtbo \
-    overlays/raspidac3.dtbo \
     overlays/rotary-encoder.dtbo \
     overlays/rpi-backlight.dtbo \
     overlays/rpi-cirrus-wm5102.dtbo \
@@ -122,6 +124,7 @@ KERNEL_DEVICETREE ?= " \
     overlays/rpi-tv.dtbo \
     overlays/rra-digidac1-wm8741-audio.dtbo \
     overlays/sc16is750-i2c.dtbo \
+    overlays/sc16is752-i2c.dtbo \
     overlays/sc16is752-spi1.dtbo \
     overlays/sdhost.dtbo \
     overlays/sdio-1bit.dtbo \
@@ -138,12 +141,14 @@ KERNEL_DEVICETREE ?= " \
     overlays/spi2-1cs.dtbo \
     overlays/spi2-2cs.dtbo \
     overlays/spi2-3cs.dtbo \
-    overlays/superaudioboard.dtbo \
     overlays/spi-gpio35-39.dtbo \
     overlays/spi-rtc.dtbo \
+    overlays/superaudioboard.dtbo \
     overlays/tinylcd35.dtbo \
     overlays/uart0.dtbo \
     overlays/uart1.dtbo \
+    overlays/upstream-aux-interrupt.dtbo \
+    overlays/upstream.dtbo \
     overlays/vc4-fkms-v3d.dtbo \
     overlays/vc4-kms-v3d.dtbo \
     overlays/vga666.dtbo \
