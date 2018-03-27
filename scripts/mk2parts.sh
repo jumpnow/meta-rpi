@@ -31,25 +31,23 @@ else
 	umount ${DRIVE}
 fi
 
-
-SIZE=`fdisk -l $DRIVE | grep "$DRIVE" | cut -d' ' -f5 | grep -o -E '[0-9]+'`
-
-echo DISK SIZE – $SIZE bytes
-
-if [ "$SIZE" -lt 1800000000 ]; then
-	echo "Require an SD card of at least 2GB"
-	exit 1
-fi
-
 # new versions of sfdisk don't use rotating disk params
-sfdisk_ver=`sfdisk --version | awk '{ print $4 }'`
+sfdisk_ver=`sfdisk --version | awk '{ print $NF }'`
 
 if [ $(ver $sfdisk_ver) -lt $(ver 2.26.2) ]; then
-        CYLINDERS=`echo $SIZE/255/63/512 | bc`
-        echo "CYLINDERS – $CYLINDERS"
-        SFDISK_CMD="sfdisk --force -D -uS -H255 -S63 -C ${CYLINDERS}"
+	SIZE=`fdisk -l $DRIVE | grep "$DRIVE" | cut -d' ' -f5 | grep -o -E '[0-9]+'`
+
+	if [ "$SIZE" -lt 1800000000 ]; then
+		echo Card size is $SIZE bytes
+		echo "Require an SD card of at least 2GB"
+		exit 1
+	fi
+
+	CYLINDERS=`echo $SIZE/255/63/512 | bc`
+	echo "CYLINDERS – $CYLINDERS"
+	SFDISK_CMD="sfdisk --force -D -uS -H255 -S63 -C ${CYLINDERS}"
 else
-        SFDISK_CMD="sfdisk"
+	SFDISK_CMD="sfdisk"
 fi
 
 echo -e "\nOkay, here we go ...\n"
