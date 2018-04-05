@@ -1,20 +1,11 @@
 EXTRAPATHS_prepend := "${THISDIR}/${PN}-${PV}:"
 
-LINUX_VERSION = "4.14.29"
+LINUX_VERSION = "4.14.31"
 
-SRCREV = "c117a8bccf37bfba323065b566cf999ed4629a4a"
+SRCREV = "b36f4e9e198477803d29861e02d3ea00fe5e09ab"
 SRC_URI = "git://github.com/raspberrypi/linux.git;branch=rpi-4.14.y"
 
 require linux-raspberrypi_4.14.inc
-
-#KERNEL_DEVICETREE_raspberrypi ?= "bcm2708-rpi-b-plus.dtb"
-#KERNEL_DEVICETREE_raspberrypi0-wifi ?= "bcm2708-rpi-0-w.dtb"
-# need to check on this one but this works
-#KERNEL_DEVICETREE_raspberrypi0 ?= "bcm2708-rpi-0-w.dtb"
-#KERNEL_DEVICETREE_raspberrypi-cm ?= "bcm2708-rpi-cm.dtb"
-#KERNEL_DEVICETREE_raspberrypi2 ?= "bcm2709-rpi-2-b.dtb"
-#KERNEL_DEVICETREE_raspberrypi3 ?= "bcm2710-rpi-3-b.dtb"
-#KERNEL_DEVICETREE_raspberrypi-cm3 ?= "bcm2710-rpi-cm3.dtb"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-0-w.dtb \
@@ -22,6 +13,7 @@ KERNEL_DEVICETREE = " \
     bcm2708-rpi-b-plus.dtb \
     bcm2708-rpi-cm.dtb \
     bcm2709-rpi-2-b.dtb \
+    bcm2710-rpi-3-b-plus.dtb \
     bcm2710-rpi-3-b.dtb \
     bcm2710-rpi-cm3.dtb \
     \
