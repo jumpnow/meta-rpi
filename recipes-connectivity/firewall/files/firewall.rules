@@ -5,7 +5,7 @@
 :OUTPUT ACCEPT [1:76]
 -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 -A INPUT -s 127.0.0.0/8 -j ACCEPT
--A INPUT -p tcp -m tcp --dport 22 -m state --state NEW -m recent --update --seconds 60 --hitcount 1 --name ssh --mask 255.255.255.255 --rsource -j REJECT --reject-with icmp-port-unreachable
+-A INPUT -p tcp -m tcp --dport 22 -m state --state NEW -m recent --update --seconds 60 --hitcount 5 --name ssh --mask 255.255.255.255 --rsource -j REJECT --reject-with icmp-port-unreachable
 -A INPUT -p tcp -m tcp --dport 22 -m state --state NEW -m recent --set --name ssh --mask 255.255.255.255 --rsource
 -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
 COMMIT
