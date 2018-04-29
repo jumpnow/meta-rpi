@@ -1,8 +1,8 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PV}:"
 
-LINUX_VERSION = "4.14.34"
+LINUX_VERSION = "4.14.37"
 
-SRCREV = "d2cf662756932ca61f61b9552272bb36cde5e966"
+SRCREV = "e5c309d32b8b0e1c2b05b2f1d37b86cbec3c38de"
 SRC_URI = "git://github.com/raspberrypi/linux.git;branch=rpi-4.14.y"
 
 require linux-raspberrypi_4.14.inc
