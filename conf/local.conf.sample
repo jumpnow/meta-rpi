@@ -18,8 +18,8 @@ MACHINE_FEATURES_remove = "apm"
 
 IMAGE_FSTYPES = "tar.xz"
 
-# the default is still 4.9
-#PREFERRED_VERSION_linux-raspberrypi = "4.14.%"
+# override the meta-raspberrypi default 4.9 kernel
+PREFERRED_VERSION_linux-raspberrypi = "4.14.%"
 
 # Choose the board you are building for
 #MACHINE="raspberrypi"
