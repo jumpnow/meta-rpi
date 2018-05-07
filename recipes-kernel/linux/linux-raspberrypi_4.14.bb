@@ -1,8 +1,8 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PV}:"
 
-LINUX_VERSION = "4.14.37"
+LINUX_VERSION = "4.14.39"
 
-SRCREV = "e5c309d32b8b0e1c2b05b2f1d37b86cbec3c38de"
+SRCREV = "865ddc1393f558198e7e7ce70928ff2e49c4f7f6"
 SRC_URI = "git://github.com/raspberrypi/linux.git;branch=rpi-4.14.y"
 
 require linux-raspberrypi_4.14.inc
@@ -25,6 +25,7 @@ KERNEL_DEVICETREE = " \
     overlays/akkordion-iqdacplus.dtbo \
     overlays/allo-boss-dac-pcm512x-audio.dtbo \
     overlays/allo-digione.dtbo \
+    overlays/allo-katana-dac-audio.dtbo \
     overlays/allo-piano-dac-pcm512x-audio.dtbo \
     overlays/allo-piano-dac-plus-pcm512x-audio.dtbo \
     overlays/applepi-dac.dtbo \
@@ -32,6 +33,7 @@ KERNEL_DEVICETREE = " \
     overlays/audioinjector-addons.dtbo \
     overlays/audioinjector-wm8731-audio.dtbo \
     overlays/audremap.dtbo \
+    overlays/balena-fin.dtbo \
     overlays/bmp085_i2c-sensor.dtbo \
     overlays/dht11.dtbo \
     overlays/dionaudio-loco.dtbo \
@@ -71,9 +73,11 @@ KERNEL_DEVICETREE = " \
     overlays/iqaudio-dac.dtbo \
     overlays/iqaudio-dacplus.dtbo \
     overlays/iqaudio-digi-wm8804-audio.dtbo \
+    overlays/jedec-spi-nor.dtbo \
     overlays/justboom-dac.dtbo \
     overlays/justboom-digi.dtbo \
     overlays/lirc-rpi.dtbo \
+    overlays/ltc294x.dtbo \
     overlays/mbed-dac.dtbo \
     overlays/mcp23017.dtbo \
     overlays/mcp23s17.dtbo \
@@ -136,6 +140,7 @@ KERNEL_DEVICETREE = " \
     overlays/spi-gpio35-39.dtbo \
     overlays/spi-rtc.dtbo \
     overlays/superaudioboard.dtbo \
+    overlays/sx150x.dtbo \
     overlays/tinylcd35.dtbo \
     overlays/uart0.dtbo \
     overlays/uart1.dtbo \
