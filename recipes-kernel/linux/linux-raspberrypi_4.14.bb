@@ -1,8 +1,8 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PV}:"
 
-LINUX_VERSION = "4.14.48"
+LINUX_VERSION = "4.14.50"
 
-SRCREV = "a0514733c3699a98f25b84f69f4d8f9a44c74cc8"
+SRCREV = "3b01f059d2ef9e48aca5174fc7f3b5c40fe2488c"
 SRC_URI = "git://github.com/raspberrypi/linux.git;branch=rpi-4.14.y"
 
 require linux-raspberrypi_4.14.inc
@@ -51,6 +51,7 @@ KERNEL_DEVICETREE = " \
     overlays/gpio-ir.dtbo \
     overlays/gpio-ir-tx.dtbo \
     overlays/gpio-key.dtbo \
+    overlays/gpio-no-irq.dtbo \
     overlays/gpio-poweroff.dtbo \
     overlays/gpio-shutdown.dtbo \
     overlays/hifiberry-amp.dtbo \
