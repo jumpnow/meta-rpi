@@ -1,23 +1,23 @@
 This layer depends on:
 
     URI: git://git.yoctoproject.org/poky.git
-    branch: rocko
-    commit: f437276
+    branch: sumo
+    commit: 4b6ff20
 
     URI: git://git.openembedded.org/meta-openembedded
-    branch: rocko
-    commit: 3525310
+    branch: sumo
+    commit: b0950ae
 
     URI: https://github.com/meta-qt5/meta-qt5
-    branch: rocko
-    commit: 682ad61
+    branch: sumo
+    commit: 7e72e91
 
     URI: git://git.yoctoproject.org/meta-raspberrypi 
-    branch: rocko
-    commit: acfb857
+    branch: sumo
+    commit: f2e2a43
 
     URI: git://git.yoctoproject.org/meta-security
-    branch: rocko
-    commit: 3d4183b
+    branch: sumo
+    commit: 7a503cb
 
     meta-rpi layer maintainer: Scott Ellis <scott@jumpnowtek.com>

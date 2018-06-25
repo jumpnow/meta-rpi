@@ -1,0 +1,26 @@
+From e91bab480767544abf8bd7456180c67c085dd6f6 Mon Sep 17 00:00:00 2001
+From: Scott Ellis <scott@jumpnowtek.com>
+Date: Mon, 25 Jun 2018 09:24:20 -0400
+Subject: [PATCH] use native pkg config
+
+---
+ Makefile.ffmpeg | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/Makefile.ffmpeg b/Makefile.ffmpeg
+index 1c4ac58..8cbdc33 100644
+--- a/Makefile.ffmpeg
++++ b/Makefile.ffmpeg
+@@ -245,7 +245,8 @@ configure:
+ 			--disable-decoder=hevc \
+ 			--enable-decoder=opus \
+ 			--cross-prefix=$(HOST)- \
+-			--disable-stripping
++			--disable-stripping \
++			--pkg-config=pkg-config
+ 
+ 
+ .PHONY : clean
+-- 
+2.7.4
+

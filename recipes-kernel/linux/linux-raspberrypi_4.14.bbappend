@@ -1,11 +1,6 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PV}:"
-
 LINUX_VERSION = "4.14.50"
 
 SRCREV = "3b01f059d2ef9e48aca5174fc7f3b5c40fe2488c"
-SRC_URI = "git://github.com/raspberrypi/linux.git;branch=rpi-4.14.y"
-
-require linux-raspberrypi_4.14.inc
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-0-w.dtb \

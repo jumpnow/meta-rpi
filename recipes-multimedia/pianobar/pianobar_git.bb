@@ -6,15 +6,13 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=cfeb8ae0065c00f1bf4f5a963872e934"
 
 DEPENDS = "curl faad2 ffmpeg gnutls json-c libao libgcrypt omxplayer"
 
-PR = "r7"
-
 inherit pkgconfig
 
-SRCREV = "60bf2f547e6a1d853b481fc7e105a98c3a6d163f"
+SRCREV = "80d5d507c8bbb67c0f3cc067e81caa5955e68b31"
 SRC_URI = " \
     git://github.com/PromyLOPh/pianobar;protocol=git \
     file://config \
- "
+"
 
 S = "${WORKDIR}/git"
 
