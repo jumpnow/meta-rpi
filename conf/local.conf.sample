@@ -1,5 +1,5 @@
 # Local configuration for meta-rpi images
-# Yocto Project 2.4 Poky distribution [rocko] branch
+# Yocto Project 2.5 Poky distribution [sumo] branch
 # This is a sysvinit system
 
 LICENSE_FLAGS_WHITELIST = "commercial"
@@ -41,7 +41,7 @@ ENABLE_UART="1"
 
 #SSTATE_DIR = "/oe4/rpi/sstate-cache"
 
-#TMPDIR = "/oe4/rpi/tmp-rocko"
+#TMPDIR = "/oe4/rpi/tmp-sumo"
 
 DISTRO = "poky"
 
