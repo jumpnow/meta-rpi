@@ -1,6 +1,6 @@
 LINUX_VERSION = "4.14.54"
 
-SRCREV = "1fa25792a2e83012e91de333034b9c9033adc1c3"
+SRCREV = "db81c14ce9fbd705c2d3936edecbc6036ace6c05"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-0-w.dtb \
@@ -17,6 +17,7 @@ KERNEL_DEVICETREE = " \
     overlays/ads1015.dtbo \
     overlays/ads1115.dtbo \
     overlays/ads7846.dtbo \
+    overlays/adv7282m.dtbo \
     overlays/akkordion-iqdacplus.dtbo \
     overlays/allo-boss-dac-pcm512x-audio.dtbo \
     overlays/allo-digione.dtbo \
@@ -49,6 +50,7 @@ KERNEL_DEVICETREE = " \
     overlays/gpio-no-irq.dtbo \
     overlays/gpio-poweroff.dtbo \
     overlays/gpio-shutdown.dtbo \
+    overlays/hd44780-lcd.dtbo \
     overlays/hifiberry-amp.dtbo \
     overlays/hifiberry-dac.dtbo \
     overlays/hifiberry-dacplus.dtbo \
@@ -87,6 +89,7 @@ KERNEL_DEVICETREE = " \
     overlays/mmc.dtbo \
     overlays/mpu6050.dtbo \
     overlays/mz61581.dtbo \
+    overlays/ov5647.dtbo \
     overlays/papirus.dtbo \
     overlays/pi3-act-led.dtbo \
     overlays/pi3-disable-bt.dtbo \
@@ -137,12 +140,15 @@ KERNEL_DEVICETREE = " \
     overlays/spi-rtc.dtbo \
     overlays/superaudioboard.dtbo \
     overlays/sx150x.dtbo \
+    overlays/tc358743-audio.dtbo \
+    overlays/tc358743.dtbo \
     overlays/tinylcd35.dtbo \
     overlays/uart0.dtbo \
     overlays/uart1.dtbo \
     overlays/upstream-aux-interrupt.dtbo \
     overlays/upstream.dtbo \
     overlays/vc4-fkms-v3d.dtbo \
+    overlays/vc4-kms-kippah-7inch.dtbo \
     overlays/vc4-kms-v3d.dtbo \
     overlays/vga666.dtbo \
     overlays/w1-gpio.dtbo \
