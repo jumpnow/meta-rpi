@@ -20,7 +20,7 @@ CORE_OS = " \
 WIFI_SUPPORT = " \
     crda \
     iw \
-    linux-firmware \
+    linux-firmware-raspbian \
     wireless-tools \
     wpa-supplicant \
 "
