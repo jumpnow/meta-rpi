@@ -1,6 +1,6 @@
-LINUX_VERSION = "4.14.59"
+LINUX_VERSION = "4.14.61"
 
-SRCREV = "ad1d85ad2a7dea6a17e6d3cc32adf6ce0ea844c0"
+SRCREV = "52d350fb107dbd9fa30d44685ed52d2c52b09d96"
 
 KERNEL_DEVICETREE = " \
     bcm2708-rpi-0-w.dtb \
