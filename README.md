@@ -2,7 +2,7 @@ This layer depends on:
 
     URI: git://git.yoctoproject.org/poky.git
     branch: sumo
-    commit: 24a833f
+    commit: bb91b2a
 
     URI: git://git.openembedded.org/meta-openembedded
     branch: sumo
@@ -10,11 +10,11 @@ This layer depends on:
 
     URI: https://github.com/meta-qt5/meta-qt5
     branch: sumo
-    commit: 4b96f70
+    commit: c429ced
 
     URI: git://git.yoctoproject.org/meta-raspberrypi 
     branch: sumo
-    commit: cdb2dad
+    commit: 05f21ad
 
     URI: git://git.yoctoproject.org/meta-security
     branch: sumo
