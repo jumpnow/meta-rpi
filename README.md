@@ -14,7 +14,7 @@ This layer depends on:
 
     URI: git://git.yoctoproject.org/meta-raspberrypi 
     branch: sumo
-    commit: ade31d6
+    commit: 2d40b00
 
     URI: git://git.yoctoproject.org/meta-security
     branch: sumo
