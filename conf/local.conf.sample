@@ -18,8 +18,6 @@ MACHINE_FEATURES_remove = "apm"
 
 IMAGE_FSTYPES = "tar.xz"
 
-# override the meta-raspberrypi default 4.9 kernel
-PREFERRED_VERSION_linux-raspberrypi = "4.14.%"
 
 # Choose the board you are building for
 #MACHINE="raspberrypi"
@@ -35,31 +33,32 @@ MACHINE = "raspberrypi3"
 # with u-boot you will also have to change the boot script boot command
 KERNEL_IMAGETYPE = "zImage"
 
-ENABLE_UART="1"
+DISABLE_OVERSCAN = "1"
+ENABLE_UART = "1"
+ENABLE_RPI3_SERIAL_CONSOLE = "1"
+SERIAL_CONSOLE = "115200 ttyAMA0"
+# SERIAL_CONSOLE_forcevariable = ""
 
 #DL_DIR = "${HOME}/oe-sources"
-
 #SSTATE_DIR = "/oe4/rpi/sstate-cache"
-
 #TMPDIR = "/oe4/rpi/tmp-sumo"
 
 DISTRO = "poky"
-
 PACKAGE_CLASSES = "package_ipk"
 
 # i686 or x86_64
 SDKMACHINE = "x86_64"
 
+# for no root passwd uncomment the following and comment the two extra user lines
 #EXTRA_IMAGE_FEATURES = "debug-tweaks"
+
+# for a root passwd, change jumpnowtek below to your password
 INHERIT += "extrausers"
 EXTRA_USERS_PARAMS = "usermod -P jumpnowtek root; "
 
+
 USER_CLASSES = "image-mklibs image-prelink"
-
 PATCHRESOLVE = "noop"
-
 RM_OLD_IMAGE = "1"
-
 INHERIT += "rm_work"
-
 CONF_VERSION = "1"
