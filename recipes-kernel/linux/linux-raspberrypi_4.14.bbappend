@@ -2,7 +2,7 @@ LINUX_VERSION = "4.14.69"
 
 SRCREV = "27e84c625ebbdfccf78220f2f90995a050c7b64a"
 
-KERNEL_DEVICETREE = " \
+RPI_KERNEL_DEVICETREE = " \
     bcm2708-rpi-0-w.dtb \
     bcm2708-rpi-b.dtb \
     bcm2708-rpi-b-plus.dtb \
@@ -11,13 +11,16 @@ KERNEL_DEVICETREE = " \
     bcm2710-rpi-3-b-plus.dtb \
     bcm2710-rpi-3-b.dtb \
     bcm2710-rpi-cm3.dtb \
-    \
+"
+
+RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/adau1977-adc.dtbo \
     overlays/adau7002-simple.dtbo \
     overlays/ads1015.dtbo \
     overlays/ads1115.dtbo \
     overlays/ads7846.dtbo \
     overlays/adv7282m.dtbo \
+    overlays/adv728x-m.dtbo \
     overlays/akkordion-iqdacplus.dtbo \
     overlays/allo-boss-dac-pcm512x-audio.dtbo \
     overlays/allo-digione.dtbo \
@@ -27,6 +30,7 @@ KERNEL_DEVICETREE = " \
     overlays/applepi-dac.dtbo \
     overlays/at86rf233.dtbo \
     overlays/audioinjector-addons.dtbo \
+    overlays/audioinjector-ultra.dtbo \
     overlays/audioinjector-wm8731-audio.dtbo \
     overlays/audremap.dtbo \
     overlays/balena-fin.dtbo \
@@ -114,6 +118,7 @@ KERNEL_DEVICETREE = " \
     overlays/rpi-dac.dtbo \
     overlays/rpi-display.dtbo \
     overlays/rpi-ft5406.dtbo \
+    overlays/rpi-poe.dtbo \
     overlays/rpi-proto.dtbo \
     overlays/rpi-sense.dtbo \
     overlays/rpi-tv.dtbo \
@@ -154,4 +159,9 @@ KERNEL_DEVICETREE = " \
     overlays/w1-gpio.dtbo \
     overlays/w1-gpio-pullup.dtbo \
     overlays/wittypi.dtbo \
+"
+
+KERNEL_DEVICETREE = " \
+    ${RPI_KERNEL_DEVICETREE} \
+    ${RPI_KERNEL_DEVICETREE_OVERLAYS} \
 "
