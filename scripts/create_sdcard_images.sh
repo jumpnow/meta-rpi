@@ -1,7 +1,11 @@
 #!/bin/bash
 
-DSTDIR=~/rpi/upload
-IMG=qt5
+if [ -z "${DSTDIR}" ]; then
+	DSTDIR=~/rpi/upload
+fi
+if [ -z "${IMG}" ]; then
+	IMG=qt5
+fi
 IMG_LONG="${IMG}-image-${MACHINE}"
 
 if [ ! -d /media/card ]; then
