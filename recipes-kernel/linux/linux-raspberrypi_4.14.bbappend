@@ -1,6 +1,6 @@
 LINUX_VERSION = "4.14.74"
 
-SRCREV = "12d78096b1669a08d440f7ebaddf5d925e52fe79"
+SRCREV = "6d27aa156c26977dfd079a7107e31670127d17d3"
 
 RPI_KERNEL_DEVICETREE = " \
     bcm2708-rpi-0-w.dtb \
@@ -48,9 +48,11 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/fe-pi-audio.dtbo \
     overlays/goodix.dtbo \
     overlays/googlevoicehat-soundcard.dtbo \
+    overlays/gpio-fan.dtbo \
     overlays/gpio-ir.dtbo \
     overlays/gpio-ir-tx.dtbo \
     overlays/gpio-key.dtbo \
+    overlays/gpio-no-bank0-irq.dtbo \
     overlays/gpio-no-irq.dtbo \
     overlays/gpio-poweroff.dtbo \
     overlays/gpio-shutdown.dtbo \
