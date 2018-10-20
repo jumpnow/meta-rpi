@@ -1,7 +1,7 @@
-RPIFW_DATE = "20181015"
-SRCREV = "10c1c5f9637849e8a3a70e114d3837e25987fc7c"
-SRC_URI[md5sum] = "1d59600401cc2ac1cfc3a44428f09677"
-SRC_URI[sha256sum] = "ef95caef64a48feec0a909d256f214322f91f2af60de61c83acbb68298417b22"
+RPIFW_DATE = "20181019"
+SRCREV = "8993bff0b82f8cd8d60409d28bb61d2197606ebb"
+SRC_URI[md5sum] = "fa8894cfbdcc8b62e8ab16ea78082018"
+SRC_URI[sha256sum] = "f3ed3f72da29d1966d9d98b67ccac4ce5d6830ed0eaa9caea2564a30d0d966c3"
 
 RPIFW_SRC_URI = "https://codeload.github.com/raspberrypi/firmware/tar.gz/${SRCREV}"
 RPIFW_S = "${WORKDIR}/firmware-${SRCREV}"
