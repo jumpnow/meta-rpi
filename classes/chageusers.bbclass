@@ -45,7 +45,7 @@ perform_chage () {
 	local rootdir="$1"
 	local opts="$2"
 	bbnote "${PN}: Performing chage with [$opts]"
-	local username=`echo "$opts" | awk '{ print $NF }'`
+	local username=$(echo "$opts" | awk '{ print $NF }')
 	grep -q "^$username:" $rootdir/etc/passwd
 
 	if [ $? -eq 0 ]; then
