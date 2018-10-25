@@ -3,9 +3,11 @@
 if [ -z "${DSTDIR}" ]; then
 	DSTDIR=~/rpi/upload
 fi
+
 if [ -z "${IMG}" ]; then
 	IMG=qt5
 fi
+
 IMG_LONG="${IMG}-image-${MACHINE}"
 
 if [ ! -d /media/card ]; then
@@ -87,7 +89,7 @@ sudo losetup -P ${LOOPDEV} ${DSTDIR}/${SDIMG}
 
 echo -e "\n***** Copying the boot partition *****"
 DEV=${LOOPDEV}p1
-./copy_boot.sh ${DEV} 
+./copy_boot.sh ${DEV}
 
 if [ $? -ne 0 ]; then
 	sudo losetup -D
@@ -96,7 +98,7 @@ fi
 
 echo -e "\n***** Copying the rootfs *****"
 DEV=${LOOPDEV}p2
-./copy_rootfs.sh ${DEV} ${IMG} ${HOSTNAME} 
+./copy_rootfs.sh ${DEV} ${IMG} ${HOSTNAME}
 
 if [ $? -ne 0 ]; then
 	sudo losetup -D
