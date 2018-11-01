@@ -57,8 +57,8 @@ INHERIT += "extrausers"
 EXTRA_USERS_PARAMS = "usermod -P jumpnowtek root; "
 
 # this will force root to change password on first login
-INHERIT += "chageusers"
-CHAGE_USERS_PARAMS = "chage -d0 root; "
+#INHERIT += "chageusers"
+#CHAGE_USERS_PARAMS = "chage -d0 root; "
 
 
 USER_CLASSES = "image-mklibs image-prelink"
