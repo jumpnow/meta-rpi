@@ -17,6 +17,8 @@ CORE_OS = " \
     openssh openssh-keygen openssh-sftp-server \
     packagegroup-core-boot \
     procps \
+    rndaddtoentcnt \
+    rng-tools \
     term-prompt \
     tzdata \
 "
@@ -25,7 +27,6 @@ WIFI_SUPPORT = " \
     crda \
     iw \
     linux-firmware-raspbian \
-    wireless-tools \
     wpa-supplicant \
 "
 
@@ -43,7 +44,7 @@ ALSA += " \
     alsa-state \
     alsa-utils \
     alsa-utils-scripts \
- "
+"
 
 IMAGE_INSTALL += " \
     ${ALSA} \
@@ -51,7 +52,7 @@ IMAGE_INSTALL += " \
     ${WIFI_SUPPORT} \
     iqaudio-mute \
     pianobar \
- "
+"
 
 set_local_timezone() {
     ln -sf /usr/share/zoneinfo/EST5EDT ${IMAGE_ROOTFS}/etc/localtime
