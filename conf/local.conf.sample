@@ -4,7 +4,7 @@
 
 LICENSE_FLAGS_WHITELIST = "commercial"
 
-DISTRO_FEATURES = "ext2 pam opengl usbhost ${DISTRO_FEATURES_LIBC}"
+DISTRO_FEATURES = "ext2 opengl usbhost ${DISTRO_FEATURES_LIBC}"
 
 DISTRO_FEATURES_BACKFILL_CONSIDERED += "pulseaudio"
 
@@ -57,8 +57,8 @@ INHERIT += "extrausers"
 EXTRA_USERS_PARAMS = "usermod -P jumpnowtek root; "
 
 # this will force root to change password on first login
-#INHERIT += "chageusers"
-#CHAGE_USERS_PARAMS = "chage -d0 root; "
+INHERIT += "chageusers"
+CHAGE_USERS_PARAMS = "chage -d0 root; "
 
 
 USER_CLASSES = "image-mklibs image-prelink"
