@@ -21,7 +21,6 @@ WIFI_SUPPORT = " \
     crda \
     iw \
     linux-firmware-raspbian \
-    wireless-tools \
     wpa-supplicant \
 "
 
@@ -72,6 +71,8 @@ EXTRA_TOOLS_INSTALL = " \
     nano \
     netcat \
     procps \
+    rndaddtoentcnt \
+    rng-tools \
     sysfsutils \
     tcpdump \
     unzip \
