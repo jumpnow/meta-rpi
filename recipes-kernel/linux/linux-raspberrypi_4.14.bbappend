@@ -1,6 +1,6 @@
-LINUX_VERSION = "4.14.78"
+LINUX_VERSION = "4.14.79"
 
-SRCREV = "8ec2a2d27dd3e3e32113445592f44ea974b21732"
+SRCREV = "36612d5d7a88672a3e7dd6cb458dbbbca0d75efe"
 
 RPI_KERNEL_DEVICETREE = " \
     bcm2708-rpi-0-w.dtb \
@@ -63,8 +63,8 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/hifiberry-digi.dtbo \
     overlays/hifiberry-digi-pro.dtbo \
     overlays/hy28a.dtbo \
-    overlays/hy28b.dtbo \
     overlays/hy28b-2017.dtbo \
+    overlays/hy28b.dtbo \
     overlays/i2c0-bcm2708.dtbo \
     overlays/i2c1-bcm2708.dtbo \
     overlays/i2c-bcm2708.dtbo \
