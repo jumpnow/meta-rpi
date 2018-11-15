@@ -19,7 +19,7 @@ Latest commits
 
     poky d240b88
     meta-openembedded 2bb21ef
-    meta-qt5 d0ef3c0 
+    meta-qt5 d4e7f73
     meta-raspberrypi 2d40b00
     meta-security 1e4b45c
 
