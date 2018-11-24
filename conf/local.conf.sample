@@ -1,5 +1,5 @@
 # Local configuration for meta-rpi images
-# Yocto Project 2.5 Poky distribution [sumo] branch
+# Yocto Project 2.6 Poky distribution [thud] branch
 # This is a sysvinit system
 
 LICENSE_FLAGS_WHITELIST = "commercial"
@@ -18,7 +18,6 @@ MACHINE_FEATURES_remove = "apm"
 
 IMAGE_FSTYPES = "tar.xz"
 
-
 # Choose the board you are building for
 #MACHINE="raspberrypi"
 #MACHINE="raspberrypi0"
@@ -36,12 +35,12 @@ KERNEL_IMAGETYPE = "zImage"
 DISABLE_OVERSCAN = "1"
 ENABLE_UART = "1"
 ENABLE_RPI3_SERIAL_CONSOLE = "1"
-SERIAL_CONSOLE = "115200 ttyAMA0"
-# SERIAL_CONSOLE_forcevariable = ""
+SERIAL_CONSOLES = "115200;ttyAMA0"
+# SERIAL_CONSOLES_forcevariable = ""
 
 #DL_DIR = "${HOME}/oe-sources"
 #SSTATE_DIR = "/oe4/rpi/sstate-cache"
-#TMPDIR = "/oe4/rpi/tmp-sumo"
+#TMPDIR = "/oe4/rpi/tmp-thud"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
@@ -59,7 +58,6 @@ EXTRA_USERS_PARAMS = "usermod -P jumpnowtek root; "
 # this will force root to change password on first login
 INHERIT += "chageusers"
 CHAGE_USERS_PARAMS = "chage -d0 root; "
-
 
 USER_CLASSES = "image-mklibs image-prelink"
 PATCHRESOLVE = "noop"

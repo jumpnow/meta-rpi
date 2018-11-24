@@ -34,10 +34,11 @@ TSLIB = " \
 
 IMAGE_INSTALL += " \
     ${FONTS} \
+    ${QT_DEV_TOOLS} \
     ${QT_TOOLS} \
-    qcolorcheck \
+    qcolorcheck-tools \
     ${TSLIB} \
-    tspress \
+    tspress-tools \
 "
 
 export IMAGE_BASENAME = "qt5-basic-image"

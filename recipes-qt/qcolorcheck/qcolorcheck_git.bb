@@ -5,8 +5,6 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 
 DEPENDS += "qtbase"
 
-PR = "r2"
-
 SRCREV = "802dcca081194103b85ea65daf0bb016fdcd2526"
 SRC_URI = "git://github.com/scottellis/qcolorcheck.git"
 

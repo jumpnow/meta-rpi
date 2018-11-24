@@ -18,6 +18,7 @@ case "${MACHINE}" in
     raspberrypi2|raspberrypi3|raspberrypi-cm3)
         DTBS="bcm2709-rpi-2-b.dtb \
               bcm2710-rpi-3-b.dtb \
+              bcm2710-rpi-3-b-plus.dtb \
               bcm2710-rpi-cm3.dtb"
         ;;
     *)
@@ -59,7 +60,7 @@ else
     fi
 
     SRCDIR=${OETMP}/deploy/images/${MACHINE}
-fi 
+fi
 
 for f in ${BOOTLDRFILES}; do
     if [ ! -f ${SRCDIR}/bcm2835-bootfiles/${f} ]; then
@@ -70,7 +71,7 @@ done
 
 have_one_dtb=0
 for f in ${DTBS}; do
-    if [ -f ${SRCDIR}/${KERNEL_IMAGETYPE}-${f} ]; then
+    if [ -f ${SRCDIR}/${f} ]; then
         have_one_dtb=1
     fi
 done
@@ -129,28 +130,27 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-echo 'Copying overlay dtbos (with prefix "${KERNEL_IMAGETYPE}-" stripped from file names)'
-for f in ${SRCDIR}/${KERNEL_IMAGETYPE}-*.dtbo; do
-    if [ -L $f ]; then
-        fname="${f##*/}"
-        frename="${fname#${KERNEL_IMAGETYPE}-}"
-        sudo cp "$f" "/media/card/overlays/$frename"
+echo 'Copying overlay dtbos'
+for f in $( ls ${SRCDIR}/*.dtbo | grep -v -e "-${MACHINE}" )
+do
+    if [ -L ${f} ]; then
+        sudo cp ${f} /media/card/overlays
+
+        if [ $? -ne 0 ]; then
+            echo "Error copying overlay: ${f}"
+            sudo umount ${DEV}
+            exit 1
+        fi
     fi
 done
 
-if [ $? -ne 0 ]; then
-    echo "Error copying overlays"
-    sudo umount ${DEV}
-    exit 1
-fi
-
 echo "Copying dtbs"
 for f in ${DTBS}; do
-    if [ -f ${SRCDIR}/${KERNEL_IMAGETYPE}-${f} ]; then
-        sudo cp ${SRCDIR}/${KERNEL_IMAGETYPE}-${f} /media/card/${f}
+    if [ -f ${SRCDIR}/${f} ]; then
+        sudo cp ${SRCDIR}/${f} /media/card
 
         if [ $? -ne 0 ]; then
-            echo "Error copying dtb: $f"
+            echo "Error copying dtb: ${f}"
             sudo umount ${DEV}
             exit 1
         fi
@@ -200,7 +200,7 @@ if [ -f ./config.txt ]; then
         exit 1
     fi
 fi
-  
+
 if [ -f ./cmdline.txt ]; then
     echo "Copying local cmdline.txt to card"
     sudo cp ./cmdline.txt /media/card

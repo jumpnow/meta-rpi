@@ -44,9 +44,11 @@ DEV_SDK_INSTALL = " \
     libstdc++ \
     libstdc++-dev \
     libtool \
+    ltrace \
     make \
     pkgconfig \
     python3-modules \
+    strace \
 "
 
 DEV_EXTRAS = " \
@@ -70,6 +72,7 @@ EXTRA_TOOLS_INSTALL = " \
     less \
     nano \
     netcat \
+    nmap \
     procps \
     rndaddtoentcnt \
     rng-tools \
@@ -107,7 +110,6 @@ disable_bootlogd() {
 ROOTFS_POSTPROCESS_COMMAND += " \
     set_local_timezone ; \
     disable_bootlogd ; \
- "
+"
 
 export IMAGE_BASENAME = "console-image"
-
