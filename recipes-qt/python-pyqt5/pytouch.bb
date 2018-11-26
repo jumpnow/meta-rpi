@@ -15,4 +15,4 @@ do_install() {
 
 FILES_${PN} = "${bindir}"
 
-RDEPENDS_${PN} = "python-pyqt5"
+RDEPENDS_${PN} = "python3-pyqt5"
