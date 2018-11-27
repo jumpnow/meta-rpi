@@ -1,6 +1,4 @@
 SUMMARY = "A console development image with some C/C++ dev tools"
-HOMEPAGE = "http://www.jumpnowtek.com"
-LICENSE = "MIT"
 
 IMAGE_FEATURES += "package-management splash"
 IMAGE_LINGUAS = "en-us"
@@ -65,6 +63,7 @@ EXTRA_TOOLS_INSTALL = " \
     ethtool \
     fbset \
     findutils \
+    firewall \
     i2c-tools \
     iperf3 \
     iproute2 \

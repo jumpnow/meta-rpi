@@ -1,6 +1,4 @@
 SUMMARY = "A basic Qt5 qwidgets dev image"
-HOMEPAGE = "http://www.jumpnowtek.com"
-LICENSE = "MIT"
 
 require console-image.bb
 

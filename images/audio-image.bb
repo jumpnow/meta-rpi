@@ -1,6 +1,5 @@
 SUMMARY = "A minimal console image that runs pianobar"
 HOMEPAGE = "http://www.jumpnowtek.com"
-LICENSE = "MIT"
 
 IMAGE_LINGUAS = "en-us"
 
