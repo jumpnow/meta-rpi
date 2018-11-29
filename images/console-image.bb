@@ -50,8 +50,6 @@ DEV_SDK_INSTALL = " \
 "
 
 DEV_EXTRAS = " \
-    ntp \
-    ntp-tickadj \
     serialecho  \
     spiloop \
 "
@@ -70,8 +68,9 @@ EXTRA_TOOLS_INSTALL = " \
     iptables \
     less \
     nano \
-    netcat \
+    netcat-openbsd \
     nmap \
+    ntp ntp-tickadj \
     procps \
     rndaddtoentcnt \
     rng-tools \
