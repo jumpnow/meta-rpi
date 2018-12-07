@@ -28,8 +28,7 @@ case "$1" in
             cat "$RANDOM_SEED_FILE" > /dev/urandom
 
             if [ -x /usr/bin/rndaddtoentcnt ]; then
-                cnt=$(expr $(stat --printf="%s" "$RANDOM_SEED_FILE") \* 2)
-                /usr/bin/rndaddtoentcnt $cnt
+                /usr/bin/rndaddtoentcnt 1024
             fi
         fi
 
