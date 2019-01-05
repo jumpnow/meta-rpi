@@ -1,6 +1,6 @@
 LINUX_VERSION = "4.14.91"
 
-SRCREV = "a0911976a8732eb0d9ad1088865e60e1f28c0099"
+SRCREV = "4c5aec7827ac970729ac54e57cbd85fba878a462"
 
 RPI_KERNEL_DEVICETREE = " \
     bcm2708-rpi-0-w.dtb \
@@ -14,6 +14,7 @@ RPI_KERNEL_DEVICETREE = " \
 "
 
 RPI_KERNEL_DEVICETREE_OVERLAYS = " \
+    overlays/3dlab-nano-player.dtbo \
     overlays/adau1977-adc.dtbo \
     overlays/adau7002-simple.dtbo \
     overlays/ads1015.dtbo \
@@ -32,6 +33,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/audioinjector-addons.dtbo \
     overlays/audioinjector-ultra.dtbo \
     overlays/audioinjector-wm8731-audio.dtbo \
+    overlays/audiosense-pi.dtbo \
     overlays/audremap.dtbo \
     overlays/balena-fin.dtbo \
     overlays/bmp085_i2c-sensor.dtbo \
@@ -151,6 +153,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/tc358743-audio.dtbo \
     overlays/tc358743.dtbo \
     overlays/tinylcd35.dtbo \
+    overlays/tpm-slb9670.dtbo \
     overlays/uart0.dtbo \
     overlays/uart1.dtbo \
     overlays/upstream-aux-interrupt.dtbo \
