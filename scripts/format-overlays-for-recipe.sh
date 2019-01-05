@@ -1,7 +1,12 @@
 #!/bin/bash
 
-cd ../../linux/arch/arm/boot/dts/overlays
+LINUX=${HOME}/linux/linux-rpi
 
-ls -l *.dts | sed s:-overlay\.dts:\.dtbo: | awk '{ print "    overlays/"$9, "\\" }'
+OVERLAYS_DIR=${LINUX}/arch/arm/boot/dts/overlays
 
-cd $OLDPWD
+if [ ! -d ${OVERLAYS_DIR} ]; then
+    echo "overlays dir not found: ${OVERLAYS_DIR}"
+    exit 1
+fi
+
+basename -a $(ls ${OVERLAYS_DIR}/*.dts | sed s:-overlay\.dts:\.dtbo:) | awk '{ print "    overlays/"$1, "\\" }'
