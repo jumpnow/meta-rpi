@@ -19,7 +19,6 @@ WIFI_SUPPORT = " \
     crda \
     iw \
     linux-firmware-raspbian \
-    wireless-tools \
     wpa-supplicant \
 "
 
