@@ -31,10 +31,8 @@ BOOTLDRFILES="bootcode.bin \
               config.txt \
               fixup_cd.dat \
               fixup.dat \
-              fixup_db.dat \
               fixup_x.dat \
               start_cd.elf \
-              start_db.elf \
               start.elf \
               start_x.elf"
 
