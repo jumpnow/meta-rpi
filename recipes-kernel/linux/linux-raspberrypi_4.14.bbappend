@@ -1,6 +1,6 @@
-LINUX_VERSION = "4.14.93"
+LINUX_VERSION = "4.14.94"
 
-SRCREV = "66b333b365acd6def12b07fc079f9d7d8e53ee50"
+SRCREV = "049e03d71027297051bc19499082194ce64cdc91"
 
 RPI_KERNEL_DEVICETREE = " \
     bcm2708-rpi-0-w.dtb \
@@ -92,6 +92,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/mcp2515-can1.dtbo \
     overlays/mcp3008.dtbo \
     overlays/mcp3202.dtbo \
+    overlays/mcp342x.dtbo \
     overlays/media-center.dtbo \
     overlays/midi-uart0.dtbo \
     overlays/midi-uart1.dtbo \
@@ -148,6 +149,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/spi2-3cs.dtbo \
     overlays/spi-gpio35-39.dtbo \
     overlays/spi-rtc.dtbo \
+    overlays/ssd1306.dtbo \
     overlays/superaudioboard.dtbo \
     overlays/sx150x.dtbo \
     overlays/tc358743-audio.dtbo \
