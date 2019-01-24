@@ -16,7 +16,7 @@ VIRTUAL-RUNTIME_init_manager = "sysvinit"
 
 MACHINE_FEATURES_remove = "apm"
 
-IMAGE_FSTYPES = "tar.xz"
+IMAGE_FSTYPES = "tar.xz rpi-sdimg"
 
 # Choose the board you are building for
 #MACHINE="raspberrypi"
