@@ -20,7 +20,7 @@ export HOST_SYS
 export STAGING_INCDIR
 export STAGING_LIBDIR
 
-DISABLED_FEATURES = "PyQt_Desktop_OpenGL PyQt_qreal_double PyQt_SessionManager"
+DISABLED_FEATURES = "PyQt_Desktop_OpenGL PyQt_SessionManager"
 
 PYQT_MODULES = "QtCore QtGui QtMultimedia QtNetwork QtQml QtQuick QtWidgets"
 
