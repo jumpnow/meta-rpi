@@ -17,6 +17,6 @@ Latest commits
     poky ee7dd31
     meta-openembedded cca27b5
     meta-qt5 201fcf2
-    meta-raspberrypi a48743d
+    meta-raspberrypi d5d92f2
 
 meta-rpi layer maintainer: Scott Ellis <scott@jumpnowtek.com>
