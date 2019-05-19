@@ -38,6 +38,9 @@ ENABLE_RPI3_SERIAL_CONSOLE = "1"
 SERIAL_CONSOLES = "115200;ttyAMA0"
 # SERIAL_CONSOLES_forcevariable = ""
 
+# comment this line if you want a 4.14 kernel
+PREFERRED_VERSION_linux-raspberrypi = "4.19.%"
+
 #DL_DIR = "${HOME}/oe-sources"
 #SSTATE_DIR = "/oe4/rpi/sstate-cache"
 #TMPDIR = "/oe4/rpi/tmp-thud"
