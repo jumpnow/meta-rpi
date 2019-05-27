@@ -1,9 +1,7 @@
-LINUX_VERSION = "4.19.42"
+LINUX_VERSION = "4.19.44"
 
-SRCREV = "4ed0f310669e324505b2125619349312497d4a08"
-SRC_URI = " \
-    git://github.com/raspberrypi/linux.git;branch=rpi-4.19.y \
-"
+SRCREV = "1694cf065778a8508b6dd8ce8ce270ca0e643788"
+SRC_URI = "git://github.com/raspberrypi/linux.git;branch=rpi-4.19.y"
 
 require linux-rpi.inc
 
@@ -19,7 +17,6 @@ RPI_KERNEL_DEVICETREE = " \
 "
 
 RPI_KERNEL_DEVICETREE_OVERLAYS = " \
-    overlays/3dlab-nano-player.dtbo \
     overlays/adau1977-adc.dtbo \
     overlays/adau7002-simple.dtbo \
     overlays/ads1015.dtbo \
@@ -144,7 +141,6 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/sc16is752-i2c.dtbo \
     overlays/sc16is752-spi1.dtbo \
     overlays/sdhost.dtbo \
-    overlays/sdio-1bit.dtbo \
     overlays/sdio.dtbo \
     overlays/sdtweak.dtbo \
     overlays/smi-dev.dtbo \
@@ -170,7 +166,6 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/uart0.dtbo \
     overlays/uart1.dtbo \
     overlays/udrc.dtbo \
-    overlays/upstream-aux-interrupt.dtbo \
     overlays/upstream.dtbo \
     overlays/vc4-fkms-v3d.dtbo \
     overlays/vc4-kms-kippah-7inch.dtbo \
