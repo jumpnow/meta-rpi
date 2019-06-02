@@ -8,6 +8,7 @@ inherit image
 DEPENDS += "bcm2835-bootfiles"
 
 CORE_OS = " \
+    ifupdown \
     kernel-modules \
     openssh openssh-keygen openssh-sftp-server \
     packagegroup-core-boot \
@@ -85,8 +86,9 @@ EXTRA_TOOLS_INSTALL = " \
     zip \
 "
 
+#    omxplayer 
+
 RPI_STUFF = " \
-    omxplayer \
     raspi2fb \
     userland \
 "

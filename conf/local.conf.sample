@@ -1,5 +1,5 @@
 # Local configuration for meta-rpi images
-# Yocto Project 2.6 Poky distribution [thud] branch
+# Yocto Project 2.7 Poky distribution [warrior] branch
 # This is a sysvinit system
 
 LICENSE_FLAGS_WHITELIST = "commercial"
@@ -43,7 +43,7 @@ PREFERRED_VERSION_linux-raspberrypi = "4.19.%"
 
 #DL_DIR = "${HOME}/oe-sources"
 #SSTATE_DIR = "/oe4/rpi/sstate-cache"
-#TMPDIR = "/oe4/rpi/tmp-thud"
+#TMPDIR = "/oe4/rpi/tmp-warrior"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"

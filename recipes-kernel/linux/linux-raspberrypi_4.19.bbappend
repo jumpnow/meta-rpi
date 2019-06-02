@@ -1,12 +1,9 @@
-LINUX_VERSION = "4.19.44"
+LINUX_VERSION = "4.19.46"
 
-SRCREV = "1694cf065778a8508b6dd8ce8ce270ca0e643788"
-SRC_URI = "git://github.com/raspberrypi/linux.git;branch=rpi-4.19.y"
-
-require linux-rpi.inc
+SRCREV = "55e0334cf5a43948b65788980cd8ab729427230e"
 
 RPI_KERNEL_DEVICETREE = " \
-    bcm2708-rpi-0-w.dtb \
+    bcm2708-rpi-zero-w.dtb \
     bcm2708-rpi-b.dtb \
     bcm2708-rpi-b-plus.dtb \
     bcm2708-rpi-cm.dtb \

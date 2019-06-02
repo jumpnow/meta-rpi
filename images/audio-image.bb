@@ -9,6 +9,7 @@ DEPENDS += "bcm2835-bootfiles"
 
 CORE_OS = " \
     firewall \
+    ifupdown \
     iptables \
     kernel-modules \
     ntp \
