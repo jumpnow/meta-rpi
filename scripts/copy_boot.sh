@@ -10,7 +10,8 @@ fi
 
 case "${MACHINE}" in
     raspberrypi|raspberrypi0|raspberrypi0-wifi|raspberrypi-cm)
-        DTBS="bcm2708-rpi-0-w.dtb \
+        DTBS="bcm2708-rpi-zero.dtb \
+              bcm2708-rpi-zero-w.dtb \
               bcm2708-rpi-b.dtb \
               bcm2708-rpi-b-plus.dtb \
               bcm2708-rpi-cm.dtb"
