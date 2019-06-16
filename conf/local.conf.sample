@@ -19,13 +19,13 @@ MACHINE_FEATURES_remove = "apm"
 IMAGE_FSTYPES = "tar.xz"
 
 # Choose the board you are building for
-#MACHINE="raspberrypi"
-#MACHINE="raspberrypi0"
-#MACHINE="raspberrypi0-wifi"
-#MACHINE="raspberrypi2"
+#MACHINE = "raspberrypi"
+#MACHINE = "raspberrypi0"
+#MACHINE = "raspberrypi0-wifi"
+#MACHINE = "raspberrypi2"
 MACHINE = "raspberrypi3"
-#MACHINE="raspberrypi-cm"
-#MACHINE="raspberrypi-cm3"
+#MACHINE = "raspberrypi-cm"
+#MACHINE = "raspberrypi-cm3"
 
 # Choices are Image or zImage if NOT using u-boot (no u-boot is the default)
 # Choices are uImage or zImage if using u-boot, though if you choose zImage
