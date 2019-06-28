@@ -4,7 +4,6 @@ HOMEPAGE = "https://6xq.net/pianobar/"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://COPYING;md5=cfeb8ae0065c00f1bf4f5a963872e934"
 
-#DEPENDS = "curl faad2 ffmpeg gnutls json-c libao libgcrypt omxplayer"
 DEPENDS = "curl faad2 ffmpeg gnutls json-c libao libgcrypt"
 
 inherit pkgconfig
