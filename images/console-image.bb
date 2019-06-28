@@ -23,6 +23,12 @@ WIFI_SUPPORT = " \
     wpa-supplicant \
 "
 
+WIREGUARD_SUPPORT = " \
+    wireguard-init \
+    wireguard-module \
+    wireguard-tools \
+"
+
 DEV_SDK_INSTALL = " \
     binutils \
     binutils-symlinks \
@@ -99,6 +105,7 @@ IMAGE_INSTALL += " \
     ${EXTRA_TOOLS_INSTALL} \
     ${RPI_STUFF} \
     ${WIFI_SUPPORT} \
+    ${WIREGUARD_SUPPORT} \
 "
 
 set_local_timezone() {
