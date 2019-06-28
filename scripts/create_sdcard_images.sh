@@ -17,6 +17,13 @@ if [ -z "${IMG}" ]; then
     IMG=qt5
 fi
 
+if [ -z "${MACHINE}" ]; then
+    if [ -f ../../build/conf/local.conf ]; then
+        export MACHINE=$(grep ^MACHINE= ../../build/conf/local.conf | cut -d'=' -f2 | tr -d '"')
+        echo "Using MACHINE from local.conf: $MACHINE"
+    fi
+fi
+
 IMG_LONG="${IMG}-image-${MACHINE}"
 
 if [ ! -d /media/card ]; then
