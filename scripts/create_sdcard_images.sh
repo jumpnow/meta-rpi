@@ -19,7 +19,7 @@ fi
 
 if [ -z "${MACHINE}" ]; then
     if [ -f ../../build/conf/local.conf ]; then
-        export MACHINE=$(grep ^MACHINE= ../../build/conf/local.conf | cut -d'=' -f2 | tr -d '"')
+        export MACHINE=$(grep '^MACHINE =' ../../build/conf/local.conf | cut -d'=' -f2 | tr -d '"' | tr -d ' ')
         echo "Using MACHINE from local.conf: $MACHINE"
     fi
 fi
