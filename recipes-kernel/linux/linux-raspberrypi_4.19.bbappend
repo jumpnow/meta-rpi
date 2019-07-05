@@ -1,6 +1,6 @@
-LINUX_VERSION = "4.19.56"
+LINUX_VERSION = "4.19.57"
 
-SRCREV = "0d3c5fea8c6b309e1e61aae2389a4baf327d2967"
+SRCREV = "18acdefe95cfc7ccd76d0f0cd00e9c8d9f66fad4"
 
 RPI_KERNEL_DEVICETREE = " \
     bcm2708-rpi-zero.dtb \
@@ -12,6 +12,7 @@ RPI_KERNEL_DEVICETREE = " \
     bcm2710-rpi-3-b-plus.dtb \
     bcm2710-rpi-3-b.dtb \
     bcm2710-rpi-cm3.dtb \
+    bcm2711-rpi-4-b.dtb \
 "
 
 RPI_KERNEL_DEVICETREE_OVERLAYS = " \
