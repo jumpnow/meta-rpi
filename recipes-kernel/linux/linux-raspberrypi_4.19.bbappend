@@ -1,6 +1,11 @@
 LINUX_VERSION = "4.19.57"
 
-SRCREV = "18acdefe95cfc7ccd76d0f0cd00e9c8d9f66fad4"
+SRCREV = "8ea4810a9f2d0c510f6a8fd56805e82ac76904a3"
+
+KERNEL_DEVICETREE = " \
+    ${RPI_KERNEL_DEVICETREE} \
+    ${RPI_KERNEL_DEVICETREE_OVERLAYS} \
+"
 
 RPI_KERNEL_DEVICETREE = " \
     bcm2708-rpi-zero.dtb \
@@ -16,6 +21,7 @@ RPI_KERNEL_DEVICETREE = " \
 "
 
 RPI_KERNEL_DEVICETREE_OVERLAYS = " \
+    overlays/act-led.dtbo \
     overlays/adau1977-adc.dtbo \
     overlays/adau7002-simple.dtbo \
     overlays/ads1015.dtbo \
@@ -41,6 +47,8 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/dht11.dtbo \
     overlays/dionaudio-loco.dtbo \
     overlays/dionaudio-loco-v2.dtbo \
+    overlays/disable-bt.dtbo \
+    overlays/disable-wifi.dtbo \
     overlays/dpi18.dtbo \
     overlays/dpi24.dtbo \
     overlays/draws.dtbo \
@@ -72,6 +80,10 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/hy28b.dtbo \
     overlays/i2c0-bcm2708.dtbo \
     overlays/i2c1-bcm2708.dtbo \
+    overlays/i2c3.dtbo \
+    overlays/i2c4.dtbo \
+    overlays/i2c5.dtbo \
+    overlays/i2c6.dtbo \
     overlays/i2c-bcm2708.dtbo \
     overlays/i2c-gpio.dtbo \
     overlays/i2c-mux.dtbo \
@@ -102,6 +114,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/media-center.dtbo \
     overlays/midi-uart0.dtbo \
     overlays/midi-uart1.dtbo \
+    overlays/miniuart-bt.dtbo \
     overlays/mmc.dtbo \
     overlays/mpu6050.dtbo \
     overlays/mz61581.dtbo \
@@ -153,7 +166,16 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/spi2-1cs.dtbo \
     overlays/spi2-2cs.dtbo \
     overlays/spi2-3cs.dtbo \
+    overlays/spi3-1cs.dtbo \
+    overlays/spi3-2cs.dtbo \
+    overlays/spi4-1cs.dtbo \
+    overlays/spi4-2cs.dtbo \
+    overlays/spi5-1cs.dtbo \
+    overlays/spi5-2cs.dtbo \
+    overlays/spi6-1cs.dtbo \
+    overlays/spi6-2cs.dtbo \
     overlays/spi-gpio35-39.dtbo \
+    overlays/spi-gpio40-45.dtbo \
     overlays/spi-rtc.dtbo \
     overlays/ssd1306.dtbo \
     overlays/superaudioboard.dtbo \
@@ -164,6 +186,10 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/tpm-slb9670.dtbo \
     overlays/uart0.dtbo \
     overlays/uart1.dtbo \
+    overlays/uart2.dtbo \
+    overlays/uart3.dtbo \
+    overlays/uart4.dtbo \
+    overlays/uart5.dtbo \
     overlays/udrc.dtbo \
     overlays/upstream.dtbo \
     overlays/vc4-fkms-v3d.dtbo \
@@ -173,9 +199,4 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/w1-gpio.dtbo \
     overlays/w1-gpio-pullup.dtbo \
     overlays/wittypi.dtbo \
-"
-
-KERNEL_DEVICETREE = " \
-    ${RPI_KERNEL_DEVICETREE} \
-    ${RPI_KERNEL_DEVICETREE_OVERLAYS} \
 "
