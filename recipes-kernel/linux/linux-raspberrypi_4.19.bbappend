@@ -1,6 +1,6 @@
 LINUX_VERSION = "4.19.58"
 
-SRCREV = "4cc44111ce00064baf0939a2d21e53964e17eab6"
+SRCREV = "0ad09aef40287ad0ea9185c8e43c5d06506f8a7d"
 
 KERNEL_DEVICETREE = " \
     ${RPI_KERNEL_DEVICETREE} \
@@ -79,7 +79,9 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/hy28b-2017.dtbo \
     overlays/hy28b.dtbo \
     overlays/i2c0-bcm2708.dtbo \
+    overlays/i2c0.dtbo \
     overlays/i2c1-bcm2708.dtbo \
+    overlays/i2c1.dtbo \
     overlays/i2c3.dtbo \
     overlays/i2c4.dtbo \
     overlays/i2c5.dtbo \
