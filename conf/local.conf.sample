@@ -27,6 +27,7 @@ IMAGE_FSTYPES = "tar.xz"
 #MACHINE = "raspberrypi0-wifi"
 #MACHINE = "raspberrypi2"
 MACHINE = "raspberrypi3"
+#MACHINE = "raspberrypi4"
 #MACHINE = "raspberrypi-cm"
 #MACHINE = "raspberrypi-cm3"
 
