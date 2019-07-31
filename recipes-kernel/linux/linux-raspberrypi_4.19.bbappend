@@ -1,6 +1,6 @@
-LINUX_VERSION = "4.19.60"
+LINUX_VERSION = "4.19.63"
 
-SRCREV = "2b3cf6c405f000c7b25953ab138d4dca0acaf74f"
+SRCREV = "3560542c15a3b71ecd58e347f7fcfc3b6e7770a2"
 
 KERNEL_DEVICETREE = " \
     ${RPI_KERNEL_DEVICETREE} \
@@ -72,6 +72,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/hifiberry-amp.dtbo \
     overlays/hifiberry-dac.dtbo \
     overlays/hifiberry-dacplusadc.dtbo \
+    overlays/hifiberry-dacplusadcpro.dtbo \
     overlays/hifiberry-dacplus.dtbo \
     overlays/hifiberry-digi.dtbo \
     overlays/hifiberry-digi-pro.dtbo \
