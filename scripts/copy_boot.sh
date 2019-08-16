@@ -22,7 +22,7 @@ case "${MACHINE}" in
               bcm2710-rpi-3-b-plus.dtb \
               bcm2710-rpi-cm3.dtb"
         ;;
-    rasperrypi4)
+    raspberrypi4)
         DTBS="bcm2711-rpi-4-b.dtb"
         ;;
     *)
