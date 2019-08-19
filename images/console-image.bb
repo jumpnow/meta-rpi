@@ -19,7 +19,8 @@ CORE_OS = " \
 WIFI_SUPPORT = " \
     crda \
     iw \
-    linux-firmware-raspbian \
+    linux-firmware-rpidistro-bcm43430 \
+    linux-firmware-rpidistro-bcm43455 \
     wpa-supplicant \
 "
 
