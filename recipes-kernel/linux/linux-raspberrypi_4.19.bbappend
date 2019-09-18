@@ -1,6 +1,6 @@
-LINUX_VERSION = "4.19.71"
+LINUX_VERSION = "4.19.73"
 
-SRCREV = "6ae4a60e2ea5ae48de2d3567c18593b313f3c167"
+SRCREV = "4d486c17f636bb339c10cd73a07292220a973e01"
 
 KERNEL_DEVICETREE = " \
     ${RPI_KERNEL_DEVICETREE} \
@@ -73,6 +73,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/hifiberry-dac.dtbo \
     overlays/hifiberry-dacplusadc.dtbo \
     overlays/hifiberry-dacplusadcpro.dtbo \
+    overlays/hifiberry-dacplusdsp.dtbo \
     overlays/hifiberry-dacplus.dtbo \
     overlays/hifiberry-digi.dtbo \
     overlays/hifiberry-digi-pro.dtbo \
@@ -96,6 +97,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/i2c-sensor.dtbo \
     overlays/i2s-gpio28-31.dtbo \
     overlays/ilitek251x.dtbo \
+    overlays/imx219.dtbo \
     overlays/iqaudio-codec.dtbo \
     overlays/iqaudio-dac.dtbo \
     overlays/iqaudio-dacplus.dtbo \
