@@ -36,6 +36,7 @@ MACHINE = "raspberrypi3"
 # with u-boot you will also have to change the boot script boot command
 KERNEL_IMAGETYPE = "zImage"
 
+DISABLE_VC4GRAPHICS = "1"
 DISABLE_OVERSCAN = "1"
 ENABLE_UART = "1"
 ENABLE_RPI3_SERIAL_CONSOLE = "1"
