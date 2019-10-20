@@ -1,6 +1,6 @@
 LINUX_VERSION = "4.19.79"
 
-SRCREV = "047589b6dcd5dfd9673a995c5d36ec4073e578b5"
+SRCREV = "6018f7ebfe5e7fa01f499300b796f409a817241b"
 
 KERNEL_DEVICETREE = " \
     ${RPI_KERNEL_DEVICETREE} \
@@ -102,6 +102,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/iqaudio-dac.dtbo \
     overlays/iqaudio-dacplus.dtbo \
     overlays/iqaudio-digi-wm8804-audio.dtbo \
+    overlays/irs1125.dtbo \
     overlays/i-sabre-q2m.dtbo \
     overlays/jedec-spi-nor.dtbo \
     overlays/justboom-dac.dtbo \
@@ -203,5 +204,6 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/vga666.dtbo \
     overlays/w1-gpio.dtbo \
     overlays/w1-gpio-pullup.dtbo \
+    overlays/w5500.dtbo \
     overlays/wittypi.dtbo \
 "
