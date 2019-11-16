@@ -16,7 +16,7 @@ CORE_OS = " \
     tzdata \
 "
 
-WIFI_SUPPORT = " \
+WIFI = " \
     crda \
     iw \
     linux-firmware-rpidistro-bcm43430 \
@@ -24,10 +24,15 @@ WIFI_SUPPORT = " \
     wpa-supplicant \
 "
 
-WIREGUARD_SUPPORT = " \
+WIREGUARD = " \
     wireguard-init \
     wireguard-module \
     wireguard-tools \
+"
+
+CRYPTODEV = " \
+    cryptodev-module \
+    load-modules \
 "
 
 DEV_SDK_INSTALL = " \
@@ -99,14 +104,23 @@ RPI_STUFF = " \
     userland \
 "
 
+SECURITY_TOOLS = " \
+    checksec \
+    ncrack \
+    nikto \
+    python3-scapy \
+"
+
 IMAGE_INSTALL += " \
     ${CORE_OS} \
     ${DEV_SDK_INSTALL} \
     ${DEV_EXTRAS} \
     ${EXTRA_TOOLS_INSTALL} \
+    ${CRYPTODEV} \
     ${RPI_STUFF} \
-    ${WIFI_SUPPORT} \
-    ${WIREGUARD_SUPPORT} \
+    ${SECURITY_TOOLS} \
+    ${WIFI} \
+    ${WIREGUARD} \
 "
 
 set_local_timezone() {
@@ -117,9 +131,14 @@ disable_bootlogd() {
     echo BOOTLOGD_ENABLE=no > ${IMAGE_ROOTFS}/etc/default/bootlogd
 }
 
+disable_rng_daemon() {
+    rm ${IMAGE_ROOTFS}/etc/rcS.d/S38rng-tools
+}
+
 ROOTFS_POSTPROCESS_COMMAND += " \
     set_local_timezone ; \
     disable_bootlogd ; \
+    disable_rng_daemon ; \
 "
 
 export IMAGE_BASENAME = "console-image"

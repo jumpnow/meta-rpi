@@ -1,6 +1,10 @@
+FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
+
 LINUX_VERSION = "4.19.83"
 
 SRCREV = "3c235dcfe80a7c7ba360219e4a3ecb256f294376"
+
+SRC_URI += "file://ikconfig.cfg"
 
 KERNEL_DEVICETREE = " \
     ${RPI_KERNEL_DEVICETREE} \

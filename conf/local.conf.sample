@@ -1,5 +1,5 @@
 # Local configuration for meta-rpi images
-# Yocto Project 2.7 Poky distribution [warrior] branch
+# Yocto Project 3.0 Poky distribution [zeus] branch
 # This is a sysvinit system
 
 # Use local version
@@ -43,12 +43,11 @@ ENABLE_RPI3_SERIAL_CONSOLE = "1"
 SERIAL_CONSOLES = "115200;ttyAMA0"
 # SERIAL_CONSOLES_forcevariable = ""
 
-# comment this line if you want a 4.14 kernel
 PREFERRED_VERSION_linux-raspberrypi = "4.19.%"
 
 #DL_DIR = "${HOME}/oe-sources"
-#SSTATE_DIR = "/oe4/rpi/sstate-cache"
-#TMPDIR = "/oe4/rpi/tmp-warrior"
+#SSTATE_DIR = "/oe5/rpi/sstate-cache"
+#TMPDIR = "/oe5/rpi/tmp-zeus"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"

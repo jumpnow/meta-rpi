@@ -18,16 +18,8 @@ CORE_OS = " \
     packagegroup-core-boot \
     procps \
     rndaddtoentcnt \
-    rng-tools \
     term-prompt \
     tzdata \
-"
-
-WIFI_SUPPORT = " \
-    crda \
-    iw \
-    linux-firmware-raspbian \
-    wpa-supplicant \
 "
 
 ALSA += " \
@@ -46,10 +38,15 @@ ALSA += " \
     alsa-utils-scripts \
 "
 
+CRYPTODEV = " \
+    cryptodev-module \
+    load-modules \
+"
+
 IMAGE_INSTALL += " \
     ${ALSA} \
     ${CORE_OS} \
-    ${WIFI_SUPPORT} \
+    ${CRYPTODEV} \
     iqaudio-mute \
     pianobar \
 "
@@ -62,9 +59,14 @@ disable_bootlogd() {
     echo BOOTLOGD_ENABLE=no > ${IMAGE_ROOTFS}/etc/default/bootlogd
 }
 
+disable_rng_daemon() {
+    rm ${IMAGE_ROOTFS}/etc/rcS.d/S38rng-tools
+}
+
 ROOTFS_POSTPROCESS_COMMAND += " \
     set_local_timezone ; \
     disable_bootlogd ; \
- "
+    disable_rng_daemon ; \
+"
 
 export IMAGE_BASENAME = "audio-image"
