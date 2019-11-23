@@ -1,7 +1,7 @@
 SUMMARY = "A console development image customized for the rpi"
 HOMEPAGE = "http://www.jumpnowtek.com"
 
-require images/console-image.bb
+require images/basic-dev-image.bb
 
 DEPENDS += "bcm2835-bootfiles"
 
@@ -31,4 +31,4 @@ IMAGE_INSTALL += " \
 "
 
 
-export IMAGE_BASENAME = "rpi-console-image"
+export IMAGE_BASENAME = "console-image"

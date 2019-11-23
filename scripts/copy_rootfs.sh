@@ -17,7 +17,7 @@ if [ ! -d /media/card ]; then
 fi
 
 if [ "x${2}" = "x" ]; then
-    IMAGE=rpi-console
+    IMAGE=console
 else
     IMAGE=${2}
 fi
