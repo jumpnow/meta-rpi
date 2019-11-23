@@ -4,7 +4,7 @@ KERNEL_IMAGETYPE=zImage
 
 if [ -z "${MACHINE}" ]; then
     echo "Environment variable MACHINE not set"
-    echo "Example: export MACHINE=raspberrypi3 or export MACHINE=raspberrypi0-wifi"
+    echo "Example: export MACHINE=raspberrypi4|raspberrypi3|raspberrypi0-wifi"
     exit 1
 fi
 
@@ -16,15 +16,18 @@ case "${MACHINE}" in
               bcm2708-rpi-b-plus.dtb \
               bcm2708-rpi-cm.dtb"
         ;;
+
     raspberrypi2|raspberrypi3|raspberrypi-cm3)
         DTBS="bcm2709-rpi-2-b.dtb \
               bcm2710-rpi-3-b.dtb \
               bcm2710-rpi-3-b-plus.dtb \
               bcm2710-rpi-cm3.dtb"
         ;;
+
     raspberrypi4)
         DTBS="bcm2711-rpi-4-b.dtb"
         ;;
+
     *)
         echo "Invalid MACHINE: ${MACHINE}"
         exit 1
@@ -218,4 +221,3 @@ echo "Unmounting ${DEV}"
 sudo umount ${DEV}
 
 echo "Done"
-

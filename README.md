@@ -15,6 +15,9 @@ This layer depends on:
     URI: git://git.yoctoproject.org/meta-security.git
     branch: zeus
 
+    URI: https://github.com/jumpnow/meta-jumpnow.git
+    branch: zeus
+
 Latest commits
 
     poky 0275e68
@@ -22,5 +25,6 @@ Latest commits
     meta-qt5 432ad2a
     meta-raspberrypi cee2557
     meta-security 27ddb45
+    meta-jumpnow 11b8338
 
 meta-rpi layer maintainer: Scott Ellis <scott@jumpnowtek.com>

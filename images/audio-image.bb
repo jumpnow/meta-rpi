@@ -60,7 +60,8 @@ disable_bootlogd() {
 }
 
 disable_rng_daemon() {
-    rm ${IMAGE_ROOTFS}/etc/rcS.d/S38rng-tools
+    rm -f ${IMAGE_ROOTFS}/etc/rcS.d/S*rng-tools
+    rm -f ${IMAGE_ROOTFS}/etc/rc5.d/S*rng-tools
 }
 
 ROOTFS_POSTPROCESS_COMMAND += " \

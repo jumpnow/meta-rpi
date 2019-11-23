@@ -1,6 +1,6 @@
 SUMMARY = "A basic Qt5 qwidgets dev image"
 
-require console-image.bb
+require rpi-console-image.bb
 
 QT_DEV_TOOLS = " \
     qtbase-dev \

@@ -13,8 +13,6 @@ SRC_URI = "\
     file://default \
 "
 
-PR = "r3"
-
 S = "${WORKDIR}/git"
 
 inherit cmake

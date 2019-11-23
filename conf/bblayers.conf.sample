@@ -16,5 +16,6 @@ BBLAYERS ?= " \
     ${HOME}/poky-zeus/meta-qt5 \
     ${HOME}/poky-zeus/meta-raspberrypi \
     ${HOME}/poky-zeus/meta-security \
+    ${HOME}/poky-zeus/meta-jumpnow \
     ${HOME}/rpi/meta-rpi \
 "
