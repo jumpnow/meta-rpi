@@ -3,10 +3,19 @@
 KERNEL_IMAGETYPE=zImage
 
 if [ -z "${MACHINE}" ]; then
-    echo "Environment variable MACHINE not set"
-    echo "Example: export MACHINE=raspberrypi4|raspberrypi3|raspberrypi0-wifi"
-    exit 1
+    # try to find it
+    if [ -f ../../build/conf/local.conf ]; then
+        MACHINE=$(grep '^MACHINE' ../../build/conf/local.conf | grep -v MACHINE_ | awk '{ print $3 }' | sed 's/"//g')
+    fi
+
+    if [ -z "${MACHINE}" ]; then
+        echo "Environment variable MACHINE not set"
+        echo "Example: export MACHINE=raspberrypi4|raspberrypi3|raspberrypi0-wifi"
+        exit 1
+    fi
 fi
+
+echo "MACHINE: ${MACHINE}"
 
 case "${MACHINE}" in
     raspberrypi|raspberrypi0|raspberrypi0-wifi|raspberrypi-cm)
@@ -54,10 +63,17 @@ if [ ! -d /media/card ]; then
 fi
 
 if [ -z "$OETMP" ]; then
-    echo -e "\nWorking from local directory"
-    SRCDIR=.
+    # echo try to find it
+    if [ -f ../../build/conf/local.conf ]; then
+        OETMP=$(grep '^TMPDIR' ../../build/conf/local.conf | awk '{ print $3 }' | sed 's/"//g')
+    fi
+fi
+
+if [ -z "$OETMP" ]; then
+    echo "Environment variable OETMP not set"
+    exit 1
 else
-    echo -e "\nOETMP: $OETMP"
+    echo "OETMP: $OETMP"
 
     if [ ! -d ${OETMP}/deploy/images/${MACHINE} ]; then
         echo "Directory not found: ${OETMP}/deploy/images/${MACHINE}"
