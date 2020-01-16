@@ -1,8 +1,8 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-LINUX_VERSION = "4.19.93"
+LINUX_VERSION = "4.19.95"
 
-SRCREV = "301ec88e28eb8924e827e60020ab513e60fb7085"
+SRCREV = "ac6064a01f1f39a99dc7061bea4bda37a21eb947"
 
 SRC_URI += "file://ikconfig.cfg"
 
@@ -39,6 +39,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/allo-katana-dac-audio.dtbo \
     overlays/allo-piano-dac-pcm512x-audio.dtbo \
     overlays/allo-piano-dac-plus-pcm512x-audio.dtbo \
+    overlays/apds9960.dtbo \
     overlays/applepi-dac.dtbo \
     overlays/at86rf233.dtbo \
     overlays/audioinjector-addons.dtbo \
@@ -109,6 +110,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/irs1125.dtbo \
     overlays/i-sabre-q2m.dtbo \
     overlays/jedec-spi-nor.dtbo \
+    overlays/justboom-both.dtbo \
     overlays/justboom-dac.dtbo \
     overlays/justboom-digi.dtbo \
     overlays/ltc294x.dtbo \
