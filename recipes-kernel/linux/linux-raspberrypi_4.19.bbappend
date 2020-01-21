@@ -1,8 +1,8 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-LINUX_VERSION = "4.19.95"
+LINUX_VERSION = "4.19.97"
 
-SRCREV = "0d72d83ec92acda1e8cbad0d4213a5ec2b3f2e1b"
+SRCREV = "c8fbe9c63ce7b6207eb41b22b2070d343f611fcd"
 
 SRC_URI += "file://ikconfig.cfg"
 
@@ -39,6 +39,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/allo-katana-dac-audio.dtbo \
     overlays/allo-piano-dac-pcm512x-audio.dtbo \
     overlays/allo-piano-dac-plus-pcm512x-audio.dtbo \
+    overlays/anyspi.dtbo \
     overlays/apds9960.dtbo \
     overlays/applepi-dac.dtbo \
     overlays/at86rf233.dtbo \
