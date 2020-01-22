@@ -2,7 +2,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 LINUX_VERSION = "4.19.97"
 
-SRCREV = "c8fbe9c63ce7b6207eb41b22b2070d343f611fcd"
+SRCREV = "c67cfec841a546d7b99aec2e5bd29cdb2184f61c"
 
 SRC_URI += "file://ikconfig.cfg"
 
@@ -80,6 +80,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/hifiberry-dacplusadc.dtbo \
     overlays/hifiberry-dacplusadcpro.dtbo \
     overlays/hifiberry-dacplusdsp.dtbo \
+    overlays/hifiberry-dacplushd.dtbo \
     overlays/hifiberry-dacplus.dtbo \
     overlays/hifiberry-digi.dtbo \
     overlays/hifiberry-digi-pro.dtbo \
