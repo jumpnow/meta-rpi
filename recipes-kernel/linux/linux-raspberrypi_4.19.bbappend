@@ -2,7 +2,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 LINUX_VERSION = "4.19.97"
 
-SRCREV = "63739afcdd3662e9f9e1f04c81b63b743a12f9d1"
+SRCREV = "4dc8a4f35e45ba669e39d56ac9e0114eb56057f1"
 
 SRC_URI += "file://ikconfig.cfg"
 
@@ -169,6 +169,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/sdhost.dtbo \
     overlays/sdio.dtbo \
     overlays/sdtweak.dtbo \
+    overlays/sh1106-spi.dtbo \
     overlays/smi-dev.dtbo \
     overlays/smi-nand.dtbo \
     overlays/smi.dtbo \
@@ -192,6 +193,8 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/spi-gpio40-45.dtbo \
     overlays/spi-rtc.dtbo \
     overlays/ssd1306.dtbo \
+    overlays/ssd1306-spi.dtbo \
+    overlays/ssd1351-spi.dtbo \
     overlays/superaudioboard.dtbo \
     overlays/sx150x.dtbo \
     overlays/tc358743-audio.dtbo \
