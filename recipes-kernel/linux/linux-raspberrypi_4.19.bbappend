@@ -2,7 +2,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 LINUX_VERSION = "4.19.97"
 
-SRCREV = "45754db702ff044e45ba14efdcf3708151e25c5f"
+SRCREV = "88f5ffafdb8c49df8a7b72c45855e1554f76dbeb"
 
 SRC_URI += "file://ikconfig.cfg"
 
@@ -75,6 +75,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/gpio-poweroff.dtbo \
     overlays/gpio-shutdown.dtbo \
     overlays/hd44780-lcd.dtbo \
+    overlays/hdmi-backlight-hwhack-gpio.dtbo \
     overlays/hifiberry-amp.dtbo \
     overlays/hifiberry-dac.dtbo \
     overlays/hifiberry-dacplusadc.dtbo \
