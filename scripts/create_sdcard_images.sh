@@ -14,7 +14,7 @@ if [ ! -d ${DSTDIR} ]; then
 fi
 
 if [ -z "${IMG}" ]; then
-    IMG=qt5
+    IMG=console
 fi
 
 if [ -z "${MACHINE}" ]; then
@@ -41,6 +41,13 @@ else
     else
         echo "Unsupported card size: ${1}"
         exit 1
+    fi
+fi
+
+if [ -z "$OETMP" ]; then
+    # echo try to find it
+    if [ -f ../../build/conf/local.conf ]; then
+        OETMP=$(grep '^TMPDIR' ../../build/conf/local.conf | awk '{ print $3 }' | sed 's/"//g')
     fi
 fi
 
