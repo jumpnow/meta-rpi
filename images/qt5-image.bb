@@ -49,14 +49,15 @@ QT5_PKGS = " \
     qtxmlpatterns \
 "
 
-QML_APPS = " \
-    qqtest-tools \
+TEST_APPS += " \
+    qmlswipe-tools \
+    qt5-opengles2-test \
 "
 
 IMAGE_INSTALL += " \
     ${QT5_DEV_PKGS} \
     ${QT5_PKGS} \
-    ${QML_APPS} \
+    ${TEST_APPS} \
 "
 
 export IMAGE_BASENAME = "qt5-image"
