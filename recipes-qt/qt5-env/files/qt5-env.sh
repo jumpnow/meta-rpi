@@ -1,7 +1,5 @@
 #!/bin/sh
 
-export PATH=${PATH}:/usr/bin/qt5
-
 # the other option is linuxfb if just using qt widgets
 export QT_QPA_PLATFORM=eglfs
 
