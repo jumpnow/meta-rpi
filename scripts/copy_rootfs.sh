@@ -18,7 +18,7 @@ if [ "x${1}" = "x" ]; then
     exit 0
 fi
 
-mount | grep -q ${1}
+mount | grep '^/' | grep -q ${1}
 
 if [ $? -ne 1 ]; then
     echo "Looks like partitions on device /dev/${1} are mounted"
