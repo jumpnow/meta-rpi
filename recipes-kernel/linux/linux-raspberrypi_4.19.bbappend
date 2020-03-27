@@ -1,8 +1,8 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-LINUX_VERSION = "4.19.108"
+LINUX_VERSION = "4.19.113"
 
-SRCREV = "69f504e061fcb278cd840ddd5a4dbfe154b23b72"
+SRCREV = "4f2a4cc501c428c940549f39d5562e60404ac4f7"
 
 SRC_URI += "file://ikconfig.cfg"
 
@@ -127,6 +127,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/mcp3202.dtbo \
     overlays/mcp342x.dtbo \
     overlays/media-center.dtbo \
+    overlays/merus-amp.dtbo \
     overlays/midi-uart0.dtbo \
     overlays/midi-uart1.dtbo \
     overlays/miniuart-bt.dtbo \
