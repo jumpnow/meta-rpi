@@ -2,8 +2,14 @@
 # Yocto Project 3.0 Poky distribution [zeus] branch
 # This is a sysvinit system
 
-# Use local version
+# mask wireguard from meta-openembedded/meta-networking
+# use version in meta-jumpnow to support kernels < 5.6
+# with wireguard-linux-compat
 BBMASK = "meta-networking/recipes-kernel/wireguard"
+
+# mask cryptodev from poky/meta
+# use version from meta-jumpnow to support kernels > 5.4
+BBMASK += "meta/recipes-kernel/cryptodev"
 
 LICENSE_FLAGS_WHITELIST = "commercial"
 
@@ -36,6 +42,9 @@ MACHINE = "raspberrypi3"
 # with u-boot you will also have to change the boot script boot command
 KERNEL_IMAGETYPE = "zImage"
 
+# uncomment for kernels < 5.6
+WIREGUARD_COMPAT = "1"
+
 DISABLE_VC4GRAPHICS = "1"
 DISABLE_OVERSCAN = "1"
 ENABLE_UART = "1"
@@ -45,9 +54,9 @@ SERIAL_CONSOLES = "115200;ttyAMA0"
 
 PREFERRED_VERSION_linux-raspberrypi = "4.19.%"
 
-#DL_DIR = "${HOME}/oe-sources"
-#SSTATE_DIR = "/oe5/rpi/sstate-cache"
-#TMPDIR = "/oe5/rpi/tmp-zeus"
+# DL_DIR = "/src/oe"
+# SSTATE_DIR = "/oe6/rpi/sstate-cache"
+# TMPDIR = "/oe6/rpi/tmp-zeus"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
