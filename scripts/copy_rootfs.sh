@@ -23,7 +23,7 @@ mount | grep '^/' | grep -q ${1}
 if [ $? -ne 1 ]; then
     echo "Looks like partitions on device /dev/${1} are mounted"
     echo "Not going to work on a device that is currently in use"
-    mount | grep ${1}
+    mount | grep '^/' | grep ${1}
     exit 1
 fi
 
