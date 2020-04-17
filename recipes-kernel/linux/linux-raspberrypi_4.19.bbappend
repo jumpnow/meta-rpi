@@ -1,8 +1,8 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-LINUX_VERSION = "4.19.114"
+LINUX_VERSION = "4.19.115"
 
-SRCREV = "2e79fd01b4b9a7eea5acb234ad4e4cdca8449d5a"
+SRCREV = "b13fc60b529fe9e4fee4a7a5caf73d582003abfa"
 
 SRC_URI += "file://ikconfig.cfg"
 
@@ -44,6 +44,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/applepi-dac.dtbo \
     overlays/at86rf233.dtbo \
     overlays/audioinjector-addons.dtbo \
+    overlays/audioinjector-isolated-soundcard.dtbo \
     overlays/audioinjector-ultra.dtbo \
     overlays/audioinjector-wm8731-audio.dtbo \
     overlays/audiosense-pi.dtbo \
