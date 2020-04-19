@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 
 DEPENDS += "qtbase"
 
-SRCREV = "82a7a614ad858818b0db4d91583a15602c44b42a"
+SRCREV = "ea6ff0b6c316fb625fe3406f79821b0c8664bcd8"
 SRC_URI = "git://github.com/scottellis/tspress.git"
 
 S = "${WORKDIR}/git"
@@ -20,4 +20,3 @@ do_install() {
 FILES_${PN} = "${bindir}"
 
 RDEPENDS_${PN} = "qtbase-plugins"
-

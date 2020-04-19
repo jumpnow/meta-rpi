@@ -3,9 +3,9 @@ SUMMARY = "A QML test app"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
-DEPENDS += "qtdeclarative"
+DEPENDS += "qtdeclarative qtquickcontrols2"
 
-SRCREV = "d0570abf4586ae5c4a91d1489cbc1974af0b23b4"
+SRCREV = "8c5c1251cf92780f3bbd13f6bc5197eba0827bf1"
 SRC_URI = "git://github.com/scottellis/${BPN}.git"
 
 S = "${WORKDIR}/git"
