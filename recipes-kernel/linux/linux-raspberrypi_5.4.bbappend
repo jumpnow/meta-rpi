@@ -1,8 +1,8 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-LINUX_VERSION = "4.19.118"
+LINUX_VERSION = "5.4.38"
 
-SRCREV = "17cba8a08192db591a32edbcdaae4c2cb022fc63"
+SRCREV = "4f10063ffdc292908e3d40e844cc37902e9e65de"
 
 SRC_URI += "file://ikconfig.cfg"
 
@@ -50,7 +50,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/audiosense-pi.dtbo \
     overlays/audremap.dtbo \
     overlays/balena-fin.dtbo \
-    overlays/bmp085_i2c-sensor.dtbo \
+    overlays/cma.dtbo \
     overlays/dht11.dtbo \
     overlays/dionaudio-loco.dtbo \
     overlays/dionaudio-loco-v2.dtbo \
@@ -86,12 +86,11 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/hifiberry-dacplus.dtbo \
     overlays/hifiberry-digi.dtbo \
     overlays/hifiberry-digi-pro.dtbo \
+    overlays/highperi.dtbo \
     overlays/hy28a.dtbo \
     overlays/hy28b-2017.dtbo \
     overlays/hy28b.dtbo \
-    overlays/i2c0-bcm2708.dtbo \
     overlays/i2c0.dtbo \
-    overlays/i2c1-bcm2708.dtbo \
     overlays/i2c1.dtbo \
     overlays/i2c3.dtbo \
     overlays/i2c4.dtbo \
@@ -137,10 +136,6 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/mz61581.dtbo \
     overlays/ov5647.dtbo \
     overlays/papirus.dtbo \
-    overlays/pi3-act-led.dtbo \
-    overlays/pi3-disable-bt.dtbo \
-    overlays/pi3-disable-wifi.dtbo \
-    overlays/pi3-miniuart-bt.dtbo \
     overlays/pibell.dtbo \
     overlays/piglow.dtbo \
     overlays/piscreen2r.dtbo \
@@ -165,6 +160,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/rpi-proto.dtbo \
     overlays/rpi-sense.dtbo \
     overlays/rpi-tv.dtbo \
+    overlays/rpivid-v4l2.dtbo \
     overlays/rra-digidac1-wm8741-audio.dtbo \
     overlays/sc16is750-i2c.dtbo \
     overlays/sc16is752-i2c.dtbo \
@@ -212,9 +208,11 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/uart5.dtbo \
     overlays/udrc.dtbo \
     overlays/upstream.dtbo \
+    overlays/upstream-pi4.dtbo \
     overlays/vc4-fkms-v3d.dtbo \
     overlays/vc4-kms-kippah-7inch.dtbo \
     overlays/vc4-kms-v3d.dtbo \
+    overlays/vc4-kms-v3d-pi4.dtbo \
     overlays/vga666.dtbo \
     overlays/w1-gpio.dtbo \
     overlays/w1-gpio-pullup.dtbo \

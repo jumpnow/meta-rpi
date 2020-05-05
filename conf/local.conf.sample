@@ -1,15 +1,11 @@
 # Local configuration for meta-rpi images
-# Yocto Project 3.0 Poky distribution [zeus] branch
+# Yocto Project 3.1 Poky distribution [dunfell] branch
 # This is a sysvinit system
 
 # mask wireguard from meta-openembedded/meta-networking
 # use version in meta-jumpnow to support kernels < 5.6
 # with wireguard-linux-compat
 BBMASK = "meta-networking/recipes-kernel/wireguard"
-
-# mask cryptodev from poky/meta
-# use version from meta-jumpnow to support kernels > 5.4
-BBMASK += "meta/recipes-kernel/cryptodev"
 
 LICENSE_FLAGS_WHITELIST = "commercial"
 
@@ -52,11 +48,13 @@ ENABLE_RPI3_SERIAL_CONSOLE = "1"
 SERIAL_CONSOLES = "115200;ttyAMA0"
 # SERIAL_CONSOLES_forcevariable = ""
 
-PREFERRED_VERSION_linux-raspberrypi = "4.19.%"
+# default is still 4.19, uncomment the following for 5.4
+# PREFERRED_VERSION_linux-raspberrypi = "5.4.%"
+
 
 # DL_DIR = "/src/oe"
 # SSTATE_DIR = "/oe6/rpi/sstate-cache"
-# TMPDIR = "/oe6/rpi/tmp-zeus"
+# TMPDIR = "/oe6/rpi/tmp-dunfell"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
