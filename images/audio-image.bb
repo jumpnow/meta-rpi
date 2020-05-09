@@ -38,15 +38,9 @@ ALSA += " \
     alsa-utils-scripts \
 "
 
-CRYPTODEV = " \
-    cryptodev-module \
-    load-modules \
-"
-
 IMAGE_INSTALL += " \
     ${ALSA} \
     ${CORE_OS} \
-    ${CRYPTODEV} \
     iqaudio-mute \
     pianobar \
 "
