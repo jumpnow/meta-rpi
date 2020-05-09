@@ -7,10 +7,6 @@
 # with wireguard-linux-compat
 BBMASK = "meta-networking/recipes-kernel/wireguard"
 
-# mask cryptodev from poky/meta
-# use version from meta-jumpnow to support kernels > 5.4
-BBMASK += "meta/recipes-kernel/cryptodev"
-
 LICENSE_FLAGS_WHITELIST = "commercial"
 
 DISTRO_FEATURES = "ext2 opengl usbhost ${DISTRO_FEATURES_LIBC}"
