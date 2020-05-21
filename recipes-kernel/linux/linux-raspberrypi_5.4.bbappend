@@ -1,10 +1,13 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-LINUX_VERSION = "5.4.40"
+LINUX_VERSION = "5.4.42"
 
-SRCREV = "99c315ee64d7fb3d0d23c4eba3e9ce1b3849803a"
+SRCREV = "971a2bb14b459819db1bda8fcdf953e493242b42"
 
-SRC_URI += "file://ikconfig.cfg"
+SRC_URI = "\
+    git://github.com/raspberrypi/linux.git;branch=${LINUX_RPI_BRANCH} \
+    file://ikconfig.cfg \
+"
 
 KERNEL_DEVICETREE = " \
     ${RPI_KERNEL_DEVICETREE} \
