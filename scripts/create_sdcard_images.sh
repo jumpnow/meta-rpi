@@ -49,6 +49,12 @@ if [ -z "$OETMP" ]; then
     if [ -f ../../build/conf/local.conf ]; then
         OETMP=$(grep '^TMPDIR' ../../build/conf/local.conf | awk '{ print $3 }' | sed 's/"//g')
     fi
+
+    if [ -z "$OETMP" ]; then
+        if [ -d "../../build/tmp" ]; then
+            OETMP="../../build/tmp"
+        fi
+    fi
 fi
 
 if [ -z "${OETMP}" ]; then
