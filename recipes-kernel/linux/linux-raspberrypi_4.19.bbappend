@@ -2,7 +2,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 LINUX_VERSION = "4.19.122"
 
-SRCREV = "a9cf165a02c83810dc5d0e6b5358c1a21bf4e6a0"
+SRCREV = "2d6b57a6d622c4565be72be0328120baadac8be5"
 
 SRC_URI += "file://ikconfig.cfg"
 
