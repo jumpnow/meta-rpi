@@ -2,7 +2,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 LINUX_VERSION = "5.4.51"
 
-SRCREV = "2c8ec3bb4403a7c76c22ec6d3d5fc4b2a366024e"
+SRCREV = "3e92327867b6b40fed95ed36bb20f56d6e0cc879"
 
 SRC_URI = "\
     git://github.com/raspberrypi/linux.git;branch=${LINUX_RPI_BRANCH} \
