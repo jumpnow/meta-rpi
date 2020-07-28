@@ -3,7 +3,7 @@ HOMEPAGE = "http://www.jumpnowtek.com"
 
 require images/basic-dev-image.bb
 
-DEPENDS += "bcm2835-bootfiles"
+DEPENDS += "bootfiles"
 
 WIFI = " \
     crda \
