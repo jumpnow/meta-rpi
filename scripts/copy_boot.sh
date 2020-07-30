@@ -99,8 +99,8 @@ else
 fi
 
 for f in ${BOOTLDRFILES}; do
-    if [ ! -f ${SRCDIR}/bcm2835-bootfiles/${f} ]; then
-        echo "Bootloader file not found: ${SRCDIR}/bcm2835-bootfiles/$f"
+    if [ ! -f ${SRCDIR}/bootfiles/${f} ]; then
+        echo "Bootloader file not found: ${SRCDIR}/bootfiles/$f"
         exit 1
     fi
 done
@@ -149,7 +149,7 @@ if [ "$?" -ne 0 ]; then
 fi
 
 echo "Copying bootloader files"
-sudo cp ${SRCDIR}/bcm2835-bootfiles/* /media/card
+sudo cp ${SRCDIR}/bootfiles/* /media/card
 
 if [ $? -ne 0 ]; then
     echo "Error copying bootloader files"
