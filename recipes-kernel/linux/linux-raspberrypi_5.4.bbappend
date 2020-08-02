@@ -2,7 +2,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 LINUX_VERSION = "5.4.51"
 
-SRCREV = "068c6b23e9ba8ac5d50775f868cfa79e407b64f9"
+SRCREV = "33115317f0006e15418396acef7bd6f9dc99b91e"
 
 SRC_URI = "\
     git://github.com/raspberrypi/linux.git;branch=${LINUX_RPI_BRANCH} \
@@ -109,6 +109,8 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/i2s-gpio28-31.dtbo \
     overlays/ilitek251x.dtbo \
     overlays/imx219.dtbo \
+    overlays/imx290.dtbo \
+    overlays/imx477.dtbo \
     overlays/iqaudio-codec.dtbo \
     overlays/iqaudio-dac.dtbo \
     overlays/iqaudio-dacplus.dtbo \
@@ -121,6 +123,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/justboom-digi.dtbo \
     overlays/ltc294x.dtbo \
     overlays/max98357a.dtbo \
+    overlays/maxtherm.dtbo \
     overlays/mbed-dac.dtbo \
     overlays/mcp23017.dtbo \
     overlays/mcp23s17.dtbo \
@@ -138,6 +141,8 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/mpu6050.dtbo \
     overlays/mz61581.dtbo \
     overlays/ov5647.dtbo \
+    overlays/ov7251.dtbo \
+    overlays/ov9281.dtbo \
     overlays/papirus.dtbo \
     overlays/pibell.dtbo \
     overlays/piglow.dtbo \
@@ -167,6 +172,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/rra-digidac1-wm8741-audio.dtbo \
     overlays/sc16is750-i2c.dtbo \
     overlays/sc16is752-i2c.dtbo \
+    overlays/sc16is752-spi0.dtbo \
     overlays/sc16is752-spi1.dtbo \
     overlays/sdhost.dtbo \
     overlays/sdio.dtbo \
@@ -176,7 +182,6 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/smi-nand.dtbo \
     overlays/smi.dtbo \
     overlays/spi0-cs.dtbo \
-    overlays/spi0-hw-cs.dtbo \
     overlays/spi1-1cs.dtbo \
     overlays/spi1-2cs.dtbo \
     overlays/spi1-3cs.dtbo \
