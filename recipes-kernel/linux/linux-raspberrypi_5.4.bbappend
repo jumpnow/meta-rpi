@@ -2,7 +2,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 LINUX_VERSION = "5.4.59"
 
-SRCREV = "f88b9bc93293b061ee68690edaa6d0f934a89dac"
+SRCREV = "0be0e0854876b7d724c473242d6ff44077d18da9"
 
 SRC_URI = "\
     git://github.com/raspberrypi/linux.git;branch=${LINUX_RPI_BRANCH} \
@@ -144,7 +144,9 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/ov7251.dtbo \
     overlays/ov9281.dtbo \
     overlays/papirus.dtbo \
+    overlays/pca953x.dtbo \
     overlays/pibell.dtbo \
+    overlays/pifacedigital.dtbo \
     overlays/piglow.dtbo \
     overlays/piscreen2r.dtbo \
     overlays/piscreen.dtbo \
@@ -181,7 +183,8 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/smi-dev.dtbo \
     overlays/smi-nand.dtbo \
     overlays/smi.dtbo \
-    overlays/spi0-cs.dtbo \
+    overlays/spi0-1cs.dtbo \
+    overlays/spi0-2cs.dtbo \
     overlays/spi1-1cs.dtbo \
     overlays/spi1-2cs.dtbo \
     overlays/spi1-3cs.dtbo \
