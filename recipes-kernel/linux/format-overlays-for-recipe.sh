@@ -9,4 +9,7 @@ if [ ! -d ${OVERLAYS_DIR} ]; then
     exit 1
 fi
 
-basename -a $(ls ${OVERLAYS_DIR}/*.dts | sed s:-overlay\.dts:\.dtbo:) | awk '{ print "    overlays/"$1, "\\" }'
+basename -a $(ls ${OVERLAYS_DIR}/*.dts | grep -v overlay_map | sed s:-overlay\.dts:\.dtbo:) | \
+	awk '{ print "    overlays/"$1, "\\" }'
+
+echo '"'
