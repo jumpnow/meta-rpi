@@ -24,7 +24,7 @@ Latest commits
     meta-openembedded d7b41ced4
     meta-qt5 0e7015f
     meta-raspberrypi 93305f7
-    meta-security ef4bfb5
+    meta-security 213e1f9
     meta-jumpnow 769783e
 
 meta-rpi layer maintainer: Scott Ellis <scott@jumpnowtek.com>
