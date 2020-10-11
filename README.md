@@ -20,11 +20,11 @@ This layer depends on:
 
 Latest commits
 
-    poky 012ad10a89
+    poky 073b659383
     meta-openembedded 144077083
     meta-qt5 0e7015f
-    meta-raspberrypi 93305f7
+    meta-raspberrypi 085fb07
     meta-security d4ec0d8
-    meta-jumpnow f7fba93
+    meta-jumpnow e27f462
 
 meta-rpi layer maintainer: Scott Ellis <scott@jumpnowtek.com>
