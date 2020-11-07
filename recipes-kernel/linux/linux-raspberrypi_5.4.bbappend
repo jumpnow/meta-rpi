@@ -1,11 +1,11 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-LINUX_VERSION = "5.4.73"
+LINUX_VERSION = "5.4.74"
 
 SRCREV_machine = ""
 SRCREV_kmeta = ""
 
-SRCREV = "c5e512a329ac7a0bfdd5f53477f4300723618db5"
+SRCREV = "2ae9829c3da54597a4701285f91985c4d08ee793"
 
 SRC_URI = "\
     git://github.com/raspberrypi/linux.git;branch=${LINUX_RPI_BRANCH} \
@@ -41,6 +41,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/adv7282m.dtbo \
     overlays/adv728x-m.dtbo \
     overlays/akkordion-iqdacplus.dtbo \
+    overlays/allo-boss2-dac-audio.dtbo \
     overlays/allo-boss-dac-pcm512x-audio.dtbo \
     overlays/allo-digione.dtbo \
     overlays/allo-katana-dac-audio.dtbo \
@@ -72,6 +73,8 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/enc28j60-spi2.dtbo \
     overlays/exc3000.dtbo \
     overlays/fe-pi-audio.dtbo \
+    overlays/fsm-demo.dtbo \
+    overlays/ghost-amp.dtbo \
     overlays/goodix.dtbo \
     overlays/googlevoicehat-soundcard.dtbo \
     overlays/gpio-fan.dtbo \
@@ -151,6 +154,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/pca953x.dtbo \
     overlays/pibell.dtbo \
     overlays/pifacedigital.dtbo \
+    overlays/pifi-40.dtbo \
     overlays/piglow.dtbo \
     overlays/piscreen2r.dtbo \
     overlays/piscreen.dtbo \
@@ -183,7 +187,6 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/sc16is752-spi1.dtbo \
     overlays/sdhost.dtbo \
     overlays/sdio.dtbo \
-    overlays/sdtweak.dtbo \
     overlays/sh1106-spi.dtbo \
     overlays/smi-dev.dtbo \
     overlays/smi-nand.dtbo \
