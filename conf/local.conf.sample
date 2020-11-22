@@ -1,23 +1,16 @@
 # Local configuration for meta-rpi images
-# Yocto Project 3.1 Poky distribution [dunfell] branch
-# This is a sysvinit system
+# Yocto Project 3.2 Poky distribution [gatesgarth] branch
+# This is a systemd system
 
-# mask wireguard from meta-openembedded/meta-networking
-# use version in meta-jumpnow to support kernels < 5.6
-# with wireguard-linux-compat
-BBMASK = "meta-networking/recipes-kernel/wireguard"
+# BBMASK = "meta-rpi/recipes-qt"
 
 LICENSE_FLAGS_WHITELIST = "commercial"
 
-DISTRO_FEATURES = "ext2 opengl usbhost ${DISTRO_FEATURES_LIBC}"
+DISTRO_FEATURES = "ext2 opengl systemd usbhost ${DISTRO_FEATURES_LIBC}"
 
-DISTRO_FEATURES_BACKFILL_CONSIDERED += "pulseaudio"
+DISTRO_FEATURES_remove = "ptest"
 
-PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
-PREFERRED_PROVIDER_jpeg-native = "libjpeg-turbo-native"
-
-PREFERRED_PROVIDER_udev = "eudev"
-VIRTUAL-RUNTIME_init_manager = "sysvinit"
+INIT_MANAGER = "systemd"
 
 MACHINE_FEATURES_remove = "apm"
 
@@ -29,13 +22,9 @@ IMAGE_FSTYPES = "tar.xz"
 #MACHINE = "raspberrypi0-wifi"
 #MACHINE = "raspberrypi2"
 MACHINE = "raspberrypi3"
-#MACHINE = "raspberrypi4"
 #MACHINE = "raspberrypi-cm"
 #MACHINE = "raspberrypi-cm3"
 
-# Choices are Image or zImage if NOT using u-boot (no u-boot is the default)
-# Choices are uImage or zImage if using u-boot, though if you choose zImage
-# with u-boot you will also have to change the boot script boot command
 KERNEL_IMAGETYPE = "zImage"
 
 # uncomment for kernels < 5.6
@@ -43,18 +32,14 @@ WIREGUARD_COMPAT = "1"
 
 DISABLE_VC4GRAPHICS = "1"
 DISABLE_OVERSCAN = "1"
-ENABLE_UART = "1"
-ENABLE_RPI3_SERIAL_CONSOLE = "1"
-SERIAL_CONSOLES = "115200;ttyAMA0"
-# SERIAL_CONSOLES_forcevariable = ""
 
-# default is still 4.19, uncomment the following for 5.4
-# PREFERRED_VERSION_linux-raspberrypi = "5.4.%"
+# default to 5.4
+PREFERRED_VERSION_linux-raspberrypi = "5.4.%"
 
 
-# DL_DIR = "/src/oe"
+# DL_DIR = "/src/gg"
 # SSTATE_DIR = "/oe6/rpi/sstate-cache"
-# TMPDIR = "/oe6/rpi/tmp-dunfell"
+# TMPDIR = "/oe6/rpi/tmp-gatesgarth"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
@@ -63,15 +48,15 @@ PACKAGE_CLASSES = "package_ipk"
 SDKMACHINE = "x86_64"
 
 # for no root passwd uncomment the following and comment the two extra user lines
-#EXTRA_IMAGE_FEATURES = "debug-tweaks"
+EXTRA_IMAGE_FEATURES = "debug-tweaks"
 
 # for a root passwd, change jumpnowtek below to your password
-INHERIT += "extrausers"
-EXTRA_USERS_PARAMS = "usermod -P jumpnowtek root; "
+#INHERIT += "extrausers"
+#EXTRA_USERS_PARAMS = "usermod -P jumpnowtek root; "
 
 # this will force root to change password on first login
-INHERIT += "chageusers"
-CHAGE_USERS_PARAMS = "chage -d0 root; "
+#INHERIT += "chageusers"
+#CHAGE_USERS_PARAMS = "chage -d0 root; "
 
 USER_CLASSES = "image-mklibs image-prelink"
 PATCHRESOLVE = "noop"

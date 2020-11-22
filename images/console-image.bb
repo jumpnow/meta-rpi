@@ -19,18 +19,20 @@ DEV_EXTRAS = " \
 "
 
 RPI_STUFF = " \
-    omxplayer \
-    raspi2fb \
     userland \
+"
+
+SYSTEMD_STUFF = " \
+    systemd-analyze \
+    systemd-bash-completion \
 "
 
 IMAGE_INSTALL += " \
     firewall \
     ${DEV_EXTRAS} \
     ${RPI_STUFF} \
+    ${SYSTEMD_STUFF} \
     ${WIFI} \
-    ${SECURITY_TOOLS} \
-    ${WIREGUARD} \
 "
 
 

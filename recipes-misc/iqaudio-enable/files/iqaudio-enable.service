@@ -1,0 +1,9 @@
+[Unit]
+Description=Set gpio 22 high to unmute IQAudio DAC
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/iqaudio-enable
+
+[Install]
+WantedBy=multi-user.target

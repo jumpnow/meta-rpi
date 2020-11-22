@@ -1,11 +1,11 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-LINUX_VERSION = "5.4.74"
+LINUX_VERSION = "5.4.77"
 
 SRCREV_machine = ""
 SRCREV_kmeta = ""
 
-SRCREV = "2ae9829c3da54597a4701285f91985c4d08ee793"
+SRCREV = "b8681a08ba16b15cc9f010bef2a24ffac0b054d1"
 
 SRC_URI = "\
     git://github.com/raspberrypi/linux.git;branch=${LINUX_RPI_BRANCH} \
@@ -136,6 +136,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/mcp23s17.dtbo \
     overlays/mcp2515-can0.dtbo \
     overlays/mcp2515-can1.dtbo \
+    overlays/mcp251xfd.dtbo \
     overlays/mcp3008.dtbo \
     overlays/mcp3202.dtbo \
     overlays/mcp342x.dtbo \

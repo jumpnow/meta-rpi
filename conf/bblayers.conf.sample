@@ -6,16 +6,16 @@ BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
 BBLAYERS ?= " \
-    ${HOME}/poky-dunfell/meta \
-    ${HOME}/poky-dunfell/meta-poky \
-    ${HOME}/poky-dunfell/meta-openembedded/meta-oe \
-    ${HOME}/poky-dunfell/meta-openembedded/meta-multimedia \
-    ${HOME}/poky-dunfell/meta-openembedded/meta-networking \
-    ${HOME}/poky-dunfell/meta-openembedded/meta-perl \
-    ${HOME}/poky-dunfell/meta-openembedded/meta-python \
-    ${HOME}/poky-dunfell/meta-qt5 \
-    ${HOME}/poky-dunfell/meta-raspberrypi \
-    ${HOME}/poky-dunfell/meta-security \
-    ${HOME}/poky-dunfell/meta-jumpnow \
-    ${HOME}/rpi/meta-rpi \
+    /${HOME}/poky-gatesgarth/meta \
+    /${HOME}/poky-gatesgarth/meta-poky \
+    /${HOME}/poky-gatesgarth/meta-openembedded/meta-oe \
+    /${HOME}/poky-gatesgarth/meta-openembedded/meta-multimedia \
+    /${HOME}/poky-gatesgarth/meta-openembedded/meta-networking \
+    /${HOME}/poky-gatesgarth/meta-openembedded/meta-perl \
+    /${HOME}/poky-gatesgarth/meta-openembedded/meta-python \
+    /${HOME}/poky-gatesgarth/meta-qt5 \
+    /${HOME}/poky-gatesgarth/meta-raspberrypi \
+    /${HOME}/poky-gatesgarth/meta-security \
+    /${HOME}/poky-gatesgarth/meta-jumpnow \
+    /${HOME}/rpi/meta-rpi \
 "
