@@ -1,11 +1,11 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-LINUX_VERSION = "5.4.81"
+LINUX_VERSION = "5.4.83"
 
 SRCREV_machine = ""
 SRCREV_kmeta = ""
 
-SRCREV = "a80c030ec58faae839cab30a483eacb86ae7bc7e"
+SRCREV = "61e5a224f7ae0752fc28aea296436f2a0992ba9a"
 
 SRC_URI = "\
     git://github.com/raspberrypi/linux.git;branch=${LINUX_RPI_BRANCH} \
@@ -87,6 +87,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/gpio-shutdown.dtbo \
     overlays/hd44780-lcd.dtbo \
     overlays/hdmi-backlight-hwhack-gpio.dtbo \
+    overlays/hifiberry-amp100.dtbo \
     overlays/hifiberry-amp.dtbo \
     overlays/hifiberry-dac.dtbo \
     overlays/hifiberry-dacplusadc.dtbo \
@@ -188,6 +189,8 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/sc16is752-spi1.dtbo \
     overlays/sdhost.dtbo \
     overlays/sdio.dtbo \
+    overlays/seeed-can-fd-hat-v1.dtbo \
+    overlays/seeed-can-fd-hat-v2.dtbo \
     overlays/sh1106-spi.dtbo \
     overlays/smi-dev.dtbo \
     overlays/smi-nand.dtbo \
@@ -238,4 +241,5 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/w1-gpio-pullup.dtbo \
     overlays/w5500.dtbo \
     overlays/wittypi.dtbo \
+    overlays/wm8960-soundcard.dtbo \
 "
