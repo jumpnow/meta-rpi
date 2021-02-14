@@ -16,6 +16,7 @@ WIFI = " \
 DEV_EXTRAS = " \
     serialecho  \
     spiloop \
+    vault \
 "
 
 RPI_STUFF = " \
