@@ -30,6 +30,7 @@ SYSTEMD_STUFF = " \
 
 IMAGE_INSTALL += " \
     firewall \
+    vim \
     ${DEV_EXTRAS} \
     ${RPI_STUFF} \
     ${SYSTEMD_STUFF} \
