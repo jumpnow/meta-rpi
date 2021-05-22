@@ -1,11 +1,11 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-LINUX_VERSION = "5.4.83"
+LINUX_VERSION = "5.10.38"
 
 SRCREV_machine = ""
 SRCREV_kmeta = ""
 
-SRCREV = "93349cdffc3fbb446c7c1fc7354215a5b8e30b97"
+SRCREV = "c2f585ae894081445b7f1ab8d0b6334061be9965"
 
 SRC_URI = "\
     git://github.com/raspberrypi/linux.git;branch=${LINUX_RPI_BRANCH} \
@@ -18,16 +18,11 @@ KERNEL_DEVICETREE = " \
 "
 
 RPI_KERNEL_DEVICETREE = " \
-    bcm2708-rpi-zero.dtb \
     bcm2708-rpi-zero-w.dtb \
-    bcm2708-rpi-b.dtb \
-    bcm2708-rpi-b-plus.dtb \
-    bcm2708-rpi-cm.dtb \
     bcm2709-rpi-2-b.dtb \
     bcm2710-rpi-3-b-plus.dtb \
     bcm2710-rpi-3-b.dtb \
     bcm2710-rpi-cm3.dtb \
-    bcm2711-rpi-4-b.dtb \
 "
 
 RPI_KERNEL_DEVICETREE_OVERLAYS = " \

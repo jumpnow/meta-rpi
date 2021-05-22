@@ -1,7 +1,0 @@
-Some custom targets are
-
-    audio-image
-    console-image
-    qt5-image
-    qt5-basic-image
-

@@ -6,16 +6,14 @@ BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
 BBLAYERS ?= " \
-    /${HOME}/poky-gatesgarth/meta \
-    /${HOME}/poky-gatesgarth/meta-poky \
-    /${HOME}/poky-gatesgarth/meta-openembedded/meta-oe \
-    /${HOME}/poky-gatesgarth/meta-openembedded/meta-multimedia \
-    /${HOME}/poky-gatesgarth/meta-openembedded/meta-networking \
-    /${HOME}/poky-gatesgarth/meta-openembedded/meta-perl \
-    /${HOME}/poky-gatesgarth/meta-openembedded/meta-python \
-    /${HOME}/poky-gatesgarth/meta-qt5 \
-    /${HOME}/poky-gatesgarth/meta-raspberrypi \
-    /${HOME}/poky-gatesgarth/meta-security \
-    /${HOME}/poky-gatesgarth/meta-jumpnow \
+    /${HOME}/poky-hardknott/meta \
+    /${HOME}/poky-hardknott/meta-poky \
+    /${HOME}/poky-hardknott/meta-openembedded/meta-oe \
+    /${HOME}/poky-hardknott/meta-openembedded/meta-multimedia \
+    /${HOME}/poky-hardknott/meta-openembedded/meta-networking \
+    /${HOME}/poky-hardknott/meta-openembedded/meta-perl \
+    /${HOME}/poky-hardknott/meta-openembedded/meta-python \
+    /${HOME}/poky-hardknott/meta-raspberrypi \
+    /${HOME}/poky-hardknott/meta-security \
     /${HOME}/rpi/meta-rpi \
 "

@@ -1,12 +1,47 @@
-SUMMARY = "A minimal console image that runs pianobar"
+SUMMARY = "A small console image that runs pianobar"
 HOMEPAGE = "http://www.jumpnowtek.com"
+
+inherit image
 
 IMAGE_FEATURES += "package-management"
 IMAGE_LINGUAS = "en-us"
 
-require images/basic-image.bb
+DEPENDS += "rpi-bootfiles"
 
-DEPENDS += "bootfiles"
+CORE_OS = "\
+    openssh openssh-keygen openssh-sftp-server \
+    packagegroup-core-boot \
+    tzdata \
+"
+
+KERNEL_EXTRA = "\
+    kernel-modules \
+"
+
+EXTRA_TOOLS = " \
+    bzip2 \
+    coreutils \
+    diffutils \
+    dosfstools \
+    findutils \
+    grep \
+    i2c-tools \
+    ifupdown \
+    iproute2 \
+    less \
+    ntp ntp-tickadj \
+    procps \
+    sysfsutils \
+    util-linux \
+    util-linux-blkid \
+    unzip \
+    zip \
+"
+
+SYSTEMD_STUFF = " \
+    systemd-analyze \
+    systemd-bash-completion \
+"
 
 ALSA += " \
     libasound \
@@ -25,17 +60,13 @@ ALSA += " \
 "
 
 IMAGE_INSTALL += " \
+    ${CORE_OS} \
+    ${KERNEL_EXTRA} \
+    ${EXTRA_TOOLS} \
+    ${SYTEMD_STUFF} \
     ${ALSA} \
     iqaudio-enable \
     pianobar \
-"
-
-set_local_timezone() {
-    ln -sf /usr/share/zoneinfo/EST5EDT ${IMAGE_ROOTFS}/etc/localtime
-}
-
-ROOTFS_POSTPROCESS_COMMAND += " \
-    set_local_timezone ; \
 "
 
 export IMAGE_BASENAME = "audio-image"

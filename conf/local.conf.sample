@@ -1,12 +1,12 @@
 # Local configuration for meta-rpi images
-# Yocto Project 3.2 Poky distribution [gatesgarth] branch
+# Yocto Project 3.3 Poky distribution [hardknott] branch
 # This is a systemd system
-
-# BBMASK = "meta-rpi/recipes-qt"
 
 LICENSE_FLAGS_WHITELIST = "commercial"
 
-DISTRO_FEATURES = "ext2 opengl systemd usbhost ${DISTRO_FEATURES_LIBC}"
+DISTRO_FEATURES = "ext2 systemd usbhost ${DISTRO_FEATURES_LIBC}"
+
+DISTRO_FEATURES_BACKFILL_CONSIDERED += "pulseaudio sysvinit"
 
 DISTRO_FEATURES_remove = "ptest"
 
@@ -17,29 +17,22 @@ MACHINE_FEATURES_remove = "apm"
 IMAGE_FSTYPES = "tar.xz"
 
 # Choose the board you are building for
-#MACHINE = "raspberrypi"
-#MACHINE = "raspberrypi0"
 #MACHINE = "raspberrypi0-wifi"
 #MACHINE = "raspberrypi2"
 MACHINE = "raspberrypi3"
-#MACHINE = "raspberrypi-cm"
 #MACHINE = "raspberrypi-cm3"
 
 KERNEL_IMAGETYPE = "zImage"
 
-# uncomment for kernels < 5.6
-WIREGUARD_COMPAT = "1"
-
 DISABLE_VC4GRAPHICS = "1"
 DISABLE_OVERSCAN = "1"
 
-# default to 5.4
-PREFERRED_VERSION_linux-raspberrypi = "5.4.%"
+# default to 5.10
+PREFERRED_VERSION_linux-raspberrypi = "5.10.%"
 
-
-# DL_DIR = "/src/gg"
-# SSTATE_DIR = "/oe6/rpi/sstate-cache"
-# TMPDIR = "/oe6/rpi/tmp-gatesgarth"
+# DL_DIR = "/src/hardknott"
+# SSTATE_DIR = "/oe8/rpi/sstate-cache"
+# TMPDIR = "/oe8/rpi/tmp-hardknott"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
@@ -48,15 +41,15 @@ PACKAGE_CLASSES = "package_ipk"
 SDKMACHINE = "x86_64"
 
 # for no root passwd uncomment the following and comment the two extra user lines
-EXTRA_IMAGE_FEATURES = "debug-tweaks"
+# EXTRA_IMAGE_FEATURES = "debug-tweaks"
 
 # for a root passwd, change jumpnowtek below to your password
-#INHERIT += "extrausers"
-#EXTRA_USERS_PARAMS = "usermod -P jumpnowtek root; "
+INHERIT += "extrausers"
+EXTRA_USERS_PARAMS = "usermod -P jumpnowtek root; "
 
 # this will force root to change password on first login
-#INHERIT += "chageusers"
-#CHAGE_USERS_PARAMS = "chage -d0 root; "
+INHERIT += "chageusers"
+CHAGE_USERS_PARAMS = "chage -d0 root; "
 
 USER_CLASSES = "image-mklibs image-prelink"
 PATCHRESOLVE = "noop"
