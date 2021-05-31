@@ -50,7 +50,6 @@ ALSA += " \
     libavfilter \
     libavformat \
     libavutil \
-    libpostproc \
     libswresample \
     libswscale \
     alsa-conf \
@@ -63,7 +62,7 @@ IMAGE_INSTALL += " \
     ${CORE_OS} \
     ${KERNEL_EXTRA} \
     ${EXTRA_TOOLS} \
-    ${SYTEMD_STUFF} \
+    ${SYSTEMD_STUFF} \
     ${ALSA} \
     iqaudio-enable \
     pianobar \
