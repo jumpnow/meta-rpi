@@ -34,6 +34,6 @@ pkg_postinst_${PN}() {
     fi
 }
 
-RDEPENDS_${PN} += "libao-plugin-libalsa libavfilter omxplayer"
+RDEPENDS_${PN} += "libao-plugin-libalsa libavfilter"
 
 FILES_${PN} = "${bindir} ${datadir}"
