@@ -10,12 +10,12 @@ This layer depends on:
     branch: hardknott
 
     URI: git://git.yoctoproject.org/meta-raspberrypi.git
-    branch: master
+    branch: hardknott
 
 Latest commits
 
-    poky 45b56ddd82
-    meta-openembedded bbe3855ec
+    poky fd33741e27
+    meta-openembedded 9ee0e08ba
     meta-security c6b1eec
     meta-raspberrypi 11209a4
 
