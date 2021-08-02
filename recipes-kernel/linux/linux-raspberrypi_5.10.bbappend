@@ -5,7 +5,7 @@ LINUX_VERSION = "5.10.52"
 SRCREV_machine = ""
 SRCREV_kmeta = ""
 
-SRCREV = "7aa66c086ae01c4f77d54aaeb1d9f62573a7b748"
+SRCREV = "6495fa3396fb387d3871ced42a30281fe7be5352"
 
 SRC_URI = "\
     git://github.com/raspberrypi/linux.git;branch=${LINUX_RPI_BRANCH} \
@@ -53,17 +53,21 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/audiosense-pi.dtbo \
     overlays/audremap.dtbo \
     overlays/balena-fin.dtbo \
+    overlays/cap1106.dtbo \
+    overlays/chipdip-dac.dtbo \
     overlays/cma.dtbo \
     overlays/dht11.dtbo \
     overlays/dionaudio-loco.dtbo \
     overlays/dionaudio-loco-v2.dtbo \
     overlays/disable-bt.dtbo \
     overlays/disable-wifi.dtbo \
+    overlays/dpi18cpadhi.dtbo \
     overlays/dpi18.dtbo \
     overlays/dpi24.dtbo \
     overlays/draws.dtbo \
     overlays/dwc2.dtbo \
     overlays/dwc-otg.dtbo \
+    overlays/edt-ft5406.dtbo \
     overlays/enc28j60.dtbo \
     overlays/enc28j60-spi2.dtbo \
     overlays/exc3000.dtbo \
@@ -76,6 +80,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/gpio-ir.dtbo \
     overlays/gpio-ir-tx.dtbo \
     overlays/gpio-key.dtbo \
+    overlays/gpio-led.dtbo \
     overlays/gpio-no-bank0-irq.dtbo \
     overlays/gpio-no-irq.dtbo \
     overlays/gpio-poweroff.dtbo \
@@ -113,6 +118,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/ilitek251x.dtbo \
     overlays/imx219.dtbo \
     overlays/imx290.dtbo \
+    overlays/imx378.dtbo \
     overlays/imx477.dtbo \
     overlays/iqaudio-codec.dtbo \
     overlays/iqaudio-dac.dtbo \
@@ -140,6 +146,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/merus-amp.dtbo \
     overlays/midi-uart0.dtbo \
     overlays/midi-uart1.dtbo \
+    overlays/minipitft13.dtbo \
     overlays/miniuart-bt.dtbo \
     overlays/mmc.dtbo \
     overlays/mpu6050.dtbo \
@@ -149,9 +156,13 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/ov9281.dtbo \
     overlays/papirus.dtbo \
     overlays/pca953x.dtbo \
+    overlays/pcie-32bit-dma.dtbo \
     overlays/pibell.dtbo \
     overlays/pifacedigital.dtbo \
     overlays/pifi-40.dtbo \
+    overlays/pifi-dac-hd.dtbo \
+    overlays/pifi-dac-zero.dtbo \
+    overlays/pifi-mini-210.dtbo \
     overlays/piglow.dtbo \
     overlays/piscreen2r.dtbo \
     overlays/piscreen.dtbo \
@@ -172,6 +183,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/rpi-display.dtbo \
     overlays/rpi-ft5406.dtbo \
     overlays/rpi-poe.dtbo \
+    overlays/rpi-poe-plus.dtbo \
     overlays/rpi-proto.dtbo \
     overlays/rpi-sense.dtbo \
     overlays/rpi-tv.dtbo \
@@ -187,6 +199,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/seeed-can-fd-hat-v1.dtbo \
     overlays/seeed-can-fd-hat-v2.dtbo \
     overlays/sh1106-spi.dtbo \
+    overlays/si446x-spi0.dtbo \
     overlays/smi-dev.dtbo \
     overlays/smi-nand.dtbo \
     overlays/smi.dtbo \
@@ -211,6 +224,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/spi-rtc.dtbo \
     overlays/ssd1306.dtbo \
     overlays/ssd1306-spi.dtbo \
+    overlays/ssd1331-spi.dtbo \
     overlays/ssd1351-spi.dtbo \
     overlays/superaudioboard.dtbo \
     overlays/sx150x.dtbo \
@@ -225,12 +239,19 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/uart4.dtbo \
     overlays/uart5.dtbo \
     overlays/udrc.dtbo \
+    overlays/ugreen-dabboard.dtbo \
     overlays/upstream.dtbo \
     overlays/upstream-pi4.dtbo \
     overlays/vc4-fkms-v3d.dtbo \
+    overlays/vc4-fkms-v3d-pi4.dtbo \
+    overlays/vc4-kms-dpi-at056tn53v1.dtbo \
+    overlays/vc4-kms-dsi-7inch.dtbo \
+    overlays/vc4-kms-dsi-lt070me05000.dtbo \
+    overlays/vc4-kms-dsi-lt070me05000-v2.dtbo \
     overlays/vc4-kms-kippah-7inch.dtbo \
     overlays/vc4-kms-v3d.dtbo \
     overlays/vc4-kms-v3d-pi4.dtbo \
+    overlays/vc4-kms-vga666.dtbo \
     overlays/vga666.dtbo \
     overlays/w1-gpio.dtbo \
     overlays/w1-gpio-pullup.dtbo \
