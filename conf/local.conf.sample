@@ -12,7 +12,7 @@ DISTRO_FEATURES_remove = "ptest"
 
 INIT_MANAGER = "systemd"
 
-MACHINE_FEATURES_remove = "apm"
+MACHINE_FEATURES_remove = "apm vfat"
 
 IMAGE_FSTYPES = "tar.xz"
 
