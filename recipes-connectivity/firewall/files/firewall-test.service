@@ -1,0 +1,12 @@
+[Unit]
+Description=firewall service test
+BindsTo=firewall.service
+After=firewall.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/systemd-run --on-active=180 --timer-property=AccuracySec=1s /bin/systemctl stop firewall.service
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,13 @@
+[Unit]
+Description=firewall service
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/firewall.sh start
+RemainAfterExit=true
+ExecStop=/usr/sbin/firewall.sh stop
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target
