@@ -78,6 +78,13 @@ RPI_STUFF = " \
     userland \
 "
 
+SECURITY = " \
+    checksec \
+    nikto \
+    nmap \
+    python3-scapy \
+"
+
 SYSTEMD_STUFF = " \
     systemd-analyze \
     systemd-bash-completion \
@@ -97,6 +104,7 @@ IMAGE_INSTALL += " \
     ${DEV_SDK} \
     ${EXTRA_TOOLS} \
     ${RPI_STUFF} \
+    ${SECURITY} \
     ${SYSTEMD_STUFF} \
     ${WIFI} \
 "
