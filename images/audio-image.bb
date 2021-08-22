@@ -24,6 +24,7 @@ EXTRA_TOOLS = " \
     diffutils \
     dosfstools \
     findutils \
+    firewall \
     grep \
     i2c-tools \
     ifupdown \

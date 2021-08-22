@@ -80,6 +80,7 @@ RPI_STUFF = " \
 
 SECURITY = " \
     checksec \
+    firewall \
     nikto \
     nmap \
     python3-scapy \
