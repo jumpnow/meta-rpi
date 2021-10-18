@@ -5,7 +5,7 @@ LINUX_VERSION = "5.10.73"
 SRCREV_machine = ""
 SRCREV_kmeta = ""
 
-SRCREV = "4dd67ca8389f86b8dc004ae1eb5ccdafee7ec018"
+SRCREV = "046e2dccac6414e728d87188eb28f9e047d63884"
 
 SRC_URI = "\
     git://github.com/raspberrypi/linux.git;branch=${LINUX_RPI_BRANCH} \
@@ -28,6 +28,7 @@ RPI_KERNEL_DEVICETREE = " \
 RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/act-led.dtbo \
     overlays/adafruit18.dtbo \
+    overlays/adafruit-st7735r.dtbo \
     overlays/adau1977-adc.dtbo \
     overlays/adau7002-simple.dtbo \
     overlays/ads1015.dtbo \
@@ -120,6 +121,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/imx290.dtbo \
     overlays/imx378.dtbo \
     overlays/imx477.dtbo \
+    overlays/imx519.dtbo \
     overlays/iqaudio-codec.dtbo \
     overlays/iqaudio-dac.dtbo \
     overlays/iqaudio-dacplus.dtbo \
@@ -138,6 +140,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/mcp23s17.dtbo \
     overlays/mcp2515-can0.dtbo \
     overlays/mcp2515-can1.dtbo \
+    overlays/mcp2515.dtbo \
     overlays/mcp251xfd.dtbo \
     overlays/mcp3008.dtbo \
     overlays/mcp3202.dtbo \
@@ -146,8 +149,13 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/merus-amp.dtbo \
     overlays/midi-uart0.dtbo \
     overlays/midi-uart1.dtbo \
+    overlays/midi-uart2.dtbo \
+    overlays/midi-uart3.dtbo \
+    overlays/midi-uart4.dtbo \
+    overlays/midi-uart5.dtbo \
     overlays/minipitft13.dtbo \
     overlays/miniuart-bt.dtbo \
+    overlays/mlx90640.dtbo \
     overlays/mmc.dtbo \
     overlays/mpu6050.dtbo \
     overlays/mz61581.dtbo \
@@ -176,6 +184,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/pwm-ir-tx.dtbo \
     overlays/pwm.dtbo \
     overlays/qca7000.dtbo \
+    overlays/qca7000-uart0.dtbo \
     overlays/rotary-encoder.dtbo \
     overlays/rpi-backlight.dtbo \
     overlays/rpi-cirrus-wm5102.dtbo \
