@@ -1,3 +1,3 @@
-pkg_postinst_${PN}() {
+pkg_postinst:${PN}() {
     echo "pcm.front cards.pcm.default" >> $D/etc/asound.conf
 }

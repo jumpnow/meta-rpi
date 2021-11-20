@@ -27,13 +27,13 @@ do_install () {
     install -m 0664 ${WORKDIR}/config ${D}${datadir}/pianobar/config 
 }
 
-pkg_postinst_${PN}() {
+pkg_postinst:${PN}() {
     if [ ! -d $D/home/root/.config/pianobar ]; then
         mkdir -p $D/home/root/.config/pianobar
         cp $D/${datadir}/pianobar/config $D/home/root/.config/pianobar/config
     fi
 }
 
-RDEPENDS_${PN} += "libao-plugin-libalsa libavfilter"
+RDEPENDS:${PN} += "libao-plugin-libalsa libavfilter"
 
-FILES_${PN} = "${bindir} ${datadir}"
+FILES:${PN} = "${bindir} ${datadir}"

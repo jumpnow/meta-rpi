@@ -22,8 +22,8 @@ do_install() {
     install -m 0644 firewall-test.service ${D}${systemd_system_unitdir}
 }
 
-FILES_${PN} = "${sbindir} ${systemd_system_unitdir}"
+FILES:${PN} = "${sbindir} ${systemd_system_unitdir}"
 
-RDEPENDS_${PN} = "iptables"
+RDEPENDS:${PN} = "iptables"
 
-SYSTEMD_SERVICE_${PN} = "firewall.service"
+SYSTEMD_SERVICE:${PN} = "firewall.service"

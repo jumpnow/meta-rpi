@@ -1,6 +1,6 @@
 SRCREV = "648ffc470824c43eb0d16c485f4c24816b32cd6f"
 
-do_deploy_append() {
+do_deploy:append() {
     if [ -z "${MENDER_ARTIFACT_NAME}" ]; then
         if [ -n "${KERNEL_IMAGETYPE}" ]; then
             sed -i '/#kernel=/ c\kernel=${KERNEL_IMAGETYPE}' ${DEPLOYDIR}/${BOOTFILES_DIR_NAME}/config.txt
