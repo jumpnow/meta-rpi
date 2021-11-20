@@ -31,6 +31,7 @@ DEV_SDK = " \
     gcc-symlinks \
     g++ \
     g++-symlinks \
+    gdb \
     gettext \
     git \
     ldd \
@@ -70,6 +71,7 @@ EXTRA_TOOLS = " \
     util-linux \
     util-linux-blkid \
     unzip \
+    vim \
     wget \
     zip \
 "
