@@ -14,7 +14,7 @@ S = "${WORKDIR}"
 inherit systemd
 
 SYSTEMD_AUTO_ENABLE = "enable"
-SYSTEMD_SERVICE_${PN} = "${PN}.service"
+SYSTEMD_SERVICE:${PN} = "${PN}.service"
 
 do_install() {
 	install -d ${D}${bindir}
@@ -24,4 +24,4 @@ do_install() {
 	install -m 0644 ${S}/${PN}.service ${D}${systemd_unitdir}/system
 }
 
-FILES_${PN} += "${bindir} ${systemd_unitdir}"
+FILES:${PN} += "${bindir} ${systemd_unitdir}"
