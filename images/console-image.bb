@@ -48,9 +48,8 @@ DEV_SDK = " \
 
 EXTRA_TOOLS = " \
     bzip2 \
-    coreutils \
+    chrony \
     curl \
-    diffutils \
     dosfstools \
     e2fsprogs-mke2fs \
     ethtool \
@@ -64,7 +63,6 @@ EXTRA_TOOLS = " \
     iptables \
     less \
     lsof \
-    ntp ntp-tickadj \
     procps \
     sysfsutils \
     tcpdump \
@@ -110,6 +108,15 @@ IMAGE_INSTALL += " \
     ${SECURITY} \
     ${SYSTEMD_STUFF} \
     ${WIFI} \
+"
+
+set_local_timezone() {
+    ln -sf /usr/share/zoneinfo/EST5EDT ${IMAGE_ROOTFS}/etc/localtime
+    echo 'America/New_York' > ${IMAGE_ROOTFS}/etc/timezone
+}
+
+ROOTFS_POSTPROCESS_COMMAND += " \
+    set_local_timezone ; \
 "
 
 export IMAGE_BASENAME = "console-image"
