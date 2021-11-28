@@ -20,6 +20,7 @@ KERNEL_EXTRA = "\
 
 EXTRA_TOOLS = " \
     bzip2 \
+    chrony \
     coreutils \
     diffutils \
     dosfstools \
@@ -30,7 +31,6 @@ EXTRA_TOOLS = " \
     ifupdown \
     iproute2 \
     less \
-    ntp ntp-tickadj \
     procps \
     sysfsutils \
     util-linux \
@@ -67,6 +67,15 @@ IMAGE_INSTALL += " \
     ${ALSA} \
     iqaudio-enable \
     pianobar \
+"
+
+set_local_timezone() {
+    ln -sf /usr/share/zoneinfo/EST5EDT ${IMAGE_ROOTFS}/etc/localtime
+    echo 'America/New_York' > ${IMAGE_ROOTFS}/etc/timezone
+}
+
+ROOTFS_POSTPROCESS_COMMAND += " \
+    set_local_timezone ; \
 "
 
 export IMAGE_BASENAME = "audio-image"
