@@ -5,7 +5,7 @@ LINUX_VERSION = "5.10.83"
 SRCREV_machine = ""
 SRCREV_kmeta = ""
 
-SRCREV = "d19c0a6166d686f173cbb8c2e946d3652a4fc83e"
+SRCREV = "131f1322039284932ccb601a5cffdd9ca5d36d96"
 
 SRC_URI = "\
     git://github.com/raspberrypi/linux.git;branch=${LINUX_RPI_BRANCH} \
@@ -72,6 +72,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/enc28j60.dtbo \
     overlays/enc28j60-spi2.dtbo \
     overlays/exc3000.dtbo \
+    overlays/fbtft.dtbo \
     overlays/fe-pi-audio.dtbo \
     overlays/fsm-demo.dtbo \
     overlays/ghost-amp.dtbo \
@@ -254,6 +255,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/vc4-fkms-v3d.dtbo \
     overlays/vc4-fkms-v3d-pi4.dtbo \
     overlays/vc4-kms-dpi-at056tn53v1.dtbo \
+    overlays/vc4-kms-dpi-generic.dtbo \
     overlays/vc4-kms-dsi-7inch.dtbo \
     overlays/vc4-kms-dsi-lt070me05000.dtbo \
     overlays/vc4-kms-dsi-lt070me05000-v2.dtbo \
