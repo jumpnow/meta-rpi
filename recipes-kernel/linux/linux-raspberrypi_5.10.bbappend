@@ -1,11 +1,11 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
-LINUX_VERSION = "5.10.87"
+LINUX_VERSION = "5.10.88"
 
 SRCREV_machine = ""
 SRCREV_kmeta = ""
 
-SRCREV = "1274474965cf424d80cb5e5e30479bc6141a55c2"
+SRCREV = "606d1fc3bc97a8be1d21e143ca88f3ba085ddef1"
 
 SRC_URI = "\
     git://github.com/raspberrypi/linux.git;branch=${LINUX_RPI_BRANCH} \
@@ -57,6 +57,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/cap1106.dtbo \
     overlays/chipdip-dac.dtbo \
     overlays/cma.dtbo \
+    overlays/cutiepi-panel.dtbo \
     overlays/dht11.dtbo \
     overlays/dionaudio-loco.dtbo \
     overlays/dionaudio-loco-v2.dtbo \
