@@ -5,7 +5,7 @@ LINUX_VERSION = "5.10.90"
 SRCREV_machine = ""
 SRCREV_kmeta = ""
 
-SRCREV = "bee50005974fba9faf2592e8660a64c985069153"
+SRCREV = "d23b69f71f3fab2ab53f41baaeccc73037d765e8"
 
 SRC_URI = "\
     git://github.com/raspberrypi/linux.git;branch=${LINUX_RPI_BRANCH} \
