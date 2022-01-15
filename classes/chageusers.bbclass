@@ -8,9 +8,9 @@
 #
 # Other chage commands probably work, but this is the only one I tested.
 
-PACKAGE_INSTALL_append = " ${@['', 'base-passwd shadow'][bool(d.getVar('CHAGE_USERS_PARAMS'))]}"
+PACKAGE_INSTALL:append = " ${@['', 'base-passwd shadow'][bool(d.getVar('CHAGE_USERS_PARAMS'))]}"
 
-ROOTFS_POSTPROCESS_COMMAND_append = " chage_user;"
+ROOTFS_POSTPROCESS_COMMAND:append = " chage_user;"
 
 chage_user () {
 	chage_user_settings="${CHAGE_USERS_PARAMS}"
