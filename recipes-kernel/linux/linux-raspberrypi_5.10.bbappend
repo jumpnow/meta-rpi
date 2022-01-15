@@ -265,6 +265,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/vc4-kms-v3d-pi4.dtbo \
     overlays/vc4-kms-vga666.dtbo \
     overlays/vga666.dtbo \
+    overlays/vl805.dtbo \
     overlays/w1-gpio.dtbo \
     overlays/w1-gpio-pullup.dtbo \
     overlays/w5500.dtbo \
