@@ -1,11 +1,11 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
-LINUX_VERSION = "5.10.94"
+LINUX_VERSION = "5.10.95"
 
 SRCREV_machine = ""
 SRCREV_kmeta = ""
 
-SRCREV = "84db2c69d8dfaa3dfcc48efaff43b562fc58fa11"
+SRCREV = "b0272c695e99a8dcc3a01298db56361333f1fdcf"
 
 SRC_URI = "\
     git://github.com/raspberrypi/linux.git;branch=${LINUX_RPI_BRANCH} \
@@ -215,6 +215,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/smi-dev.dtbo \
     overlays/smi-nand.dtbo \
     overlays/smi.dtbo \
+    overlays/spi0-0cs.dtbo \
     overlays/spi0-1cs.dtbo \
     overlays/spi0-2cs.dtbo \
     overlays/spi1-1cs.dtbo \
@@ -256,8 +257,8 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/upstream-pi4.dtbo \
     overlays/vc4-fkms-v3d.dtbo \
     overlays/vc4-fkms-v3d-pi4.dtbo \
-    overlays/vc4-kms-dpi-at056tn53v1.dtbo \
     overlays/vc4-kms-dpi-generic.dtbo \
+    overlays/vc4-kms-dpi-panel.dtbo \
     overlays/vc4-kms-dsi-7inch.dtbo \
     overlays/vc4-kms-dsi-lt070me05000.dtbo \
     overlays/vc4-kms-dsi-lt070me05000-v2.dtbo \
