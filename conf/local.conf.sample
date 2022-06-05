@@ -1,18 +1,20 @@
 # Local configuration for meta-rpi images
-# Yocto Project 3.3 Poky distribution [hardknott] branch
+# Yocto Project 4.0 Poky distribution [kirkstone] branch
 # This is a systemd system
 
-LICENSE_FLAGS_WHITELIST = "commercial"
+SANITY_TESTED_DISTROS += "ubuntu-22.04 \n "
 
-DISTRO_FEATURES = "ext2 systemd usbhost ${DISTRO_FEATURES_LIBC}"
+LICENSE_FLAGS_ACCEPTED = "commercial"
+
+DISTRO_FEATURES = "ext2 security systemd usbhost ${DISTRO_FEATURES_LIBC}"
 
 DISTRO_FEATURES_BACKFILL_CONSIDERED += "pulseaudio sysvinit"
 
-DISTRO_FEATURES_remove = "ptest"
+DISTRO_FEATURES:remove = "ptest"
 
 INIT_MANAGER = "systemd"
 
-MACHINE_FEATURES_remove = "apm vfat"
+MACHINE_FEATURES:remove = "apm vfat"
 
 IMAGE_FSTYPES = "tar.xz"
 
@@ -27,12 +29,12 @@ KERNEL_IMAGETYPE = "zImage"
 DISABLE_VC4GRAPHICS = "1"
 DISABLE_OVERSCAN = "1"
 
-# default to 5.10
-PREFERRED_VERSION_linux-raspberrypi = "5.10.%"
+# the default is 5.15
+#PREFERRED_VERSION_linux-raspberrypi = "5.15.%"
 
-# DL_DIR = "/src/hardknott"
-# SSTATE_DIR = "/oe8/rpi/sstate-cache"
-# TMPDIR = "/oe8/rpi/tmp-hardknott"
+#DL_DIR = "/oe/dl/kirkstone"
+#SSTATE_DIR = "/oe/rpi/sstate-cache"
+#TMPDIR = "/oe/rpi/tmp"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
@@ -41,7 +43,7 @@ PACKAGE_CLASSES = "package_ipk"
 SDKMACHINE = "x86_64"
 
 # for no root passwd uncomment the following and comment the two extra user lines
-# EXTRA_IMAGE_FEATURES = "debug-tweaks"
+#EXTRA_IMAGE_FEATURES = "debug-tweaks"
 
 # for a root passwd, change jumpnowtek below to your password
 INHERIT += "extrausers"
@@ -51,8 +53,7 @@ EXTRA_USERS_PARAMS = "usermod -P jumpnowtek root; "
 INHERIT += "chageusers"
 CHAGE_USERS_PARAMS = "chage -d0 root; "
 
-USER_CLASSES = "image-mklibs image-prelink"
 PATCHRESOLVE = "noop"
 RM_OLD_IMAGE = "1"
 INHERIT += "rm_work"
-CONF_VERSION = "1"
+CONF_VERSION = "2"

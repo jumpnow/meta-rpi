@@ -1,4 +1,5 @@
 kernel=zImage
-dtparams=audio=off
-dtparam=i2c_arm=on
+# dtparam=audio=off
+dtparam=i2s=on
+# dtparam=i2c_arm=on
 dtoverlay=iqaudio-dacplus

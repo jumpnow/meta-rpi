@@ -1,22 +1,22 @@
 This layer depends on:
 
     URI: git://git.yoctoproject.org/poky.git
-    branch: honister
+    branch: kirkstone
 
     URI: git://git.openembedded.org/meta-openembedded.git
-    branch: honister
+    branch: kirkstone
 
     URI: git://git.yoctoproject.org/meta-security.git
-    branch: honister
+    branch: kirkstone
 
     URI: git://git.yoctoproject.org/meta-raspberrypi.git
-    branch: honister
+    branch: kirkstone
 
 Latest commits
 
-    poky fd34439250
-    meta-openembedded 9a0caf5b0
-    meta-security fb77606
-    meta-raspberrypi 378d4b6
+    poky 00c04394cb
+    meta-openembedded 0b7836265
+    meta-security d3d8e62
+    meta-raspberrypi 0135a02
 
 meta-rpi layer maintainer: Scott Ellis <scott@jumpnowtek.com>

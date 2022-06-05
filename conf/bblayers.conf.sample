@@ -6,14 +6,14 @@ BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
 BBLAYERS ?= " \
-    /${HOME}/poky-hardknott/meta \
-    /${HOME}/poky-hardknott/meta-poky \
-    /${HOME}/poky-hardknott/meta-openembedded/meta-oe \
-    /${HOME}/poky-hardknott/meta-openembedded/meta-multimedia \
-    /${HOME}/poky-hardknott/meta-openembedded/meta-networking \
-    /${HOME}/poky-hardknott/meta-openembedded/meta-perl \
-    /${HOME}/poky-hardknott/meta-openembedded/meta-python \
-    /${HOME}/poky-hardknott/meta-raspberrypi \
-    /${HOME}/poky-hardknott/meta-security \
+    /${HOME}/poky-kirkstone/meta \
+    /${HOME}/poky-kirkstone/meta-poky \
+    /${HOME}/poky-kirkstone/meta-openembedded/meta-oe \
+    /${HOME}/poky-kirkstone/meta-openembedded/meta-multimedia \
+    /${HOME}/poky-kirkstone/meta-openembedded/meta-networking \
+    /${HOME}/poky-kirkstone/meta-openembedded/meta-perl \
+    /${HOME}/poky-kirkstone/meta-openembedded/meta-python \
+    /${HOME}/poky-kirkstone/meta-raspberrypi \
+    /${HOME}/poky-kirkstone/meta-security \
     /${HOME}/rpi/meta-rpi \
 "

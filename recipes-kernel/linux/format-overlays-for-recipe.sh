@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LINUX=/src/linux/linux-rpi
+LINUX=/oe/linux/linux-rpi
 
 OVERLAYS_DIR=${LINUX}/arch/arm/boot/dts/overlays
 
