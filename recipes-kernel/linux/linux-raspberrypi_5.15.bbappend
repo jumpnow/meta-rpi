@@ -5,7 +5,7 @@ LINUX_VERSION = "5.15.45"
 SRCREV_machine = ""
 SRCREV_kmeta = ""
 
-SRCREV = "6efdadb1106f8fa06330ba3a095649d2c6417d3f"
+SRCREV = "fca0308be9e2d516cb38a1686050e931a740ebe2"
 
 SRC_URI = "\
     git://github.com/raspberrypi/linux.git;branch=${LINUX_RPI_BRANCH};protocol=https \
@@ -47,6 +47,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/anyspi.dtbo \
     overlays/apds9960.dtbo \
     overlays/applepi-dac.dtbo \
+    overlays/arducam-64mp.dtbo \
     overlays/arducam-pivariety.dtbo \
     overlays/at86rf233.dtbo \
     overlays/audioinjector-addons.dtbo \
@@ -208,7 +209,6 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/rpi-proto.dtbo \
     overlays/rpi-sense.dtbo \
     overlays/rpi-tv.dtbo \
-    overlays/rpivid-v4l2.dtbo \
     overlays/rra-digidac1-wm8741-audio.dtbo \
     overlays/sainsmart18.dtbo \
     overlays/sc16is750-i2c.dtbo \
