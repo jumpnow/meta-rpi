@@ -1,11 +1,11 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
-LINUX_VERSION = "5.15.53"
+LINUX_VERSION = "5.15.55"
 
 SRCREV_machine = ""
 SRCREV_kmeta = ""
 
-SRCREV = "10aaaecddda5ff530bc5bf8f2872b789555e7fee"
+SRCREV = "eed2fd58a1aeb9e5d9b02f8525753a2145b94ba5"
 
 SRC_URI = "\
     git://github.com/raspberrypi/linux.git;branch=${LINUX_RPI_BRANCH};protocol=https \
@@ -63,6 +63,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/cma.dtbo \
     overlays/cutiepi-panel.dtbo \
     overlays/dht11.dtbo \
+    overlays/dionaudio-kiwi.dtbo \
     overlays/dionaudio-loco.dtbo \
     overlays/dionaudio-loco-v2.dtbo \
     overlays/disable-bt.dtbo \
@@ -80,6 +81,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/fbtft.dtbo \
     overlays/fe-pi-audio.dtbo \
     overlays/fsm-demo.dtbo \
+    overlays/gc9a01.dtbo \
     overlays/ghost-amp.dtbo \
     overlays/goodix.dtbo \
     overlays/googlevoicehat-soundcard.dtbo \
@@ -198,6 +200,8 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/pwm.dtbo \
     overlays/qca7000.dtbo \
     overlays/qca7000-uart0.dtbo \
+    overlays/ramoops.dtbo \
+    overlays/ramoops-pi4.dtbo \
     overlays/rotary-encoder.dtbo \
     overlays/rpi-backlight.dtbo \
     overlays/rpi-cirrus-wm5102.dtbo \
