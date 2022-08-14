@@ -58,6 +58,8 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/audiosense-pi.dtbo \
     overlays/audremap.dtbo \
     overlays/balena-fin.dtbo \
+    overlays/camera-mux-2port.dtbo \
+    overlays/camera-mux-4port.dtbo \
     overlays/cap1106.dtbo \
     overlays/chipdip-dac.dtbo \
     overlays/cma.dtbo \
@@ -98,6 +100,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/hd44780-lcd.dtbo \
     overlays/hdmi-backlight-hwhack-gpio.dtbo \
     overlays/hifiberry-amp100.dtbo \
+    overlays/hifiberry-amp3.dtbo \
     overlays/hifiberry-amp.dtbo \
     overlays/hifiberry-dac.dtbo \
     overlays/hifiberry-dacplusadc.dtbo \
@@ -131,7 +134,9 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/imx258.dtbo \
     overlays/imx290.dtbo \
     overlays/imx296.dtbo \
+    overlays/imx327.dtbo \
     overlays/imx378.dtbo \
+    overlays/imx462.dtbo \
     overlays/imx477.dtbo \
     overlays/imx519.dtbo \
     overlays/iqaudio-codec.dtbo \
