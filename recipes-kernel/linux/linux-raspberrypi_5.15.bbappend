@@ -5,7 +5,7 @@ LINUX_VERSION = "5.15.61"
 SRCREV_machine = ""
 SRCREV_kmeta = ""
 
-SRCREV = "010d2dbf92ca610f7302ad26ee6204d7e4db948e"
+SRCREV = "d331f456e6acd1a2bee6ccb9e96341b024fbe53e"
 
 SRC_URI = "\
     git://github.com/raspberrypi/linux.git;branch=${LINUX_RPI_BRANCH};protocol=https \
@@ -64,6 +64,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/chipdip-dac.dtbo \
     overlays/cma.dtbo \
     overlays/cutiepi-panel.dtbo \
+    overlays/dacberry400.dtbo \
     overlays/dht11.dtbo \
     overlays/dionaudio-kiwi.dtbo \
     overlays/dionaudio-loco.dtbo \
