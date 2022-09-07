@@ -1,11 +1,11 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
-LINUX_VERSION = "5.15.64"
+LINUX_VERSION = "5.15.65"
 
 SRCREV_machine = ""
 SRCREV_kmeta = ""
 
-SRCREV = "0dd998469638fbcb10ca379e8894e227d9a5cb22"
+SRCREV = "cbb47398aebff7605bc23c4727c27d16a566982e"
 
 SRC_URI = "\
     git://github.com/raspberrypi/linux.git;branch=${LINUX_RPI_BRANCH};protocol=https \
@@ -62,6 +62,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/camera-mux-4port.dtbo \
     overlays/cap1106.dtbo \
     overlays/chipdip-dac.dtbo \
+    overlays/cirrus-wm5102.dtbo \
     overlays/cma.dtbo \
     overlays/cutiepi-panel.dtbo \
     overlays/dacberry400.dtbo \
@@ -129,6 +130,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/i2c-rtc-gpio.dtbo \
     overlays/i2c-rtc.dtbo \
     overlays/i2c-sensor.dtbo \
+    overlays/i2s-dac.dtbo \
     overlays/i2s-gpio28-31.dtbo \
     overlays/ilitek251x.dtbo \
     overlays/imx219.dtbo \
@@ -201,6 +203,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/pitft28-resistive.dtbo \
     overlays/pitft35-resistive.dtbo \
     overlays/pps-gpio.dtbo \
+    overlays/proto-codec.dtbo \
     overlays/pwm-2chan.dtbo \
     overlays/pwm-ir-tx.dtbo \
     overlays/pwm.dtbo \
@@ -210,13 +213,13 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/ramoops-pi4.dtbo \
     overlays/rotary-encoder.dtbo \
     overlays/rpi-backlight.dtbo \
-    overlays/rpi-cirrus-wm5102.dtbo \
-    overlays/rpi-dac.dtbo \
-    overlays/rpi-display.dtbo \
+    overlays/rpi-codeczero.dtbo \
+    overlays/rpi-dacplus.dtbo \
+    overlays/rpi-dacpro.dtbo \
+    overlays/rpi-digiampplus.dtbo \
     overlays/rpi-ft5406.dtbo \
     overlays/rpi-poe.dtbo \
     overlays/rpi-poe-plus.dtbo \
-    overlays/rpi-proto.dtbo \
     overlays/rpi-sense.dtbo \
     overlays/rpi-tv.dtbo \
     overlays/rra-digidac1-wm8741-audio.dtbo \
@@ -293,6 +296,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/w1-gpio.dtbo \
     overlays/w1-gpio-pullup.dtbo \
     overlays/w5500.dtbo \
+    overlays/watterott-display.dtbo \
     overlays/waveshare-can-fd-hat-mode-a.dtbo \
     overlays/waveshare-can-fd-hat-mode-b.dtbo \
     overlays/wittypi.dtbo \
