@@ -21,6 +21,7 @@ KERNEL_EXTRA = "\
 DEV_SDK = " \
     binutils \
     binutils-symlinks \
+    cmake \
     coreutils \
     cpp \
     cpp-symlinks \
