@@ -5,7 +5,7 @@ LINUX_VERSION = "5.15.79"
 SRCREV_machine = ""
 SRCREV_kmeta = ""
 
-SRCREV = "c254c216d887c621d3c72f289f23fc2d1d387d5a"
+SRCREV = "3e3acdd755007b8f5839088d8946981207c217bf"
 
 SRC_URI = "\
     git://github.com/raspberrypi/linux.git;branch=${LINUX_RPI_BRANCH};protocol=https \
@@ -204,6 +204,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/pitft35-resistive.dtbo \
     overlays/pps-gpio.dtbo \
     overlays/proto-codec.dtbo \
+    overlays/pwm1.dtbo \
     overlays/pwm-2chan.dtbo \
     overlays/pwm-ir-tx.dtbo \
     overlays/pwm.dtbo \
@@ -221,6 +222,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/rpi-poe.dtbo \
     overlays/rpi-poe-plus.dtbo \
     overlays/rpi-sense.dtbo \
+    overlays/rpi-sense-v2.dtbo \
     overlays/rpi-tv.dtbo \
     overlays/rra-digidac1-wm8741-audio.dtbo \
     overlays/sainsmart18.dtbo \
