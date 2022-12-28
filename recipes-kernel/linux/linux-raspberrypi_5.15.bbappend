@@ -64,6 +64,8 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/chipdip-dac.dtbo \
     overlays/cirrus-wm5102.dtbo \
     overlays/cma.dtbo \
+    overlays/cm-swap-i2c0.dtbo \
+    overlays/crystalfontz-cfa050_pi_m.dtbo \
     overlays/cutiepi-panel.dtbo \
     overlays/dacberry400.dtbo \
     overlays/dht11.dtbo \
@@ -71,6 +73,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/dionaudio-loco.dtbo \
     overlays/dionaudio-loco-v2.dtbo \
     overlays/disable-bt.dtbo \
+    overlays/disable-emmc2.dtbo \
     overlays/disable-wifi.dtbo \
     overlays/dpi18cpadhi.dtbo \
     overlays/dpi18.dtbo \
