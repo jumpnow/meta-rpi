@@ -117,7 +117,7 @@ echo "Extracting ${IMAGE}-image-${MACHINE}.tar.xz to $mnt"
 sudo tar --numeric-owner -C "$mnt" -xJf ${src}/${IMAGE}-image-${MACHINE}.tar.xz
 
 echo "Generating a random-seed for systemd-random-seed"
-mkdir -p "${mnt}/var/lib/systemd"
+sudo mkdir -p "${mnt}/var/lib/systemd"
 sudo dd status=none if=/dev/urandom of="${mnt}/var/lib/systemd/random-seed" bs=512 count=1
 sudo chmod 600 "${mnt}/var/lib/systemd/random-seed"
 
