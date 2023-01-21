@@ -1,10 +1,10 @@
 # Local configuration for meta-rpi images
-# Yocto Project 4.0 Poky distribution [kirkstone] branch
+# Yocto Project 4.1 Poky distribution [langdale] branch
 # This is a systemd system
 
 SANITY_TESTED_DISTROS += "ubuntu-22.04 \n "
 
-LICENSE_FLAGS_ACCEPTED = "commercial"
+LICENSE_FLAGS_ACCEPTED = "commercial synaptic-killswitch"
 
 DISTRO_FEATURES = "ext2 security systemd usbhost ${DISTRO_FEATURES_LIBC}"
 
@@ -32,9 +32,9 @@ DISABLE_OVERSCAN = "1"
 # the default is 5.15
 #PREFERRED_VERSION_linux-raspberrypi = "5.15.%"
 
-#DL_DIR = "/oe/dl/kirkstone"
-#SSTATE_DIR = "/oe/rpi/sstate-cache"
-#TMPDIR = "/oe/rpi/tmp"
+#DL_DIR = "/src/langdale"
+#SSTATE_DIR = "/oe2/rpi/sstate-cache"
+#TMPDIR = "/oe2/rpi/tmp"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
@@ -42,16 +42,8 @@ PACKAGE_CLASSES = "package_ipk"
 # i686 or x86_64
 SDKMACHINE = "x86_64"
 
-# for no root passwd uncomment the following and comment the two extra user lines
-#EXTRA_IMAGE_FEATURES = "debug-tweaks"
-
-# for a root passwd, change jumpnowtek below to your password
-INHERIT += "extrausers"
-EXTRA_USERS_PARAMS = "usermod -P jumpnowtek root; "
-
-# this will force root to change password on first login
-INHERIT += "chageusers"
-CHAGE_USERS_PARAMS = "chage -d0 root; "
+# for no root passwd
+EXTRA_IMAGE_FEATURES = "debug-tweaks"
 
 PATCHRESOLVE = "noop"
 RM_OLD_IMAGE = "1"

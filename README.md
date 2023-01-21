@@ -1,16 +1,16 @@
 This layer depends on:
 
     URI: git://git.yoctoproject.org/poky.git
-    branch: kirkstone
+    branch: langdale
 
     URI: git://git.openembedded.org/meta-openembedded.git
-    branch: kirkstone
+    branch: langdale
 
     URI: git://git.yoctoproject.org/meta-security.git
-    branch: kirkstone
+    branch: langdale
 
     URI: git://git.yoctoproject.org/meta-raspberrypi.git
-    branch: kirkstone
+    branch: langdale
 
 Latest commits
 
