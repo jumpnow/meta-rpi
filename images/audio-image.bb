@@ -39,11 +39,6 @@ EXTRA_TOOLS = " \
     zip \
 "
 
-SYSTEMD_STUFF = " \
-    systemd-analyze \
-    systemd-bash-completion \
-"
-
 ALSA += " \
     libasound \
     libavcodec \
@@ -63,7 +58,6 @@ IMAGE_INSTALL += " \
     ${CORE_OS} \
     ${KERNEL_EXTRA} \
     ${EXTRA_TOOLS} \
-    ${SYSTEMD_STUFF} \
     ${ALSA} \
     iqaudio-enable \
     pianobar \
