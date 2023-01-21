@@ -145,6 +145,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/imx462.dtbo \
     overlays/imx477.dtbo \
     overlays/imx519.dtbo \
+    overlays/imx708.dtbo \
     overlays/iqaudio-codec.dtbo \
     overlays/iqaudio-dac.dtbo \
     overlays/iqaudio-dacplus.dtbo \
