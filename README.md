@@ -1,22 +1,22 @@
 This layer depends on:
 
     URI: git://git.yoctoproject.org/poky.git
-    branch: langdale
+    branch: mickledore
 
     URI: git://git.openembedded.org/meta-openembedded.git
-    branch: langdale
+    branch: mickledore
 
     URI: git://git.yoctoproject.org/meta-security.git
-    branch: langdale
+    branch: mickledore
 
     URI: git://git.yoctoproject.org/meta-raspberrypi.git
-    branch: langdale
+    branch: mickledore
 
 Latest commits
 
-    poky 3e95f268ce
-    meta-openembedded cbbaa8223
-    meta-security a4562b1
-    meta-raspberrypi 6f5771d
+    poky 60223eb380
+    meta-openembedded 928658212
+    meta-security d7db0a3
+    meta-raspberrypi aa0aed9
 
 meta-rpi layer maintainer: Scott Ellis <scott@jumpnowtek.com>

@@ -1,6 +1,5 @@
 # Local configuration for meta-rpi images
-# Yocto Project 4.1 Poky distribution [langdale] branch
-# This is a systemd system
+# Yocto Project 4.2 Poky distribution [mickledore] branch
 
 SANITY_TESTED_DISTROS += "ubuntu-22.04 \n "
 
@@ -29,12 +28,12 @@ KERNEL_IMAGETYPE = "zImage"
 DISABLE_VC4GRAPHICS = "1"
 DISABLE_OVERSCAN = "1"
 
-# the default is 5.15
+# the default is 6.1
 #PREFERRED_VERSION_linux-raspberrypi = "5.15.%"
 
-#DL_DIR = "/src/langdale"
-#SSTATE_DIR = "/oe2/rpi/sstate-cache"
-#TMPDIR = "/oe2/rpi/tmp"
+#DL_DIR = "/src/mickledore"
+#SSTATE_DIR = "/oe8/rpi/sstate-cache"
+#TMPDIR = "/oe8/rpi/tmp"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"

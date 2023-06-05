@@ -6,14 +6,14 @@ BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
 BBLAYERS ?= " \
-    /${HOME}/poky-langdale/meta \
-    /${HOME}/poky-langdale/meta-poky \
-    /${HOME}/poky-langdale/meta-openembedded/meta-oe \
-    /${HOME}/poky-langdale/meta-openembedded/meta-multimedia \
-    /${HOME}/poky-langdale/meta-openembedded/meta-networking \
-    /${HOME}/poky-langdale/meta-openembedded/meta-perl \
-    /${HOME}/poky-langdale/meta-openembedded/meta-python \
-    /${HOME}/poky-langdale/meta-raspberrypi \
-    /${HOME}/poky-langdale/meta-security \
+    /${HOME}/poky-mickledore/meta \
+    /${HOME}/poky-mickledore/meta-poky \
+    /${HOME}/poky-mickledore/meta-openembedded/meta-oe \
+    /${HOME}/poky-mickledore/meta-openembedded/meta-multimedia \
+    /${HOME}/poky-mickledore/meta-openembedded/meta-networking \
+    /${HOME}/poky-mickledore/meta-openembedded/meta-perl \
+    /${HOME}/poky-mickledore/meta-openembedded/meta-python \
+    /${HOME}/poky-mickledore/meta-raspberrypi \
+    /${HOME}/poky-mickledore/meta-security \
     /${HOME}/rpi/meta-rpi \
 "
