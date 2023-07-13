@@ -18,35 +18,6 @@ KERNEL_EXTRA = "\
     kernel-modules \
 "
 
-DEV_SDK = " \
-    binutils \
-    binutils-symlinks \
-    cmake \
-    coreutils \
-    cpp \
-    cpp-symlinks \
-    diffutils \
-    elfutils elfutils-binutils \
-    file \
-    gcc \
-    gcc-symlinks \
-    g++ \
-    g++-symlinks \
-    gdb \
-    gettext \
-    git \
-    ldd \
-    libstdc++ \
-    libstdc++-dev \
-    libtool \
-    ltrace \
-    make \
-    perl-modules \
-    pkgconfig \
-    python3-modules \
-    strace \
-"
-
 EXTRA_TOOLS = " \
     bzip2 \
     chrony \
@@ -81,9 +52,6 @@ RPI_STUFF = " \
 SECURITY = " \
     checksec \
     firewall \
-    nikto \
-    nmap \
-    python3-scapy \
     wireguard-tools \
 "
 
@@ -96,7 +64,6 @@ WIFI = " \
 IMAGE_INSTALL += " \
     ${CORE_OS} \
     ${KERNEL_EXTRA} \
-    ${DEV_SDK} \
     ${EXTRA_TOOLS} \
     ${RPI_STUFF} \
     ${SECURITY} \
