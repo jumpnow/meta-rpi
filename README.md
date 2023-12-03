@@ -1,20 +1,21 @@
 This layer depends on:
 
     URI: git://git.yoctoproject.org/poky.git
-    branch: mickledore
+    branch: nanbield
 
     URI: git://git.openembedded.org/meta-openembedded.git
-    branch: mickledore
+    branch: nanbield
 
     URI: git://git.yoctoproject.org/meta-security.git
-    branch: mickledore
+    branch: nanbield
 
+    # no nanbield branch, use master
     URI: git://git.yoctoproject.org/meta-raspberrypi.git
-    branch: mickledore
+    branch: master
 
 Latest commits
 
-    poky 7235399a86
-    meta-openembedded aa5e8edab
-    meta-security d7db0a3
-    meta-raspberrypi 9c81413
+    poky bf9f2f6f60
+    meta-openembedded 1750c66ae
+    meta-security 5938fa5
+    meta-raspberrypi 8231f97

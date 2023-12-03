@@ -1,19 +1,17 @@
 # Local configuration for meta-rpi images
-# Yocto Project 4.2 Poky distribution [mickledore] branch
-
-SANITY_TESTED_DISTROS += "ubuntu-22.04 \n "
+# Yocto Project 4.3 Poky distribution [nanbield] branch
 
 LICENSE_FLAGS_ACCEPTED = "commercial synaptic-killswitch"
 
-DISTRO_FEATURES = "ext2 security systemd usbhost ${DISTRO_FEATURES_LIBC}"
+# DISTRO_FEATURES = "ext2 opengl pam security systemd usbhost wayland ${DISTRO_FEATURES_LIBC}"
 
-DISTRO_FEATURES_BACKFILL_CONSIDERED += "pulseaudio sysvinit"
+DISTRO_FEATURES_BACKFILL_CONSIDERED += "sysvinit"
 
 DISTRO_FEATURES:remove = "ptest"
 
 INIT_MANAGER = "systemd"
 
-MACHINE_FEATURES:remove = "apm vfat"
+MACHINE_FEATURES:remove = "apm"
 
 IMAGE_FSTYPES = "tar.xz"
 
@@ -29,9 +27,9 @@ DISABLE_VC4GRAPHICS = "1"
 DISABLE_OVERSCAN = "1"
 
 # the default is 6.1
-#PREFERRED_VERSION_linux-raspberrypi = "5.15.%"
+#PREFERRED_VERSION_linux-raspberrypi = "6.1.%"
 
-#DL_DIR = "/src/mickledore"
+#DL_DIR = "/src/nanbield"
 #SSTATE_DIR = "/oe8/rpi/sstate-cache"
 #TMPDIR = "/oe8/rpi/tmp"
 
