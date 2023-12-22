@@ -9,13 +9,12 @@ This layer depends on:
     URI: git://git.yoctoproject.org/meta-security.git
     branch: nanbield
 
-    # no nanbield branch, use master
     URI: git://git.yoctoproject.org/meta-raspberrypi.git
-    branch: master
+    branch: nanbield
 
 Latest commits
 
-    poky 046b70083f
+    poky 53387c5ca3
     meta-openembedded 1750c66ae
     meta-security 5938fa5
-    meta-raspberrypi 4c033eb
+    meta-raspberrypi fde68b2
