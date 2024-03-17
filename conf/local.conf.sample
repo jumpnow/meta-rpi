@@ -3,7 +3,7 @@
 
 LICENSE_FLAGS_ACCEPTED = "commercial synaptic-killswitch"
 
-# DISTRO_FEATURES = "ext2 opengl pam security systemd usbhost wayland ${DISTRO_FEATURES_LIBC}"
+DISTRO_FEATURES = "ext2 opengl security systemd usbhost ${DISTRO_FEATURES_LIBC}"
 
 DISTRO_FEATURES_BACKFILL_CONSIDERED += "sysvinit"
 
@@ -11,7 +11,7 @@ DISTRO_FEATURES:remove = "ptest"
 
 INIT_MANAGER = "systemd"
 
-MACHINE_FEATURES:remove = "apm"
+MACHINE_FEATURES:remove = "apm vfat"
 
 IMAGE_FSTYPES = "tar.xz"
 

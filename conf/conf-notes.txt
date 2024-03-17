@@ -3,11 +3,9 @@
 
 You can now run 'bitbake <target>'
 
-Tested targets are:
+Available targets are:
 
     audio-image
     console-image
     console-dev-image
-    weston-image
-    weston-dev-image
 
