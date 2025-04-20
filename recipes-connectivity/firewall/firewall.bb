@@ -7,7 +7,7 @@ SRC_URI += "file://firewall.service \
             file://firewall-test.service \
             file://firewall.sh"
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 inherit systemd
 

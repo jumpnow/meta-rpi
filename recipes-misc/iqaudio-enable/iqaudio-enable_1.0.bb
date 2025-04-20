@@ -9,7 +9,7 @@ SRC_URI = "file://iqaudio-enable \
            file://iqaudio-enable.service \
           "
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 inherit systemd
 

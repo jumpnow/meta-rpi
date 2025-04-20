@@ -6,14 +6,13 @@ BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
 BBLAYERS ?= " \
-    ${HOME}/poky-nanbield/meta \
-    ${HOME}/poky-nanbield/meta-poky \
-    ${HOME}/poky-nanbield/meta-openembedded/meta-oe \
-    ${HOME}/poky-nanbield/meta-openembedded/meta-multimedia \
-    ${HOME}/poky-nanbield/meta-openembedded/meta-networking \
-    ${HOME}/poky-nanbield/meta-openembedded/meta-python \
-    ${HOME}/poky-nanbield/meta-raspberrypi \
-    ${HOME}/poky-nanbield/meta-security \
-    ${HOME}/poky-nanbield/meta-qt6 \
+    ${HOME}/poky-styhead/meta \
+    ${HOME}/poky-styhead/meta-poky \
+    ${HOME}/poky-styhead/meta-openembedded/meta-oe \
+    ${HOME}/poky-styhead/meta-openembedded/meta-multimedia \
+    ${HOME}/poky-styhead/meta-openembedded/meta-networking \
+    ${HOME}/poky-styhead/meta-openembedded/meta-python \
+    ${HOME}/poky-styhead/meta-raspberrypi \
+    ${HOME}/poky-styhead/meta-security \
     ${HOME}/rpi/meta-rpi \
 "
