@@ -20,7 +20,6 @@ KERNEL_EXTRA = "\
 
 EXTRA_TOOLS = " \
     bzip2 \
-    chrony \
     curl \
     dosfstools \
     e2fsprogs-mke2fs \
@@ -53,7 +52,6 @@ RPI_STUFF = " \
 
 SECURITY = " \
     checksec \
-    firewall \
     wireguard-tools \
 "
 

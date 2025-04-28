@@ -1,5 +1,5 @@
 # Local configuration for meta-rpi images
-# Yocto Project 5.1 Poky distribution [styhead] branch
+# Yocto Project 5.2 Poky distribution [walnascar] branch
 
 LICENSE_FLAGS_ACCEPTED = "commercial synaptic-killswitch"
 
@@ -22,7 +22,9 @@ KERNEL_IMAGETYPE = "zImage"
 DISABLE_VC4GRAPHICS = "1"
 DISABLE_OVERSCAN = "1"
 
-#DL_DIR = "/src/styhead"
+PREFERRED_VERSION_linux-raspberrypi = "6.12.%"
+
+#DL_DIR = "/src/walnascar"
 #SSTATE_DIR = "/oe1/rpi/sstate-cache"
 #TMPDIR = "/oe1/rpi/tmp"
 
@@ -32,8 +34,7 @@ PACKAGE_CLASSES = "package_ipk"
 # i686 or x86_64
 SDKMACHINE = "x86_64"
 
-# for no root passwd
-EXTRA_IMAGE_FEATURES = "debug-tweaks"
+EXTRA_IMAGE_FEATURES = "empty-root-password allow-empty-password allow-root-login"
 
 PATCHRESOLVE = "noop"
 RM_OLD_IMAGE = "1"

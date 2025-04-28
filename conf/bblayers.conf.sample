@@ -6,13 +6,13 @@ BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
 BBLAYERS ?= " \
-    ${HOME}/poky-styhead/meta \
-    ${HOME}/poky-styhead/meta-poky \
-    ${HOME}/poky-styhead/meta-openembedded/meta-oe \
-    ${HOME}/poky-styhead/meta-openembedded/meta-multimedia \
-    ${HOME}/poky-styhead/meta-openembedded/meta-networking \
-    ${HOME}/poky-styhead/meta-openembedded/meta-python \
-    ${HOME}/poky-styhead/meta-raspberrypi \
-    ${HOME}/poky-styhead/meta-security \
+    ${HOME}/poky-walnascar/meta \
+    ${HOME}/poky-walnascar/meta-poky \
+    ${HOME}/poky-walnascar/meta-openembedded/meta-oe \
+    ${HOME}/poky-walnascar/meta-openembedded/meta-multimedia \
+    ${HOME}/poky-walnascar/meta-openembedded/meta-networking \
+    ${HOME}/poky-walnascar/meta-openembedded/meta-python \
+    ${HOME}/poky-walnascar/meta-raspberrypi \
+    ${HOME}/poky-walnascar/meta-security \
     ${HOME}/rpi/meta-rpi \
 "

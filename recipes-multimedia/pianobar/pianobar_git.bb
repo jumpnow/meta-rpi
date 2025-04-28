@@ -8,7 +8,7 @@ DEPENDS = "curl faad2 ffmpeg gnutls json-c libao libgcrypt"
 
 inherit pkgconfig
 
-SRCREV = "b11e5e07001fbbba619bb704668c7c8fdc1e2266"
+SRCREV = "e1b593b37565d2d06580a0549b12f60015bf2c40"
 SRC_URI = " \
     git://github.com/PromyLOPh/pianobar;branch=master;protocol=https \
     file://config \
