@@ -3,7 +3,7 @@
 
 LICENSE_FLAGS_ACCEPTED = "commercial synaptic-killswitch"
 
-DISTRO_FEATURES = "ext2 opengl security systemd usbhost ${DISTRO_FEATURES_LIBC}"
+DISTRO_FEATURES = "ext2 security systemd usbhost ${DISTRO_FEATURES_LIBC}"
 
 DISTRO_FEATURES_BACKFILL_CONSIDERED += "sysvinit"
 
@@ -12,6 +12,14 @@ DISTRO_FEATURES:remove = "ptest"
 INIT_MANAGER = "systemd"
 
 MACHINE_FEATURES:remove = "apm vfat"
+
+PREFERRED_PROVIDER_libavcodec = "ffmpeg"
+PREFERRED_PROVIDER_libavdevice = "ffmpeg"
+PREFERRED_PROVIDER_libavformat = "ffmpeg"
+PREFERRED_PROVIDER_libavutil = "ffmpeg"
+PREFERRED_PROVIDER_libswresample = "ffmpeg"
+PREFERRED_PROVIDER_libswscale = "ffmpeg"
+PREFERRED_PROVIDER_ffmpeg = "ffmpeg"
 
 IMAGE_FSTYPES = "tar.xz"
 
@@ -31,7 +39,6 @@ PREFERRED_VERSION_linux-raspberrypi = "6.12.%"
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
 
-# i686 or x86_64
 SDKMACHINE = "x86_64"
 
 EXTRA_IMAGE_FEATURES = "empty-root-password allow-empty-password allow-root-login"
