@@ -56,8 +56,14 @@ SECURITY = " \
 "
 
 WIFI = " \
-    crda \
     iw \
+    linux-firmware-rpidistro-bcm43430 \
+    linux-firmware-rpidistro-bcm43436 \
+    linux-firmware-rpidistro-bcm43436s \
+    linux-firmware-rpidistro-bcm43439 \
+    linux-firmware-rpidistro-bcm43455 \
+    linux-firmware-rpidistro-bcm43456 \
+    linux-firmware-rpidistro-license \
     wpa-supplicant \
 "
 
@@ -67,6 +73,7 @@ IMAGE_INSTALL += " \
     ${EXTRA_TOOLS} \
     ${RPI_STUFF} \
     ${SECURITY} \
+    ${WIFI} \
 "
 
 set_local_timezone() {
