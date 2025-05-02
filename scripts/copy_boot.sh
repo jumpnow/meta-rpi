@@ -20,23 +20,14 @@ fi
 echo "MACHINE: ${MACHINE}"
 
 case "${MACHINE}" in
-    raspberrypi|raspberrypi0|raspberrypi0-wifi|raspberrypi-cm)
+    raspberrypi0|raspberrypi0-wifi)
         DTBS="bcm2708-rpi-zero.dtb \
-              bcm2708-rpi-zero-w.dtb \
-              bcm2708-rpi-b.dtb \
-              bcm2708-rpi-b-plus.dtb \
-              bcm2708-rpi-cm.dtb"
+              bcm2708-rpi-zero-w.dtb"
         ;;
 
-    raspberrypi2|raspberrypi3|raspberrypi-cm3)
-        DTBS="bcm2709-rpi-2-b.dtb \
-              bcm2710-rpi-3-b.dtb \
-              bcm2710-rpi-3-b-plus.dtb \
-              bcm2710-rpi-cm3.dtb"
-        ;;
-
-    raspberrypi4)
-        DTBS="bcm2711-rpi-4-b.dtb"
+    raspberrypi3)
+        DTBS="bcm2710-rpi-3-b.dtb \
+              bcm2710-rpi-3-b-plus.dtb"
         ;;
 
     *)
