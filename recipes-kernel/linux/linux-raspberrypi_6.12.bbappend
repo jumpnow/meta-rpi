@@ -8,7 +8,7 @@ SRCREV_kmeta = ""
 
 unset KBUILD_DEFCONFIG
 
-SRCREV = "0ff7f575b657b3fdfbd6902b68a28548208f4d36"
+SRCREV = "ec6ca8fd21ab010304b6a4b217f0e479f0533ed2"
 
 SRC_URI = "\
     git://github.com/raspberrypi/linux.git;branch=${LINUX_RPI_BRANCH};protocol=https \
