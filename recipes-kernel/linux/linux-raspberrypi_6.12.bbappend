@@ -1,14 +1,14 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/linux-raspberrypi-6.12:"
 
 LINUX_RPI_BRANCH = "rpi-6.12.y"
-LINUX_VERSION = "6.12.33"
+LINUX_VERSION = "6.12.35"
 
 SRCREV_machine = ""
 SRCREV_kmeta = ""
 
 unset KBUILD_DEFCONFIG
 
-SRCREV = "304e1d5171065f013845fc3b8d2866f4bf697f59"
+SRCREV = "c0b918a38dfc53729967d9325b86e3bd2b1fee0a"
 
 SRC_URI = "\
     git://github.com/raspberrypi/linux.git;branch=${LINUX_RPI_BRANCH};protocol=https \
